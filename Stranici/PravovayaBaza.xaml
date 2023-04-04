@@ -1,0 +1,179 @@
+﻿<Page x:Class="LegistOS.Stranici.PravovayaBaza"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LegistOS.Stranici" 
+      xmlns:Classi="clr-namespace:LegistOS.Classi"
+      
+      mc:Ignorable="d" 
+      d:DesignHeight="700" d:DesignWidth="1440"
+      Title="Правовая база" >
+    <!--xmlns:theme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2"-->
+    <Page.Resources>
+        <!--<Classi:DateTimeToDateConverter x:Key="dateConverter" />-->
+        <!--<Classi:KonverterDati x:Key="dateConverter" />-->
+        <!--<Classi:DateTimeToDateConverter x:Key="dateConverter" />-->
+    </Page.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Column="1" Grid.Row="0" Background="{StaticResource PodlojkaBel}">
+            <TextBlock Text="Правовая база" x:Name="TBZagolovokNP" 
+                       Style="{StaticResource TBlZagolovok}" 
+                       HorizontalAlignment="Left" VerticalAlignment="Center" />
+        </StackPanel>
+
+        <!-- Поиск -->
+        <StackPanel Orientation="Vertical" 
+                    HorizontalAlignment="Center" VerticalAlignment="Center"
+                    Grid.Row="1" Grid.Column="1" >
+            <StackPanel Orientation="Horizontal" >
+                <TextBox x:Name="TBoxPoisk" TextChanged="TBoxSearch_TextChanged"
+                         Style="{StaticResource TBPoisk}" />
+                <Button x:Name="BtnRashirPoisk"
+                        Margin="10,0,0,0"
+                        Style="{StaticResource BtnRashPoisk}"
+                        VerticalAlignment="Center" >
+                    <TextBlock Text="Расширенный поиск..." FontSize="12" Foreground="{StaticResource SerayaInf}" />
+                </Button>
+            </StackPanel>
+        </StackPanel>
+
+        <!-- Боковое меню -->
+        <Rectangle Fill="{StaticResource PodlojkaBel}" Grid.Column="0" Grid.RowSpan="3" />
+
+        <StackPanel Orientation="Vertical" Grid.Column="0" Grid.RowSpan="3"
+                    HorizontalAlignment="Left" VerticalAlignment="Top" >
+
+            <StackPanel Name="LVBaza"
+                        Background="{x:Null}" Width="200" Height="370">
+                <TextBlock Text="1. Правовая база" Margin="10" />
+                <Button x:Name="BtnVsyaBaza" Background="{x:Null}" BorderBrush="{x:Null}"
+                        Width="200" Height="35" Click="BtnVsyaBaza_Click" >
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel x:Name="SPLegalBasis2" Style="{StaticResource SPBokMenu}" >
+                            <TextBlock Text="1.1. Вся база" Style="{StaticResource TBlBokMenu}" />
+                        </StackPanel>
+                    </StackPanel>
+                </Button>
+
+                <Button x:Name="BtnConstitutiya" Background="{x:Null}" BorderBrush="{x:Null}"
+                        Width="200" Height="35" Click="BtnConstitutiya_Click" >
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel x:Name="SPConstitution2" Style="{StaticResource SPBokMenu}" >
+                            <TextBlock Text="1.2. Конституция РФ" Style="{StaticResource TBlBokMenu}" />
+                        </StackPanel>
+                    </StackPanel>
+                </Button>
+
+                <Button x:Name="BtnFederaLaws" Background="{x:Null}" BorderBrush="{x:Null}"
+                        Width="200" Height="35" Click="BtnFederaLaws_Click" >
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel x:Name="SPFederaLaws2" Style="{StaticResource SPBokMenu}" >
+                            <TextBlock Text="1.3. Федеральные законы" Style="{StaticResource TBlBokMenu}" />
+                        </StackPanel>
+                    </StackPanel>
+                </Button>
+
+                <Button x:Name="BtnPresidentialDecrees" Background="{x:Null}" BorderBrush="{x:Null}"
+                        Width="200" Height="35" Click="BtnPresidentialDecrees_Click" >
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel x:Name="SPPresidentialDecrees2" Style="{StaticResource SPBokMenu}" >
+                            <TextBlock Text="1.4. Указы Президента РФ" Style="{StaticResource TBlBokMenu}" />
+                        </StackPanel>
+                    </StackPanel>
+                </Button>
+
+                <Button x:Name="BtnGovernmentDecrees" Background="{x:Null}" BorderBrush="{x:Null}"
+                        Width="200" Height="50" Click="BtnGovernmentDecrees_Click" >
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel x:Name="SPGovernmentDecrees2" Width="200" Height="50" Style="{StaticResource SPBokMenu}" >
+                            <TextBlock Text="1.5. Постановления правительства РФ" Style="{StaticResource TBlBokMenu}" />
+                        </StackPanel>
+                    </StackPanel>
+                </Button>
+
+                <Button x:Name="BtnNormativeAct" Background="{x:Null}" BorderBrush="{x:Null}"
+                        Width="200" Height="35" Click="BtnNormativeAct_Click" >
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel x:Name="SPNormativeAct2" Style="{StaticResource SPBokMenu}" >
+                            <TextBlock Text="1.6. Нормативные акты" Style="{StaticResource TBlBokMenu}" />
+                        </StackPanel>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+
+        <!-- Область вывода документов -->
+        <ListView x:Name="LVPravovayaBaza" Margin="9.8,10,10,10.4"
+                  Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="4"
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                  Background="{x:Null}" BorderBrush="{x:Null}">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Vertical"
+                               HorizontalAlignment="Left"/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <StackPanel Grid.Column="1" Orientation="Vertical" Margin="0,5,0,0">
+                            
+                            
+                            <TextBlock Text="{Binding status}" 
+                                       HorizontalAlignment="Left"
+                                       Style="{StaticResource TBlStatus}"/>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Закон «" Style="{StaticResource ZagPravB}" />
+                                <TextBlock Text="{Binding Nazvanie}" 
+                                       HorizontalAlignment="Left"
+                                       TextWrapping="Wrap" TextTrimming="WordEllipsis"
+                                       Style="{StaticResource ZagPravB}"/>
+                                <TextBlock Text="»" Style="{StaticResource ZagPravB}" />
+                            </StackPanel>
+                            <!-- Дата -->
+                            <TextBlock Text="{Binding Opisanie}" 
+                                       HorizontalAlignment="Left" Width="auto"
+                                       TextWrapping="Wrap"
+                                       Style="{StaticResource OpisaniePravB}"/>
+                            <Button Name="BtnPodrobnee"
+                                    Width="auto" Height="auto" HorizontalAlignment="Right"
+                                    Click="BtnPodrobnee_Click"
+                                    Style="{StaticResource BtnRashPoisk}" >
+                                <TextBlock Text="Подробнее..." Foreground="{StaticResource SerayaInf}" FontSize="18" />
+                            </Button>
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>
+
+<!--<StackPanel Orientation="Horizontal">
+    <TextBlock Text=" от " Style="{StaticResource ZagPravB}" />
+    <TextBlock Text="{Binding Path=DataNach,Converter={StaticResource dateConverter}}" 
+                                       HorizontalAlignment="Left" Width="auto"
+                                       TextWrapping="Wrap"
+                                       Style="{StaticResource ZagPravB}"/>
+    </StackPanel>--> 
+
+    <!--<TextBlock x:Name="TBoxStDoc"
+                                       Text="{Binding StatusDoc1.NameStatus}"
+                                       HorizontalAlignment="Left"
+                                       Style="{StaticResource StatusDoc}">
+                                <TextBlock.DataContext>
+                                    <Classes:Document/>
+                                </TextBlock.DataContext>
+                            </TextBlock>-->                            

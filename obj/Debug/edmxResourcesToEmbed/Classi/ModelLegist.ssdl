@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище user37_dbModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "user37_db.dbo.DDocTeg" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+  <EntityType Name="DDocTeg">
+    <Key>
+      <PropertyRef Name="idDocumenta" />
+      <PropertyRef Name="idTega" />
+    </Key>
+    <Property Name="idDocumenta" Type="int" Nullable="false" />
+    <Property Name="idTega" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DDocument">
+    <Key>
+      <PropertyRef Name="idDocumenta" />
+    </Key>
+    <Property Name="idDocumenta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nomer" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Nazvanie" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DataNach" Type="date" />
+    <Property Name="DataKon" Type="date" />
+    <Property Name="Opisanie" Type="nvarchar(max)" />
+    <Property Name="KratOpisanie" Type="nvarchar(max)" />
+    <Property Name="IzdavOrgan" Type="int" />
+    <Property Name="VidDoc" Type="int" />
+    <Property Name="PravovayaBaza" Type="int" />
+    <Property Name="Status" Type="int" />
+    <Property Name="Region" Type="int" />
+    <Property Name="NPA" Type="int" />
+    <Property Name="PytFaila" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="DIzdavOrgan">
+    <Key>
+      <PropertyRef Name="idIzdavOrgana" />
+    </Key>
+    <Property Name="idIzdavOrgana" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NazvanieOrgana" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DNPA">
+    <Key>
+      <PropertyRef Name="idNPA" />
+    </Key>
+    <Property Name="idNPA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NazvanieNPA" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="UrSila" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DOrganUstarNazv">
+    <Key>
+      <PropertyRef Name="idUstarNazvOrgana" />
+    </Key>
+    <Property Name="idUstarNazvOrgana" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idOrgana" Type="int" Nullable="false" />
+    <Property Name="UstarNazvanie" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DataIzmeneniya" Type="date" />
+  </EntityType>
+  <EntityType Name="DPolzovatel">
+    <Key>
+      <PropertyRef Name="idPolzovatelya" />
+    </Key>
+    <Property Name="idPolzovatelya" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Familia" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Imya" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Otchestvo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Telefon" Type="nvarchar" MaxLength="12" />
+    <Property Name="Pochta" Type="nvarchar(max)" />
+    <Property Name="Parol" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Rol" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DPravovayaBaza">
+    <Key>
+      <PropertyRef Name="idPravBazi" />
+    </Key>
+    <Property Name="idPravBazi" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NazvanieBazi" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DRegion">
+    <Key>
+      <PropertyRef Name="idRegiona" />
+    </Key>
+    <Property Name="idRegiona" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NazvanieRegiona" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="DRol">
+    <Key>
+      <PropertyRef Name="idRoli" />
+    </Key>
+    <Property Name="idRoli" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NazvanieRoli" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DStatus">
+    <Key>
+      <PropertyRef Name="idStatusa" />
+    </Key>
+    <Property Name="idStatusa" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NazvanieStatusa" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DTeg">
+    <Key>
+      <PropertyRef Name="idTega" />
+    </Key>
+    <Property Name="idTega" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NazvanieTega" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DVid">
+    <Key>
+      <PropertyRef Name="idVida" />
+    </Key>
+    <Property Name="idVida" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NazvanieVida" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_DDocTeg_DDocument">
+    <End Role="DDocument" Type="Self.DDocument" Multiplicity="1" />
+    <End Role="DDocTeg" Type="Self.DDocTeg" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DDocument">
+        <PropertyRef Name="idDocumenta" />
+      </Principal>
+      <Dependent Role="DDocTeg">
+        <PropertyRef Name="idDocumenta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DDocTeg_DTeg">
+    <End Role="DTeg" Type="Self.DTeg" Multiplicity="1" />
+    <End Role="DDocTeg" Type="Self.DDocTeg" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DTeg">
+        <PropertyRef Name="idTega" />
+      </Principal>
+      <Dependent Role="DDocTeg">
+        <PropertyRef Name="idTega" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DDocument_DIzdavOrgan">
+    <End Role="DIzdavOrgan" Type="Self.DIzdavOrgan" Multiplicity="0..1" />
+    <End Role="DDocument" Type="Self.DDocument" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DIzdavOrgan">
+        <PropertyRef Name="idIzdavOrgana" />
+      </Principal>
+      <Dependent Role="DDocument">
+        <PropertyRef Name="IzdavOrgan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DDocument_DNPA">
+    <End Role="DNPA" Type="Self.DNPA" Multiplicity="0..1" />
+    <End Role="DDocument" Type="Self.DDocument" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DNPA">
+        <PropertyRef Name="idNPA" />
+      </Principal>
+      <Dependent Role="DDocument">
+        <PropertyRef Name="NPA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DDocument_DPravovayaBaza">
+    <End Role="DPravovayaBaza" Type="Self.DPravovayaBaza" Multiplicity="0..1" />
+    <End Role="DDocument" Type="Self.DDocument" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DPravovayaBaza">
+        <PropertyRef Name="idPravBazi" />
+      </Principal>
+      <Dependent Role="DDocument">
+        <PropertyRef Name="PravovayaBaza" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DDocument_DRegion">
+    <End Role="DRegion" Type="Self.DRegion" Multiplicity="0..1" />
+    <End Role="DDocument" Type="Self.DDocument" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DRegion">
+        <PropertyRef Name="idRegiona" />
+      </Principal>
+      <Dependent Role="DDocument">
+        <PropertyRef Name="Region" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DDocument_DStatus">
+    <End Role="DStatus" Type="Self.DStatus" Multiplicity="0..1" />
+    <End Role="DDocument" Type="Self.DDocument" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DStatus">
+        <PropertyRef Name="idStatusa" />
+      </Principal>
+      <Dependent Role="DDocument">
+        <PropertyRef Name="Status" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DDocument_DVid">
+    <End Role="DVid" Type="Self.DVid" Multiplicity="0..1" />
+    <End Role="DDocument" Type="Self.DDocument" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DVid">
+        <PropertyRef Name="idVida" />
+      </Principal>
+      <Dependent Role="DDocument">
+        <PropertyRef Name="VidDoc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DOrganUstarNazv_DIzdavOrgan">
+    <End Role="DIzdavOrgan" Type="Self.DIzdavOrgan" Multiplicity="1" />
+    <End Role="DOrganUstarNazv" Type="Self.DOrganUstarNazv" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DIzdavOrgan">
+        <PropertyRef Name="idIzdavOrgana" />
+      </Principal>
+      <Dependent Role="DOrganUstarNazv">
+        <PropertyRef Name="idOrgana" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DPolzovatel_DRol">
+    <End Role="DRol" Type="Self.DRol" Multiplicity="1" />
+    <End Role="DPolzovatel" Type="Self.DPolzovatel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DRol">
+        <PropertyRef Name="idRoli" />
+      </Principal>
+      <Dependent Role="DPolzovatel">
+        <PropertyRef Name="Rol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище user37_dbModelContainer">
+    <EntitySet Name="DDocument" EntityType="Self.DDocument" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DIzdavOrgan" EntityType="Self.DIzdavOrgan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DNPA" EntityType="Self.DNPA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DOrganUstarNazv" EntityType="Self.DOrganUstarNazv" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DPolzovatel" EntityType="Self.DPolzovatel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DPravovayaBaza" EntityType="Self.DPravovayaBaza" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DRegion" EntityType="Self.DRegion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DRol" EntityType="Self.DRol" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DStatus" EntityType="Self.DStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DTeg" EntityType="Self.DTeg" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DVid" EntityType="Self.DVid" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DDocTeg" EntityType="Self.DDocTeg" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [DDocTeg].[idDocumenta] AS [idDocumenta], 
+    [DDocTeg].[idTega] AS [idTega]
+    FROM [dbo].[DDocTeg] AS [DDocTeg]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_DDocTeg_DDocument" Association="Self.FK_DDocTeg_DDocument">
+      <End Role="DDocument" EntitySet="DDocument" />
+      <End Role="DDocTeg" EntitySet="DDocTeg" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DDocTeg_DTeg" Association="Self.FK_DDocTeg_DTeg">
+      <End Role="DTeg" EntitySet="DTeg" />
+      <End Role="DDocTeg" EntitySet="DDocTeg" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DDocument_DIzdavOrgan" Association="Self.FK_DDocument_DIzdavOrgan">
+      <End Role="DIzdavOrgan" EntitySet="DIzdavOrgan" />
+      <End Role="DDocument" EntitySet="DDocument" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DDocument_DNPA" Association="Self.FK_DDocument_DNPA">
+      <End Role="DNPA" EntitySet="DNPA" />
+      <End Role="DDocument" EntitySet="DDocument" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DDocument_DPravovayaBaza" Association="Self.FK_DDocument_DPravovayaBaza">
+      <End Role="DPravovayaBaza" EntitySet="DPravovayaBaza" />
+      <End Role="DDocument" EntitySet="DDocument" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DDocument_DRegion" Association="Self.FK_DDocument_DRegion">
+      <End Role="DRegion" EntitySet="DRegion" />
+      <End Role="DDocument" EntitySet="DDocument" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DDocument_DStatus" Association="Self.FK_DDocument_DStatus">
+      <End Role="DStatus" EntitySet="DStatus" />
+      <End Role="DDocument" EntitySet="DDocument" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DDocument_DVid" Association="Self.FK_DDocument_DVid">
+      <End Role="DVid" EntitySet="DVid" />
+      <End Role="DDocument" EntitySet="DDocument" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DOrganUstarNazv_DIzdavOrgan" Association="Self.FK_DOrganUstarNazv_DIzdavOrgan">
+      <End Role="DIzdavOrgan" EntitySet="DIzdavOrgan" />
+      <End Role="DOrganUstarNazv" EntitySet="DOrganUstarNazv" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DPolzovatel_DRol" Association="Self.FK_DPolzovatel_DRol">
+      <End Role="DRol" EntitySet="DRol" />
+      <End Role="DPolzovatel" EntitySet="DPolzovatel" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,112 @@
+﻿<Window x:Class="LegistOS.Okna.Registratia"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LegistOS.Okna"
+        mc:Ignorable="d"
+        Title="Регистрация" Height="600" Width="460" 
+        WindowStartupLocation="CenterScreen" 
+        MinHeight="599" MinWidth="459" MaxHeight="601" MaxWidth="461">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="160" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="365" />
+            <RowDefinition Height="75" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Image x:Name="ImgLogo" Width="140" Margin="10"
+               Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="0"
+               Source="/Izobragenia/logo3long.700х200.png"
+               HorizontalAlignment="Left" VerticalAlignment="Top" />
+
+        <StackPanel Orientation="Vertical" Grid.Column="1" Grid.RowSpan="3"
+                    HorizontalAlignment="Center" Margin="0,40,0,0">
+            <TextBlock x:Name="TBlZagolovok" Text="Регистрация" 
+                       Style="{StaticResource TBlZagolovok}" />
+
+            <TextBlock x:Name="TBlFamilia" Text="Фамилия:" 
+                       HorizontalAlignment="Left" Margin="10,20,0,0" />
+            <TextBox x:Name="TBFamilia" HorizontalAlignment="Center" 
+                     Style="{StaticResource TBOsn}" />
+
+            <TextBlock x:Name="TBlImya" Text="Имя:" Margin="10,0,0,0"
+                       HorizontalAlignment="Left" />
+            <TextBox x:Name="TBImya" HorizontalAlignment="Center" 
+                     Style="{StaticResource TBOsn}" />
+
+            <TextBlock x:Name="TBlOtchestvo" Text="Отчество:" Margin="10,0,0,0"
+                       HorizontalAlignment="Left" />
+            <TextBox x:Name="TBOtchestvo" HorizontalAlignment="Center" 
+                     Style="{StaticResource TBOsn}" />
+
+            <TextBlock x:Name="TBlTelefon" Text="Телефон:" Margin="10,0,0,0"
+                       HorizontalAlignment="Left" />
+            <TextBox x:Name="TBTelefon" HorizontalAlignment="Center" 
+                     Style="{StaticResource TBOsn}" />
+
+            <TextBlock x:Name="TBlPochta" Text="Почта:" Margin="10,0,0,0"
+                       HorizontalAlignment="Left" />
+            <TextBox x:Name="TBPochta" HorizontalAlignment="Center" 
+                     Style="{StaticResource TBOsn}" />
+
+            <TextBlock x:Name="TBlParol" Text="Пароль:" 
+                       HorizontalAlignment="Left" Margin="10,0,0,0" />
+            <PasswordBox x:Name="PBParol" HorizontalAlignment="Center"
+                         Style="{StaticResource PBParol}" />
+
+            <Button x:Name="BtnGenerirovanieParola" Content="Сгенерировать" 
+                    Style="{StaticResource BtnDeistv}" Click="BtnGenerirovanieParola_Click" />
+
+            <CheckBox x:Name="ChBPrinatVse"  
+                      Margin="10,15,0,0" Width="150" Checked="ChBPrinatVse_Checked">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="Принять условия" />
+                    <TextBlock Text="использования" />
+                </StackPanel>
+            </CheckBox>
+
+            <Button x:Name="BtnRegistratia" Content="Регистрация" 
+                    Style="{StaticResource BtnDeistv}" Margin="0,20,0,0" Click="BtnRegistratia_Click" />
+            <Button x:Name="BtnAvtorizatia" Content="Авторизация" 
+                    Style="{StaticResource BtnDeistv}" Click="BtnAvtorizatia_Click"  />
+        </StackPanel>
+
+        <StackPanel Orientation="Vertical" Grid.Column="2" Grid.Row="1">
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="BtnProsmotrParolya" Style="{StaticResource BtnRegMal}"
+                        Click="BtnProsmotrParolya_Click">
+                    <Image x:Name="ImgGlaz" Source="/Izobragenia/Znachki/streamline-interface-edit-view--interface-essential--48x48.PNG"
+                           Width="18"/>
+                </Button>
+                <Button x:Name="BtnKopirovanieParola" Style="{StaticResource BtnRegMal}"
+                        Click="BtnKopirovanieParola_Click" IsEnabled="False">
+                    <Image x:Name="ImgKopia" Source="/Izobragenia/Znachki/streamline-interface-file-double--interface-essential--48x48.PNG"
+                           Width="18"/>
+                </Button>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal" MaxHeight="40">
+                <Button x:Name="BtnSkritParol" Style="{StaticResource BtnRegMal}" 
+                        Click="BtnSkritParol_Click" Visibility="Hidden">
+                    <Image x:Name="ImgGlazZacher" Source="/Izobragenia/Znachki/streamline-interface-edit-view-off--interface-essential--48x48.PNG"
+                           Width="18"/>
+                </Button>
+                <TextBlock Text="" x:Name="TBlParolProsmotr" 
+                           VerticalAlignment="Center" Margin="3,0,0,0"
+                           Visibility="Hidden" Width="120" TextWrapping="Wrap"/>
+            </StackPanel>
+        </StackPanel>
+
+        <Button x:Name="BtnSoglashenia" Style="{StaticResource BtnRegMal}" 
+                Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top"
+                Click="BtnSoglashenia_Click" >
+            <Image x:Name="ImgPomoh" Source="/Izobragenia/Znachki/streamline-interface-help-question-square--interface-essential--48x48.PNG"
+                           Width="18"/>
+        </Button>
+    </Grid>
+</Window>

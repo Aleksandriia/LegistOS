@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2B727D7D-C98F-4115-99DB-8DE6AA00CD50}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>LegistOS</RootNamespace>
+    <AssemblyName>LegistOS</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Izobragenia\logo1.250х250.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classi\Bazi.cs" />
+    <Compile Include="Classi\Class1.cs" />
+    <Compile Include="Classi\DDocument.cs">
+      <DependentUpon>ModelLegist.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classi\DIzdavOrgan.cs">
+      <DependentUpon>ModelLegist.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classi\DNPA.cs">
+      <DependentUpon>ModelLegist.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classi\DOrganUstarNazv.cs">
+      <DependentUpon>ModelLegist.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classi\DPolzovatel.cs">
+      <DependentUpon>ModelLegist.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classi\DPravovayaBaza.cs">
+      <DependentUpon>ModelLegist.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classi\DRegion.cs">
+      <DependentUpon>ModelLegist.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classi\DRol.cs">
+      <DependentUpon>ModelLegist.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classi\DStatu.cs">
+      <DependentUpon>ModelLegist.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classi\DStatus.cs" />
+    <Compile Include="Classi\DTeg.cs">
+      <DependentUpon>ModelLegist.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classi\DVid.cs">
+      <DependentUpon>ModelLegist.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classi\KonverterDati.cs" />
+    <Compile Include="Classi\ModelLegist.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelLegist.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classi\ModelLegist.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelLegist.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classi\ModelLegist.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelLegist.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Stranici\NastroikaProfila.xaml.cs">
+      <DependentUpon>NastroikaProfila.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Stranici\Nastroiki.xaml.cs">
+      <DependentUpon>Nastroiki.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Stranici\PravovayaBaza.xaml.cs">
+      <DependentUpon>PravovayaBaza.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Okna\Avtorizatia.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Okna\Glavnaya.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Okna\Registratia.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stranici\NastroikaProfila.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stranici\Nastroiki.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stranici\PravovayaBaza.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Okna\Avtorizatia.xaml.cs">
+      <DependentUpon>Avtorizatia.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Okna\Glavnaya.xaml.cs">
+      <DependentUpon>Glavnaya.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Okna\Registratia.xaml.cs">
+      <DependentUpon>Registratia.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EntityDeploy Include="Classi\ModelLegist.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelLegist.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Classi\ModelLegist.edmx.diagram">
+      <DependentUpon>ModelLegist.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Izobragenia\logo1.250х250.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Izobragenia\logo3.450х450.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Izobragenia\logo3long.700х200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Izobragenia\logo1.250х250.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Izobragenia\Znachki\streamline-interface-file-double--interface-essential--48x48.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Izobragenia\Znachki\streamline-interface-edit-view--interface-essential--48x48.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Izobragenia\Znachki\streamline-interface-edit-view-off--interface-essential--48x48.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Classi\ModelLegist.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelLegist.Context.cs</LastGenOutput>
+      <DependentUpon>ModelLegist.edmx</DependentUpon>
+    </Content>
+    <Content Include="Classi\ModelLegist.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelLegist.edmx</DependentUpon>
+      <LastGenOutput>ModelLegist.cs</LastGenOutput>
+    </Content>
+    <Resource Include="Izobragenia\Znachki\streamline-interface-user-square-alternate--interface-essential--48x48.PNG" />
+    <Resource Include="Izobragenia\Znachki\streamline-interface-logout--interface-essential--48x48.PNG" />
+    <Resource Include="Izobragenia\Znachki\streamline-computer-desktop-help--computer-devices--48x48.PNG" />
+    <Resource Include="Izobragenia\Znachki\streamline-programming-script-1--programming--48x48.PNG" />
+    <Resource Include="Izobragenia\Znachki\streamline-interface-add-square--interface-essential--48x48.PNG" />
+    <Resource Include="Izobragenia\Znachki\streamline-interface-setting-cog--interface-essential--48x48.PNG" />
+    <Resource Include="Izobragenia\Znachki\streamline-interface-help-question-square--interface-essential--48x48.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
