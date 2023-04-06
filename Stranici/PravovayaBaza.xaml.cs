@@ -90,7 +90,13 @@ namespace LegistOS.Stranici
 
         private void BtnPodrobnee_Click(object sender, RoutedEventArgs e)
         {
+            var document = (sender as Button).DataContext as Classi.DDocument;
+            NavigationService.Navigate( new Stranici.Document(document));
+        }
 
+        private void BtnRashirPoisk_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("В разработке", "Сообщение", MessageBoxButton.OK, MessageBoxImage.Information);
         }
     }
 }

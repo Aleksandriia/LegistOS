@@ -41,10 +41,10 @@
                 <TextBox x:Name="TBoxPoisk" TextChanged="TBoxSearch_TextChanged"
                          Style="{StaticResource TBPoisk}" />
                 <Button x:Name="BtnRashirPoisk"
-                        Margin="10,0,0,0"
+                        Click="BtnRashirPoisk_Click"
                         Style="{StaticResource BtnRashPoisk}"
                         VerticalAlignment="Center" >
-                    <TextBlock Text="Расширенный поиск..." FontSize="12" Foreground="{StaticResource SerayaInf}" />
+                    <TextBlock Text="Расширенный поиск..." />
                 </Button>
             </StackPanel>
         </StackPanel>
@@ -143,15 +143,14 @@
                                 <TextBlock Text="»" Style="{StaticResource ZagPravB}" />
                             </StackPanel>
                             <!-- Дата -->
-                            <TextBlock Text="{Binding Opisanie}" 
+                            <TextBlock Text="{Binding KratOpisanie}" 
                                        HorizontalAlignment="Left" Width="auto"
                                        TextWrapping="Wrap"
                                        Style="{StaticResource OpisaniePravB}"/>
                             <Button Name="BtnPodrobnee"
-                                    Width="auto" Height="auto" HorizontalAlignment="Right"
                                     Click="BtnPodrobnee_Click"
-                                    Style="{StaticResource BtnRashPoisk}" >
-                                <TextBlock Text="Подробнее..." Foreground="{StaticResource SerayaInf}" FontSize="18" />
+                                    Style="{StaticResource BtnPodrobnee}" >
+                                <TextBlock Text="Подробнее..." FontSize="18" />
                             </Button>
                         </StackPanel>
                     </Grid>

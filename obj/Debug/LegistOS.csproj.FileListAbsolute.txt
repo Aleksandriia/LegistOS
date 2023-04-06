@@ -32,3 +32,5 @@ E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\Nas
 E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\NastroikaProfila.baml
 E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\PravovayaBaza.g.cs
 E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\PravovayaBaza.baml
+E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\Document.g.cs
+E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\Document.baml

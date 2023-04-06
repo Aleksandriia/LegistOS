@@ -1,0 +1,87 @@
+﻿<Page x:Class="LegistOS.Stranici.Document"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LegistOS.Stranici"
+      mc:Ignorable="d" 
+      d:DesignHeight="700" d:DesignWidth="1440"
+      Title="Документ">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35" />
+            <RowDefinition Height="150" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Column="1" Grid.Row="0" Background="{StaticResource PodlojkaBel}">
+            <TextBlock Text="Документ" x:Name="TBZagolovokNP" 
+                       Style="{StaticResource TBlZagolovok}" 
+                       HorizontalAlignment="Left" VerticalAlignment="Center" />
+        </StackPanel>
+
+        <Rectangle Fill="{StaticResource PodlojkaBel}" Grid.Column="0" Grid.RowSpan="3" />
+
+        <Button x:Name="BtnNazad" Content="Назад" 
+                Click="BtnNazad_Click" Margin="20"
+                Grid.Column="0" Grid.Row="1" VerticalAlignment="Top"
+                Style="{StaticResource BtnDeistv}" />
+        
+        <!-- Область вывода документа -->
+        <StackPanel Orientation="Vertical"
+                    Grid.Row="1" Grid.Column="1" >
+            <StackPanel Orientation="Horizontal">
+                <TextBlock x:Name="TBlDocNomer" Text="Документ №"
+                           Style="{StaticResource TBlZagolovokDoc}" 
+                           Margin="20" FontWeight="SemiBold" />
+                <TextBlock x:Name="TBlNomerDoc" Text="{Binding Nomer}"
+                           Style="{StaticResource TBlZagolovokDoc}" Margin="-10,20,0,0" />
+            </StackPanel>
+            <TextBlock x:Name="TBlNazvanieDoc" Text="{Binding Nazvanie}"
+                       Style="{StaticResource TBlZagolovokDoc}"
+                       Margin="20,20,0,0"/>
+        </StackPanel>
+
+        <!--<StackPanel Orientation="Vertical" MaxHeight="400"
+                    ScrollViewer.VerticalScrollBarVisibility="Visible"
+                    Grid.Row="2" Grid.Column="1" >
+            <ScrollViewer VerticalScrollBarVisibility="Visible">
+                <TextBlock x:Name="TBlOpisanie" Text="{Binding Opisanie}"
+                           Style="{StaticResource TBlTextDoc}"
+                           Margin="20,20,0,0" MaxHeight="400"
+                           ScrollViewer.VerticalScrollBarVisibility="Visible"
+                           />
+            </ScrollViewer>
+        </StackPanel>-->
+
+        <ListView x:Name="LVDocument" Margin="9.8,10,10,10.4"
+                  Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="4"
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                  ScrollViewer.CanContentScroll="False"
+                  Background="{x:Null}" BorderBrush="{x:Null}" >
+
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <!--<WrapPanel Orientation="Vertical"
+                               HorizontalAlignment="Left"/>-->
+                    <VirtualizingStackPanel IsEnabled="False"/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <TextBlock x:Name="TBlOpisanie" Text="{Binding Opisanie}"
+                           Style="{StaticResource TBlTextDoc}"
+                           Margin="20,20,0,0" MaxHeight="400" />
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </Grid>
+</Page>

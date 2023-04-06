@@ -107,6 +107,7 @@
     <Compile Include="Classi\DVid.cs">
       <DependentUpon>ModelLegist.tt</DependentUpon>
     </Compile>
+    <Compile Include="Classi\GlobalPeremen.cs" />
     <Compile Include="Classi\KonverterDati.cs" />
     <Compile Include="Classi\ModelLegist.Context.cs">
       <AutoGen>True</AutoGen>
@@ -122,6 +123,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelLegist.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Stranici\Document.xaml.cs">
+      <DependentUpon>Document.xaml</DependentUpon>
     </Compile>
     <Compile Include="Stranici\NastroikaProfila.xaml.cs">
       <DependentUpon>NastroikaProfila.xaml</DependentUpon>
@@ -141,6 +145,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Okna\Registratia.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stranici\Document.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

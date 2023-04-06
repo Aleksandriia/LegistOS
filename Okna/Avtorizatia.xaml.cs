@@ -53,5 +53,11 @@ namespace LegistOS.Okna
                 TBPochta.Focus();
             }
         }
+
+        private void BtnZapolnenie_Click(object sender, RoutedEventArgs e)
+        {
+            TBPochta.Text = "stanimir@example.net";
+            PBParol.Password = "%nQvps4@01+nDEN";
+        }
     }
 }
