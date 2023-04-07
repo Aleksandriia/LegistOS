@@ -296,6 +296,23 @@
             </Style.Resources>
         </Style>
 
+        <Style x:Key="TBOpisanieDoc" TargetType="TextBox" >
+            <Setter Property="Margin" Value="20" />
+            <Setter Property="Padding" Value="3" />
+            <Setter Property="Cursor" Value="IBeam" />
+            <Setter Property="FontFamily" Value="Tw Cen MT" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="TextWrapping" Value="Wrap" />
+            <Setter Property="Foreground" Value="#000000" />
+            <Setter Property="BorderBrush" Value="{StaticResource AksentCvet}" />
+            <Setter Property="BorderThickness" Value="1.4" />
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5" />
+                </Style>
+            </Style.Resources>
+        </Style>
+
         <!-- TextBlock -->
 
         <Style TargetType="TextBlock" >
@@ -330,9 +347,26 @@
         </Style>
 
         <Style TargetType="TextBlock" x:Key="TBlStatus" >
+            <Setter Property="Height" Value="auto" />
             <Setter Property="FontFamily" Value="Tw Cen MT" />
             <Setter Property="FontSize" Value="12" />
             <Setter Property="Foreground" Value="{StaticResource TextKrasn}" />
+        </Style>
+
+        <Style TargetType="TextBlock" x:Key="TBlBokIng" >
+            <Setter Property="Height" Value="auto" />
+            <Setter Property="MaxWidth" Value="170" />
+            <Setter Property="TextWrapping" Value="Wrap" />
+            <Setter Property="FontFamily" Value="Tw Cen MT" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="Foreground" Value="#000000" />
+        </Style>
+
+        <Style x:Key="TBlInfBokIzn" TargetType="TextBlock" >
+            <Setter Property="Height" Value="auto" />
+            <Setter Property="FontFamily" Value="Tw Cen MT" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="FontWeight" Value="Bold" />
         </Style>
 
         <Style TargetType="TextBlock" x:Key="ZagPravB">

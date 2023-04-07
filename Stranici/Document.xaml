@@ -15,7 +15,7 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="35" />
-            <RowDefinition Height="150" />
+            <RowDefinition Height="95" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
@@ -44,22 +44,10 @@
             </StackPanel>
             <TextBlock x:Name="TBlNazvanieDoc" Text="{Binding Nazvanie}"
                        Style="{StaticResource TBlZagolovokDoc}"
-                       Margin="20,20,0,0"/>
+                       Margin="20,-10,0,0"/>
         </StackPanel>
 
-        <!--<StackPanel Orientation="Vertical" MaxHeight="400"
-                    ScrollViewer.VerticalScrollBarVisibility="Visible"
-                    Grid.Row="2" Grid.Column="1" >
-            <ScrollViewer VerticalScrollBarVisibility="Visible">
-                <TextBlock x:Name="TBlOpisanie" Text="{Binding Opisanie}"
-                           Style="{StaticResource TBlTextDoc}"
-                           Margin="20,20,0,0" MaxHeight="400"
-                           ScrollViewer.VerticalScrollBarVisibility="Visible"
-                           />
-            </ScrollViewer>
-        </StackPanel>-->
-
-        <ListView x:Name="LVDocument" Margin="9.8,10,10,10.4"
+        <!--<ListView x:Name="LVDocument" Margin="9.8,10,10,10.4"
                   Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="4"
                   ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                   ScrollViewer.CanContentScroll="False"
@@ -67,8 +55,8 @@
 
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <!--<WrapPanel Orientation="Vertical"
-                               HorizontalAlignment="Left"/>-->
+                    --><!--<WrapPanel Orientation="Vertical"
+                               HorizontalAlignment="Left"/>--><!--
                     <VirtualizingStackPanel IsEnabled="False"/>
                 </ItemsPanelTemplate>
             </ListView.ItemsPanel>
@@ -81,7 +69,76 @@
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>
-        </ListView>
+        </ListView>-->
+
+        <TextBox Grid.Column="1" Grid.Row="2"
+                 x:Name="TBOpisanie" IsReadOnly="True"
+                 Style="{StaticResource TBOpisanieDoc}"
+                 ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                 ScrollViewer.VerticalScrollBarVisibility="Auto" Cursor="IBeam"
+                 />
+        
+        <!-- Боковые данные -->
+        <StackPanel Orientation="Vertical" 
+                    Grid.Column="0" Grid.Row="2">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock x:Name="TBlDocStatus" Text="Статус:"
+                           Style="{StaticResource TBlInfBokIzn}" Margin="20,20,0,0" />
+                <TextBlock x:Name="TBlStatusDoc"
+                           Style="{StaticResource TBlStatus}" Margin="5,20,0,0"
+                           Text="{Binding DDocument.status}"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock x:Name="TBlDocVid" Text="Вид:"
+                           Style="{StaticResource TBlInfBokIzn}" Margin="20,10,0,0" />
+                <TextBlock x:Name="TBlVidDoc"
+                           Style="{StaticResource TBlBokIng}" Margin="5,10,0,0" />
+            </StackPanel>
+
+            <!--<StackPanel Orientation="Horizontal">
+                <TextBlock x:Name="TBlDocTeg" Text="Тег:"
+                           Style="{StaticResource TBlInfBokIzn}" Margin="20,0,0,0" />
+                <TextBlock x:Name="TBlTegDoc"
+                           Style="{StaticResource TBlBokIng}" Margin="5,0,0,0" />
+            </StackPanel>-->
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock x:Name="TBlDocPravBaza" Text="Правовая база:"
+                           Style="{StaticResource TBlInfBokIzn}" Margin="20,10,0,0" />
+                <TextBlock x:Name="TBlPravBazaDoc"
+                           Style="{StaticResource TBlBokIng}" Margin="5,10,0,0" MaxWidth="80" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock x:Name="TBlDocRegion" Text="Регион:"
+                           Style="{StaticResource TBlInfBokIzn}" Margin="20,10,0,0" />
+                <TextBlock x:Name="TBlRegionDoc"
+                           Style="{StaticResource TBlBokIng}" Margin="5,10,0,0" />
+            </StackPanel>
+
+            <TextBlock x:Name="TBlDocIzdOrgan" Text="Издавший орган:"
+                       Style="{StaticResource TBlInfBokIzn}" Margin="20,10,0,0" />
+            <TextBlock x:Name="TBlIzdOrganDoc"
+                       Style="{StaticResource TBlBokIng}" Margin="20,10,0,0" MaxWidth="180" />
+
+            <StackPanel Orientation="Vertical">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock x:Name="TBlDocDataNach" Text="Дата начала:"
+                       Style="{StaticResource TBlInfBokIzn}" Margin="20,10,0,0" />
+                    <TextBlock x:Name="TBlDocDataKonca" Text="Дата конца:"
+                       Style="{StaticResource TBlInfBokIzn}" Margin="15,10,0,0" />
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    
+                    <TextBlock x:Name="TBlDataNachDoc"
+                       Style="{StaticResource TBlBokIng}" Margin="20,10,0,0" Width="80" />
+                    <TextBlock x:Name="TBlDataKoncaDoc"
+                       Style="{StaticResource TBlBokIng}" Margin="10,10,0,0" Width="80" MaxWidth="80" />
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
 
     </Grid>
 </Page>
