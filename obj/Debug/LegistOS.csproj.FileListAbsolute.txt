@@ -68,3 +68,5 @@ F:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\LegistOS.csp
 F:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\LegistOS.csproj.CopyComplete
 F:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\LegistOS.exe
 F:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\LegistOS.pdb
+E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\PravovayaBazaRashirPoisk.g.cs
+E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\PravovayaBazaRashirPoisk.baml

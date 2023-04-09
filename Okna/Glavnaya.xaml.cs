@@ -27,6 +27,8 @@ namespace LegistOS.Okna
             InitializeComponent();
 
             TBlFamiliaPolzpvatelya.Text = App.dPolzovatel.Familia;
+
+            FrameMain.Navigate(new Stranici.PravovayaBaza());
         }
 
         private void BtnVMNastroiki_Click(object sender, RoutedEventArgs e)

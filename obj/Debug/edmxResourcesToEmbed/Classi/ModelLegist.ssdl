@@ -1,7 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="Хранилище user37_dbModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <!--Ошибки, обнаруженные при создании:
-предупреждение 6002: В таблице или представлении "user37_db.dbo.DDocTeg" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
   <EntityType Name="DDocTeg">
     <Key>
       <PropertyRef Name="idDocumenta" />
@@ -229,6 +227,7 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="Хранилище user37_dbModelContainer">
+    <EntitySet Name="DDocTeg" EntityType="Self.DDocTeg" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DDocument" EntityType="Self.DDocument" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DIzdavOrgan" EntityType="Self.DIzdavOrgan" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DNPA" EntityType="Self.DNPA" Schema="dbo" store:Type="Tables" />
@@ -240,12 +239,6 @@
     <EntitySet Name="DStatus" EntityType="Self.DStatus" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DTeg" EntityType="Self.DTeg" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DVid" EntityType="Self.DVid" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="DDocTeg" EntityType="Self.DDocTeg" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [DDocTeg].[idDocumenta] AS [idDocumenta], 
-    [DDocTeg].[idTega] AS [idTega]
-    FROM [dbo].[DDocTeg] AS [DDocTeg]</DefiningQuery>
-    </EntitySet>
     <AssociationSet Name="FK_DDocTeg_DDocument" Association="Self.FK_DDocTeg_DDocument">
       <End Role="DDocument" EntitySet="DDocument" />
       <End Role="DDocTeg" EntitySet="DDocTeg" />

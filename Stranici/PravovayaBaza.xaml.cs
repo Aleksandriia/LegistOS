@@ -31,7 +31,11 @@ namespace LegistOS.Stranici
         {
             var docs = App.Context.DDocuments.ToList();
 
-            docs = docs.Where(p => p.Nazvanie.ToLower().Contains(TBoxPoisk.Text.ToLower())).ToList();
+            docs = docs.Where(p => p.Nazvanie.ToLower().Contains(TBoxPoisk.Text.ToLower()) ||
+                              p.KratOpisanie.ToLower().Contains(TBoxPoisk.Text.ToLower()) ||
+                              p.Nomer.ToLower().Contains(TBoxPoisk.Text.ToLower())).ToList();
+            //docs = docs.Where(p => p.KratOpisanie.ToLower().Contains(TBoxPoisk.Text.ToLower())).ToList();
+
             if (Classi.Bazi.Vibrano > 0)
             {
                 docs = docs.Where(p => p.NPA == Classi.Bazi.Vibrano).ToList();
@@ -96,7 +100,8 @@ namespace LegistOS.Stranici
 
         private void BtnRashirPoisk_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("В разработке", "Сообщение", MessageBoxButton.OK, MessageBoxImage.Information);
+            //MessageBox.Show("В разработке", "Сообщение", MessageBoxButton.OK, MessageBoxImage.Information);
+            NavigationService.Navigate(new Stranici.PravovayaBazaRashirPoisk());
         }
     }
 }

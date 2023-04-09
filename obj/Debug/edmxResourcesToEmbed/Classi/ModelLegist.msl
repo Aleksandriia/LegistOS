@@ -4,118 +4,118 @@
     <EntitySetMapping Name="DDocuments">
       <EntityTypeMapping TypeName="user37_dbModel.DDocument">
         <MappingFragment StoreEntitySet="DDocument">
-          <ScalarProperty Name="idDocumenta" ColumnName="idDocumenta" />
-          <ScalarProperty Name="Nomer" ColumnName="Nomer" />
-          <ScalarProperty Name="Nazvanie" ColumnName="Nazvanie" />
-          <ScalarProperty Name="DataNach" ColumnName="DataNach" />
-          <ScalarProperty Name="DataKon" ColumnName="DataKon" />
-          <ScalarProperty Name="Opisanie" ColumnName="Opisanie" />
-          <ScalarProperty Name="KratOpisanie" ColumnName="KratOpisanie" />
-          <ScalarProperty Name="IzdavOrgan" ColumnName="IzdavOrgan" />
-          <ScalarProperty Name="VidDoc" ColumnName="VidDoc" />
-          <ScalarProperty Name="PravovayaBaza" ColumnName="PravovayaBaza" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
-          <ScalarProperty Name="Region" ColumnName="Region" />
-          <ScalarProperty Name="NPA" ColumnName="NPA" />
           <ScalarProperty Name="PytFaila" ColumnName="PytFaila" />
+          <ScalarProperty Name="NPA" ColumnName="NPA" />
+          <ScalarProperty Name="Region" ColumnName="Region" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="PravovayaBaza" ColumnName="PravovayaBaza" />
+          <ScalarProperty Name="VidDoc" ColumnName="VidDoc" />
+          <ScalarProperty Name="IzdavOrgan" ColumnName="IzdavOrgan" />
+          <ScalarProperty Name="KratOpisanie" ColumnName="KratOpisanie" />
+          <ScalarProperty Name="Opisanie" ColumnName="Opisanie" />
+          <ScalarProperty Name="DataKon" ColumnName="DataKon" />
+          <ScalarProperty Name="DataNach" ColumnName="DataNach" />
+          <ScalarProperty Name="Nazvanie" ColumnName="Nazvanie" />
+          <ScalarProperty Name="Nomer" ColumnName="Nomer" />
+          <ScalarProperty Name="idDocumenta" ColumnName="idDocumenta" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="DIzdavOrgans">
       <EntityTypeMapping TypeName="user37_dbModel.DIzdavOrgan">
         <MappingFragment StoreEntitySet="DIzdavOrgan">
-          <ScalarProperty Name="idIzdavOrgana" ColumnName="idIzdavOrgana" />
           <ScalarProperty Name="NazvanieOrgana" ColumnName="NazvanieOrgana" />
+          <ScalarProperty Name="idIzdavOrgana" ColumnName="idIzdavOrgana" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="DNPAs">
       <EntityTypeMapping TypeName="user37_dbModel.DNPA">
         <MappingFragment StoreEntitySet="DNPA">
-          <ScalarProperty Name="idNPA" ColumnName="idNPA" />
-          <ScalarProperty Name="NazvanieNPA" ColumnName="NazvanieNPA" />
           <ScalarProperty Name="UrSila" ColumnName="UrSila" />
+          <ScalarProperty Name="NazvanieNPA" ColumnName="NazvanieNPA" />
+          <ScalarProperty Name="idNPA" ColumnName="idNPA" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="DOrganUstarNazvs">
       <EntityTypeMapping TypeName="user37_dbModel.DOrganUstarNazv">
         <MappingFragment StoreEntitySet="DOrganUstarNazv">
-          <ScalarProperty Name="idUstarNazvOrgana" ColumnName="idUstarNazvOrgana" />
-          <ScalarProperty Name="idOrgana" ColumnName="idOrgana" />
-          <ScalarProperty Name="UstarNazvanie" ColumnName="UstarNazvanie" />
           <ScalarProperty Name="DataIzmeneniya" ColumnName="DataIzmeneniya" />
+          <ScalarProperty Name="UstarNazvanie" ColumnName="UstarNazvanie" />
+          <ScalarProperty Name="idOrgana" ColumnName="idOrgana" />
+          <ScalarProperty Name="idUstarNazvOrgana" ColumnName="idUstarNazvOrgana" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="DPolzovatels">
       <EntityTypeMapping TypeName="user37_dbModel.DPolzovatel">
         <MappingFragment StoreEntitySet="DPolzovatel">
-          <ScalarProperty Name="idPolzovatelya" ColumnName="idPolzovatelya" />
-          <ScalarProperty Name="Familia" ColumnName="Familia" />
-          <ScalarProperty Name="Imya" ColumnName="Imya" />
-          <ScalarProperty Name="Otchestvo" ColumnName="Otchestvo" />
-          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
-          <ScalarProperty Name="Pochta" ColumnName="Pochta" />
-          <ScalarProperty Name="Parol" ColumnName="Parol" />
           <ScalarProperty Name="Rol" ColumnName="Rol" />
+          <ScalarProperty Name="Parol" ColumnName="Parol" />
+          <ScalarProperty Name="Pochta" ColumnName="Pochta" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Otchestvo" ColumnName="Otchestvo" />
+          <ScalarProperty Name="Imya" ColumnName="Imya" />
+          <ScalarProperty Name="Familia" ColumnName="Familia" />
+          <ScalarProperty Name="idPolzovatelya" ColumnName="idPolzovatelya" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="DPravovayaBazas">
       <EntityTypeMapping TypeName="user37_dbModel.DPravovayaBaza">
         <MappingFragment StoreEntitySet="DPravovayaBaza">
-          <ScalarProperty Name="idPravBazi" ColumnName="idPravBazi" />
           <ScalarProperty Name="NazvanieBazi" ColumnName="NazvanieBazi" />
+          <ScalarProperty Name="idPravBazi" ColumnName="idPravBazi" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="DRegions">
       <EntityTypeMapping TypeName="user37_dbModel.DRegion">
         <MappingFragment StoreEntitySet="DRegion">
-          <ScalarProperty Name="idRegiona" ColumnName="idRegiona" />
           <ScalarProperty Name="NazvanieRegiona" ColumnName="NazvanieRegiona" />
+          <ScalarProperty Name="idRegiona" ColumnName="idRegiona" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="DRols">
       <EntityTypeMapping TypeName="user37_dbModel.DRol">
         <MappingFragment StoreEntitySet="DRol">
-          <ScalarProperty Name="idRoli" ColumnName="idRoli" />
           <ScalarProperty Name="NazvanieRoli" ColumnName="NazvanieRoli" />
+          <ScalarProperty Name="idRoli" ColumnName="idRoli" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="DStatus">
       <EntityTypeMapping TypeName="user37_dbModel.DStatu">
         <MappingFragment StoreEntitySet="DStatus">
-          <ScalarProperty Name="idStatusa" ColumnName="idStatusa" />
           <ScalarProperty Name="NazvanieStatusa" ColumnName="NazvanieStatusa" />
+          <ScalarProperty Name="idStatusa" ColumnName="idStatusa" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="DTegs">
       <EntityTypeMapping TypeName="user37_dbModel.DTeg">
         <MappingFragment StoreEntitySet="DTeg">
-          <ScalarProperty Name="idTega" ColumnName="idTega" />
           <ScalarProperty Name="NazvanieTega" ColumnName="NazvanieTega" />
+          <ScalarProperty Name="idTega" ColumnName="idTega" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="DVids">
       <EntityTypeMapping TypeName="user37_dbModel.DVid">
         <MappingFragment StoreEntitySet="DVid">
-          <ScalarProperty Name="idVida" ColumnName="idVida" />
           <ScalarProperty Name="NazvanieVida" ColumnName="NazvanieVida" />
+          <ScalarProperty Name="idVida" ColumnName="idVida" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="DDocTeg" TypeName="user37_dbModel.DDocTeg" StoreEntitySet="DDocTeg">
-      <EndProperty Name="DDocument">
-        <ScalarProperty Name="idDocumenta" ColumnName="idDocumenta" />
-      </EndProperty>
+    <AssociationSetMapping Name="DDocTegs" TypeName="user37_dbModel.DDocTeg" StoreEntitySet="DDocTeg">
       <EndProperty Name="DTeg">
         <ScalarProperty Name="idTega" ColumnName="idTega" />
+      </EndProperty>
+      <EndProperty Name="DDocument">
+        <ScalarProperty Name="idDocumenta" ColumnName="idDocumenta" />
       </EndProperty>
     </AssociationSetMapping>
   </EntityContainerMapping>

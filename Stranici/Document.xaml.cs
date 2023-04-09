@@ -22,16 +22,12 @@ namespace LegistOS.Stranici
     /// </summary>
     public partial class Document : Page
     {
-        //private Classi.DDocument DDocument = null;
-        //DDocument dDocument = new DDocument();
         public Document()
         {
             InitializeComponent();
 
             //UpdateServices();
         }
-
-        //Classi.user37_dbEntities db = new Classi.user37_dbEntities();
 
         public Document(Classi.DDocument document)
         {
@@ -41,92 +37,134 @@ namespace LegistOS.Stranici
             TBlNomerDoc.Text = document.Nomer;
             TBOpisanie.Text = document.Opisanie;
 
-            if (document.Status == 1)
+            switch (document.Status) {
+                case 1:
                 TBlStatusDoc.Text = "Действующие";
-            else if (document.Status == 2)
+                break;
+                case 2:
                 TBlStatusDoc.Text = "Не вступившие в силу";
-            else if (document.Status == 3)
+                break;
+                case 3:
                 TBlStatusDoc.Text = "Утратившие силу";
-            //TBlStatusDoc.Text = document.Status.ToString();
-            /*var stat = App.Context.DStatus.ToString();
-            stat = stat.Where(p => p.CompareTo(DDocument.Status == DStatu.NazvanieStatusa)).ToString();
-            TBlStatusDoc.Text = stat;*/
+                break;
+            }
 
-            //TBlVidDoc.Text = document.VidDoc.ToString();
-            if (document.VidDoc == 1)
-                TBlVidDoc.Text = "Акт";
-            else if (document.VidDoc == 2)
-                TBlVidDoc.Text = "Генеральное соглашение";
-            else if (document.VidDoc == 3)
-                TBlVidDoc.Text = "Декларация";
-            else if (document.VidDoc == 4)
-                TBlVidDoc.Text = "Документ";
-            else if (document.VidDoc == 5)
-                TBlVidDoc.Text = "Дополнение";
-            else if (document.VidDoc == 6)
-                TBlVidDoc.Text = "Закон";
-            else if (document.VidDoc == 7)
-                TBlVidDoc.Text = "Кодекс";
-            else if (document.VidDoc == 8)
-                TBlVidDoc.Text = "Меморандум";
-            else if (document.VidDoc == 9)
-                TBlVidDoc.Text = "Номенклатура";
-            else if (document.VidDoc == 10)
-                TBlVidDoc.Text = "Поправка";
-            else if (document.VidDoc == 11)
-                TBlVidDoc.Text = "Постановление";
-            else if (document.VidDoc == 12)
-                TBlVidDoc.Text = "Приказ";
-            else if (document.VidDoc == 13)
-                TBlVidDoc.Text = "Регламент";
+            switch (document.VidDoc)
+            {
+                case 1:
+                    TBlVidDoc.Text = "Акт";
+                    break;
+                case 2:
+                    TBlVidDoc.Text = "Генеральное соглашение";
+                    break;
+                case 3:
+                    TBlVidDoc.Text = "Декларация";
+                    break;
+                case 4:
+                    TBlVidDoc.Text = "Документ";
+                    break;
+                case 5:
+                    TBlVidDoc.Text = "Дополнение";
+                    break;
+                case 6:
+                    TBlVidDoc.Text = "Закон";
+                    break;
+                case 7:
+                    TBlVidDoc.Text = "Кодекс";
+                    break;
+                case 8:
+                    TBlVidDoc.Text = "Меморандум";
+                    break;
+                case 9:
+                    TBlVidDoc.Text = "Номенклатура";
+                    break;
+                case 10:
+                    TBlVidDoc.Text = "Поправка";
+                    break;
+                case 11:
+                    TBlVidDoc.Text = "Постановление";
+                    break;
+                case 12:
+                    TBlVidDoc.Text = "Приказ";
+                    break;
+                case 13:
+                    TBlVidDoc.Text = "Регламент";
+                    break;
+            }
 
             //TBlTegDoc.Text = document.DTegs.ToString();
 
-            //TBlPravBazaDoc.Text = document.PravovayaBaza.ToString();
-            if (document.PravovayaBaza == 1)
-                TBlPravBazaDoc.Text = "Федеральная база";
-            else if (document.PravovayaBaza == 2)
-                TBlPravBazaDoc.Text = "Региональная база";
-            else if (document.PravovayaBaza == 3)
-                TBlPravBazaDoc.Text = "Судебная практика";
+            switch (document.PravovayaBaza)
+            {
+                case 1:
+                    TBlPravBazaDoc.Text = "Федеральная база";
+                    break;
+                case 2:
+                    TBlPravBazaDoc.Text = "Региональная база";
+                    break;
+                case 3:
+                    TBlPravBazaDoc.Text = "Судебная практика";
+                    break;
+            }
 
-            //TBlRegionDoc.Text = document.Region.ToString();
-            if (document.Region == 1)
-                TBlRegionDoc.Text = "РФ";
-            else if (document.Region == 2)
-                TBlRegionDoc.Text = "Ярославская область";
-
-            //TBlIzdOrganDoc.Text = document.IzdavOrgan.ToString();
-            if (document.IzdavOrgan == 1)
-                TBlIzdOrganDoc.Text = "Администрация Президента РФ";
-            else if (document.IzdavOrgan == 2)
-                TBlIzdOrganDoc.Text = "Министерство внутренних дел РФ";
-            else if (document.IzdavOrgan == 3)
-                TBlIzdOrganDoc.Text = "Министерство здравоохранения РФ";
-            else if (document.IzdavOrgan == 4)
-                TBlIzdOrganDoc.Text = "Министерство иностранных дел РФ";
-            else if (document.IzdavOrgan == 5)
-                TBlIzdOrganDoc.Text = "Министерство обороны РФ";
-            else if (document.IzdavOrgan == 6)
-                TBlIzdOrganDoc.Text = "Министерство образования и науки РФ";
-            else if (document.IzdavOrgan == 7)
-                TBlIzdOrganDoc.Text = "Министерство финансов РФ";
-            else if (document.IzdavOrgan == 8)
-                TBlIzdOrganDoc.Text = "Министерство экономического развития РФ";
-            else if (document.IzdavOrgan == 9)
-                TBlIzdOrganDoc.Text = "Министерство юстиции РФ";
-            else if (document.IzdavOrgan == 10)
-                TBlIzdOrganDoc.Text = "Правительство РФ";
-            else if (document.IzdavOrgan == 11)
-                TBlIzdOrganDoc.Text = "Президент РФ";
-            else if (document.IzdavOrgan == 12)
-                TBlIzdOrganDoc.Text = "Управление делами Президента РФ";
-            else if (document.IzdavOrgan == 13)
-                TBlIzdOrganDoc.Text = "Федеральная антимонопольная служба";
-            else if (document.IzdavOrgan == 14)
-                TBlIzdOrganDoc.Text = "Федеральная служба по аккредитации";
-            else if (document.IzdavOrgan == 15)
-                TBlIzdOrganDoc.Text = "Федеральное казначейство";
+            switch (document.Region)
+            {
+                case 1:
+                    TBlRegionDoc.Text = "РФ";
+                    break;
+                case 2:
+                    TBlRegionDoc.Text = "Ярославская область";
+                    break;
+            }
+                
+            switch (document.IzdavOrgan)
+            {
+                case 1:
+                    TBlIzdOrganDoc.Text = "Администрация Президента РФ";
+                    break;
+                case 2:
+                    TBlIzdOrganDoc.Text = "Министерство внутренних дел РФ";
+                    break;
+                case 3:
+                    TBlIzdOrganDoc.Text = "Министерство здравоохранения РФ";
+                    break;
+                case 4:
+                    TBlIzdOrganDoc.Text = "Министерство иностранных дел РФ";
+                    break;
+                case 5:
+                    TBlIzdOrganDoc.Text = "Министерство обороны РФ";
+                    break;
+                case 6:
+                    TBlIzdOrganDoc.Text = "Министерство образования и науки РФ";
+                    break;
+                case 7:
+                    TBlIzdOrganDoc.Text = "Министерство финансов РФ";
+                    break;
+                case 8:
+                    TBlIzdOrganDoc.Text = "Министерство экономического развития РФ";
+                    break;
+                case 9:
+                    TBlIzdOrganDoc.Text = "Министерство юстиции РФ";
+                    break;
+                case 10:
+                    TBlIzdOrganDoc.Text = "Правительство РФ";
+                    break;
+                case 11:
+                    TBlIzdOrganDoc.Text = "Президент РФ";
+                    break;
+                case 12:
+                    TBlIzdOrganDoc.Text = "Управление делами Президента РФ";
+                    break;
+                case 13:
+                    TBlIzdOrganDoc.Text = "Федеральная антимонопольная служба";
+                    break;
+                case 14:
+                    TBlIzdOrganDoc.Text = "Федеральная служба по аккредитации";
+                    break;
+                case 15:
+                    TBlIzdOrganDoc.Text = "Федеральное казначейство";
+                    break;
+            }
 
             TBlDataNachDoc.Text = ((DateTime)document.DataNach).ToString("dd.MM.yyyy");
 
@@ -136,15 +174,6 @@ namespace LegistOS.Stranici
                 TBlDataKoncaDoc.Text = ((DateTime)document.DataKon).ToString("dd.MM.yyyy");
 
         }
-
-        /*private void UpdateServices()
-        {
-            //var document = App.Context.DDocuments.ToList();
-
-            //document = document.Where(p => p.idDocumenta == Classi.GlobalPeremen.IDdoc).ToList();
-
-            //LVDocument.ItemsSource = document;
-        }*/
 
         private void BtnNazad_Click(object sender, RoutedEventArgs e)
         {

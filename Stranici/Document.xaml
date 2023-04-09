@@ -83,7 +83,7 @@
                     Grid.Column="0" Grid.Row="2">
             <StackPanel Orientation="Horizontal">
                 <TextBlock x:Name="TBlDocStatus" Text="Статус:"
-                           Style="{StaticResource TBlInfBokIzn}" Margin="20,20,0,0" />
+                           Style="{StaticResource TBlInfBokIzn}" Margin="10,20,0,0" />
                 <TextBlock x:Name="TBlStatusDoc"
                            Style="{StaticResource TBlStatus}" Margin="5,20,0,0"
                            Text="{Binding DDocument.status}"/>
@@ -91,7 +91,7 @@
 
             <StackPanel Orientation="Horizontal">
                 <TextBlock x:Name="TBlDocVid" Text="Вид:"
-                           Style="{StaticResource TBlInfBokIzn}" Margin="20,10,0,0" />
+                           Style="{StaticResource TBlInfBokIzn}" Margin="10,10,0,0" />
                 <TextBlock x:Name="TBlVidDoc"
                            Style="{StaticResource TBlBokIng}" Margin="5,10,0,0" />
             </StackPanel>
@@ -105,27 +105,27 @@
 
             <StackPanel Orientation="Horizontal">
                 <TextBlock x:Name="TBlDocPravBaza" Text="Правовая база:"
-                           Style="{StaticResource TBlInfBokIzn}" Margin="20,10,0,0" />
+                           Style="{StaticResource TBlInfBokIzn}" Margin="10,10,0,0" />
                 <TextBlock x:Name="TBlPravBazaDoc"
-                           Style="{StaticResource TBlBokIng}" Margin="5,10,0,0" MaxWidth="80" />
+                           Style="{StaticResource TBlBokIng}" Margin="5,10,0,0" MaxWidth="90" />
             </StackPanel>
 
             <StackPanel Orientation="Horizontal">
                 <TextBlock x:Name="TBlDocRegion" Text="Регион:"
-                           Style="{StaticResource TBlInfBokIzn}" Margin="20,10,0,0" />
+                           Style="{StaticResource TBlInfBokIzn}" Margin="10,10,0,0" />
                 <TextBlock x:Name="TBlRegionDoc"
                            Style="{StaticResource TBlBokIng}" Margin="5,10,0,0" />
             </StackPanel>
 
             <TextBlock x:Name="TBlDocIzdOrgan" Text="Издавший орган:"
-                       Style="{StaticResource TBlInfBokIzn}" Margin="20,10,0,0" />
+                       Style="{StaticResource TBlInfBokIzn}" Margin="10,10,0,0" />
             <TextBlock x:Name="TBlIzdOrganDoc"
-                       Style="{StaticResource TBlBokIng}" Margin="20,10,0,0" MaxWidth="180" />
+                       Style="{StaticResource TBlBokIng}" Margin="-10,10,0,0" Width="200" />
 
             <StackPanel Orientation="Vertical">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock x:Name="TBlDocDataNach" Text="Дата начала:"
-                       Style="{StaticResource TBlInfBokIzn}" Margin="20,10,0,0" />
+                       Style="{StaticResource TBlInfBokIzn}" Margin="10,10,0,0" />
                     <TextBlock x:Name="TBlDocDataKonca" Text="Дата конца:"
                        Style="{StaticResource TBlInfBokIzn}" Margin="15,10,0,0" />
                 </StackPanel>
@@ -133,7 +133,7 @@
                 <StackPanel Orientation="Horizontal">
                     
                     <TextBlock x:Name="TBlDataNachDoc"
-                       Style="{StaticResource TBlBokIng}" Margin="20,10,0,0" Width="80" />
+                       Style="{StaticResource TBlBokIng}" Margin="10,10,0,0" Width="80" />
                     <TextBlock x:Name="TBlDataKoncaDoc"
                        Style="{StaticResource TBlBokIng}" Margin="10,10,0,0" Width="80" MaxWidth="80" />
                 </StackPanel>

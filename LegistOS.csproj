@@ -124,6 +124,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelLegist.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Classi\SortCB.cs" />
     <Compile Include="Stranici\Document.xaml.cs">
       <DependentUpon>Document.xaml</DependentUpon>
     </Compile>
@@ -135,6 +136,9 @@
     </Compile>
     <Compile Include="Stranici\PravovayaBaza.xaml.cs">
       <DependentUpon>PravovayaBaza.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Stranici\PravovayaBazaRashirPoisk.xaml.cs">
+      <DependentUpon>PravovayaBazaRashirPoisk.xaml</DependentUpon>
     </Compile>
     <Page Include="Okna\Avtorizatia.xaml">
       <SubType>Designer</SubType>
@@ -161,6 +165,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Stranici\PravovayaBaza.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stranici\PravovayaBazaRashirPoisk.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
