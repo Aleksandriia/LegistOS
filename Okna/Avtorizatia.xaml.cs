@@ -59,5 +59,11 @@ namespace LegistOS.Okna
             TBPochta.Text = "stanimir@example.net";
             PBParol.Password = "%nQvps4@01+nDEN";
         }
+
+        private void BtnAdminZapolnenie_Click(object sender, RoutedEventArgs e)
+        {
+            TBPochta.Text = "user@mail.ru";
+            PBParol.Password = "user1234";
+        }
     }
 }

@@ -24,6 +24,15 @@ namespace LegistOS.Stranici
         {
             InitializeComponent();
 
+            if (App.dPolzovatel.Rol == 1)
+            {
+                BtnDobavlenie.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                BtnDobavlenie.Visibility = Visibility.Collapsed;
+            }
+
             UpdateServices();
         }
 
@@ -102,6 +111,26 @@ namespace LegistOS.Stranici
         {
             //MessageBox.Show("В разработке", "Сообщение", MessageBoxButton.OK, MessageBoxImage.Information);
             NavigationService.Navigate(new Stranici.PravovayaBazaRashirPoisk());
+        }
+
+        private void BtnRedactirovanie_Click(object sender, RoutedEventArgs e)
+        {
+            var ddoc = (sender as Button).DataContext as Classi.DDocument;
+            NavigationService.Navigate(new DobavlenieDoc(ddoc));
+        }
+
+        private void BtnYdalenie_Click(object sender, RoutedEventArgs e)
+        {
+            var docc = (sender as Button).DataContext as Classi.DDocument;
+
+            if (MessageBox.Show($"Вы уверены, что хотите удалить документ№: " + 
+                $"{docc.Nomer}?", "Внимание", MessageBoxButton.YesNo, 
+                MessageBoxImage.Warning) == MessageBoxResult.Yes)
+            {
+                App.Context.DDocuments.Remove(docc);
+                App.Context.SaveChanges();
+                UpdateServices();
+            }
         }
     }
 }

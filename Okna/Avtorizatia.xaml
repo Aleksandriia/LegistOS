@@ -35,7 +35,9 @@
                 Style="{StaticResource BtnDeistv}"
                 Click="BtnZapolnenie_Click"/>
         </StackPanel>
-
+        <Button x:Name="BtnAdminZapolnenie" Content="ЗапАдмин" 
+                Style="{StaticResource BtnDeistv}" Width="70" Margin="225,307,0,0"
+                Click="BtnAdminZapolnenie_Click"/>
         
     </Grid>
 </Window>

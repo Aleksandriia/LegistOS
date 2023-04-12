@@ -42,27 +42,27 @@
             </StackPanel>
             
             <StackPanel Orientation="Horizontal">
-                <StackPanel Orientation="Vertical" Width="300"
+                <StackPanel Orientation="Vertical" Width="525"
                             HorizontalAlignment="Left" >
                     <TextBlock x:Name="TBlNomer" Text="№" Margin="15,0,0,0" />
                     <TextBox x:Name="TBNomer" Style="{StaticResource TBOsn}" 
-                             Width="89" HorizontalAlignment="Left" Margin="10,0,0,0" />
+                             Width="189" HorizontalAlignment="Left" Margin="10,0,0,0" />
 
                     <TextBlock x:Name="TBlVidDoc" Text="Вид документа:" Margin="15,10,0,-5" />
-                    <ComboBox x:Name="CBVidDoc" Style="{StaticResource ComboBoxFlatStyle}"
+                    <ComboBox x:Name="CBVidDoc" Style="{StaticResource CBOsn}"
                               DisplayMemberPath="nazVida" SelectionChanged="CBVidDoc_SelectionChanged" >
                         
                     </ComboBox>
 
                     <TextBlock x:Name="TBlTegDoc" Text="Тег:" Margin="15,10,0,-5" />
-                    <ComboBox x:Name="CBTegDoc" Style="{StaticResource ComboBoxFlatStyle}"
+                    <ComboBox x:Name="CBTegDoc" Style="{StaticResource CBOsn}"
                               DisplayMemberPath="nazTeg" SelectionChanged="CBTegDoc_SelectionChanged"
                               IsEditable="False">
 
                     </ComboBox>
                 </StackPanel>
 
-                <StackPanel Orientation="Vertical" Width="725"
+                <StackPanel Orientation="Vertical" Width="525"
                             HorizontalAlignment="Left" >
                     <StackPanel Orientation="Horizontal">
                         <TextBlock x:Name="TBlDataNach" Text="Дата с:" Margin="10,0,0,0" />
@@ -70,23 +70,23 @@
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <TextBox x:Name="TBDataNach" 
-                                 Style="{StaticResource TBOsn}" Width="80"
+                                 Style="{StaticResource TBOsn}" Width="140"
                                  Margin="0,0,0,0" />
                         <TextBox x:Name="TBDataKon" 
-                                 Style="{StaticResource TBOsn}" Width="80"
+                                 Style="{StaticResource TBOsn}" Width="140"
                                  Margin="10,0,0,0" />
                     </StackPanel>
 
                     <TextBlock x:Name="TBlOrganDoc" Text="Орган:" Margin="10,10,0,-5" />
                     <ComboBox x:Name="CBOrgenDoc" Margin="0,5,0,0"
-                              Style="{StaticResource ComboBoxFlatStyle}"
+                              Style="{StaticResource CBOsn}"
                               DisplayMemberPath="nazOrgana" SelectionChanged="CBOrgenDoc_SelectionChanged" >
 
                     </ComboBox>
 
                     <TextBlock x:Name="TBlRegionDoc" Text="Регион:" Margin="10,10,0,-5" />
                     <ComboBox x:Name="CBRegionDoc" Margin="0,5,0,0"
-                              Style="{StaticResource ComboBoxFlatStyle}"
+                              Style="{StaticResource CBOsn}"
                               DisplayMemberPath="nazRegiona" SelectionChanged="CBRegionDoc_SelectionChanged" >
 
                     </ComboBox>

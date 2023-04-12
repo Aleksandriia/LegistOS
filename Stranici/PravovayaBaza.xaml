@@ -56,7 +56,7 @@
                     HorizontalAlignment="Left" VerticalAlignment="Top" >
 
             <StackPanel Name="LVBaza"
-                        Background="{x:Null}" Width="200" Height="370">
+                        Background="{x:Null}" Width="200" Height="270">
                 <TextBlock Text="1. Правовая база" Margin="10" />
                 <Button x:Name="BtnVsyaBaza" Background="{x:Null}" BorderBrush="{x:Null}"
                         Width="200" Height="35" Click="BtnVsyaBaza_Click" >
@@ -114,6 +114,13 @@
             </StackPanel>
         </StackPanel>
 
+        <!-- Область админа -->
+        <StackPanel Orientation="Vertical" Grid.Column="0" Grid.RowSpan="3" 
+                        HorizontalAlignment="Center" VerticalAlignment="Bottom">
+            <Button x:Name="BtnDobavlenie" Content="Добавить" 
+                        Style="{StaticResource BtnDeistv}" Visibility="{Binding AdminContVidimost}" />
+        </StackPanel>
+
         <!-- Область вывода документов -->
         <ListView x:Name="LVPravovayaBaza" Margin="9.8,10,10,10.4"
                   Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="4"
@@ -150,15 +157,30 @@
                                 <TextBlock Text="»" Style="{StaticResource ZagPravB}" />
                             </StackPanel>
                             <!-- Дата -->
+                            
                             <TextBlock Text="{Binding KratOpisanie}" 
                                        HorizontalAlignment="Left" Width="auto"
                                        TextWrapping="Wrap"
                                        Style="{StaticResource OpisaniePravB}"/>
-                            <Button Name="BtnPodrobnee"
-                                    Click="BtnPodrobnee_Click"
-                                    Style="{StaticResource BtnPodrobnee}" >
-                                <TextBlock Text="Подробнее..." FontSize="18" />
-                            </Button>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                <Button Name="BtnRedactirovanie"
+                                    Click="BtnRedactirovanie_Click"
+                                    Style="{StaticResource BtnPodrobnee}"
+                                    Visibility="{Binding AdminContrVidimost}" >
+                                    <TextBlock Text="Редактировать" FontSize="18" />
+                                </Button>
+                                <Button Name="BtnYdalenie"
+                                    Click="BtnYdalenie_Click"
+                                    Style="{StaticResource BtnPodrobnee}"
+                                    Visibility="{Binding AdminContrVidimost}" >
+                                    <TextBlock Text="Удалить" FontSize="18" />
+                                </Button>
+                                <Button Name="BtnPodrobnee"
+                                        Click="BtnPodrobnee_Click"
+                                        Style="{StaticResource BtnPodrobnee}" >
+                                    <TextBlock Text="Подробнее..." FontSize="18" />
+                                </Button>
+                            </StackPanel>
                         </StackPanel>
                     </Grid>
                 </DataTemplate>

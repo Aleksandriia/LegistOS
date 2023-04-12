@@ -70,3 +70,5 @@ F:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\LegistOS.exe
 F:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\LegistOS.pdb
 E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\PravovayaBazaRashirPoisk.g.cs
 E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\PravovayaBazaRashirPoisk.baml
+E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\DobavlenieDoc.g.cs
+E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\DobavlenieDoc.baml
