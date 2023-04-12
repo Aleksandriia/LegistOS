@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace LegistOS.Stranici
 {
@@ -29,6 +30,20 @@ namespace LegistOS.Stranici
         public DobavlenieDoc(Classi.DDocument document)
         {
             InitializeComponent();
+        }
+
+        private void BtnNazad_Click(object sender, RoutedEventArgs e)
+        {
+            if (TBNomerDoc.Text != null || TBNazvanieDoc.Text != null || 
+                TBKratOpisanie.Text != null || TBOpisanie.Text != null || 
+                CBIzdavOrgan.Text != null || CBVid.Text != null || CBPravBaza.Text != null || 
+                CBStatus.Text != null || CBRegion.Text != null || CBNPA.Text != null)
+            {
+                if (MessageBox.Show("Изменения не были внесены.\nВы действительно хотите выйти?", "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+                {
+                    NavigationService.GoBack();
+                }
+            }
         }
     }
 }

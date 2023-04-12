@@ -132,5 +132,10 @@ namespace LegistOS.Stranici
                 UpdateServices();
             }
         }
+
+        private void BtnDobavlenie_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Stranici.DobavlenieDoc());
+        }
     }
 }

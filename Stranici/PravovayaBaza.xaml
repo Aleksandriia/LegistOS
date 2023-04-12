@@ -117,8 +117,9 @@
         <!-- Область админа -->
         <StackPanel Orientation="Vertical" Grid.Column="0" Grid.RowSpan="3" 
                         HorizontalAlignment="Center" VerticalAlignment="Bottom">
-            <Button x:Name="BtnDobavlenie" Content="Добавить" 
-                        Style="{StaticResource BtnDeistv}" Visibility="{Binding AdminContVidimost}" />
+            <Button x:Name="BtnDobavlenie" Content="Добавить" Click="BtnDobavlenie_Click"
+                        Style="{StaticResource BtnDeistv}" 
+                    Visibility="{Binding AdminContVidimost}" />
         </StackPanel>
 
         <!-- Область вывода документов -->

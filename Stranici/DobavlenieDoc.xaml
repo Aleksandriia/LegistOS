@@ -9,6 +9,83 @@
       Title="Добавление документа">
 
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.ColumnSpan="2" Grid.Row="0" Background="{StaticResource PodlojkaBel}">
+            <TextBlock Text="Добавление документа" x:Name="TBZagolovokNP" 
+                       Style="{StaticResource TBlZagolovok}" 
+                       HorizontalAlignment="Center" VerticalAlignment="Center" />
+        </StackPanel>
+
+        <Button x:Name="BtnNazad" Content="Назад" 
+                Click="BtnNazad_Click" Margin="20"
+                Grid.Column="0" Grid.Row="1" VerticalAlignment="Top"
+                Style="{StaticResource BtnDeistv}" HorizontalAlignment="Left" />
         
+
+        <StackPanel Orientation="Horizontal" Grid.Column="0" 
+                    Grid.Row="1" Margin="0,0,30,0"
+                    HorizontalAlignment="Right" VerticalAlignment="Center" >
+            <!-- Описание полей -->
+            <StackPanel Orientation="Vertical">
+                <TextBlock x:Name="TBlNomerDoc" Text="Номер документа:"
+                           Style="{StaticResource TBlDobavDoc}" />
+                <TextBlock x:Name="TBlNazvanieDoc" Text="Название:"
+                           Style="{StaticResource TBlDobavDoc}" />
+                <TextBlock x:Name="TBlDataNachDoc" Text="Дата начала:"
+                           Style="{StaticResource TBlDobavDoc}" />
+                <TextBlock x:Name="TBlDataKonDoc" Text="Дата конца:"
+                           Style="{StaticResource TBlDobavDoc}" />
+
+                <TextBlock x:Name="TBlIzdOrganDoc" Text="Орган:"
+                           Style="{StaticResource TBlDobavDoc}" />
+                <TextBlock x:Name="TBlVidDoc" Text="Вид:"
+                           Style="{StaticResource TBlDobavDoc}" />
+                <TextBlock x:Name="TBlPravBazaDoc" Text="Правовая база:"
+                           Style="{StaticResource TBlDobavDoc}" />
+                <TextBlock x:Name="TBlStatusDoc" Text="Статус:"
+                           Style="{StaticResource TBlDobavDoc}" />
+                <TextBlock x:Name="TBlRegionDoc" Text="Регион:"
+                           Style="{StaticResource TBlDobavDoc}" />
+                <TextBlock x:Name="TBlNPADoc" Text="НПА:"
+                           Style="{StaticResource TBlDobavDoc}" />
+            </StackPanel>
+
+            <!-- Поля для ввода данных -->
+            <StackPanel Orientation="Vertical">
+                <TextBox x:Name="TBNomerDoc" Style="{StaticResource TBOsn}" />
+                <TextBox x:Name="TBNazvanieDoc" Style="{StaticResource TBOsn}" />
+                <TextBox x:Name="TBDataNachDoc" Style="{StaticResource TBOsn}" />
+                <TextBox x:Name="TBDataKonDoc" Style="{StaticResource TBOsn}" />
+
+                <ComboBox x:Name="CBIzdavOrgan" Style="{StaticResource CBDobav}" />
+                <ComboBox x:Name="CBVid" Style="{StaticResource CBDobav}" />
+                <ComboBox x:Name="CBPravBaza" Style="{StaticResource CBDobav}" />
+                <ComboBox x:Name="CBStatus" Style="{StaticResource CBDobav}" />
+                <ComboBox x:Name="CBRegion" Style="{StaticResource CBDobav}" />
+                <ComboBox x:Name="CBNPA" Style="{StaticResource CBDobav}" />
+
+                <Button x:Name="BtnSohranenie" Content="Сохранить" 
+                        Style="{StaticResource BtnDeistv}" 
+                        Margin="0,50,0,0" />
+            </StackPanel>
+        </StackPanel>
+
+
+        <!-- Поля для ввода больших данных -->
+        <StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="1"
+                    HorizontalAlignment="Left" VerticalAlignment="Center" >
+            <TextBox x:Name="TBKratOpisanie" 
+                     Style="{StaticResource TBDobMalOpisanieDoc}" />
+            <TextBox x:Name="TBOpisanie" 
+                     Style="{StaticResource TBDobBolOpisanieDoc}" />
+        </StackPanel>
     </Grid>
 </Page>
