@@ -53,4 +53,37 @@ namespace LegistOS.Classi
             }
         }
     }
+
+    public partial class DPravovayaBaza
+    {
+        public string nazBazi
+        {
+            get
+            {
+                return NazvanieBazi;
+            }
+        }
+    }
+
+    public partial class DStatu
+    {
+        public string nazStatusa
+        {
+            get
+            {
+                return NazvanieStatusa;
+            }
+        }
+    }
+
+    public partial class DNPA
+    {
+        public string nazNPA
+        {
+            get
+            {
+                return NazvanieNPA;
+            }
+        }
+    }
 }

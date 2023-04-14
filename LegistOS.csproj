@@ -125,8 +125,8 @@
     </Compile>
     <Compile Include="Classi\Roli.cs" />
     <Compile Include="Classi\SortCB.cs" />
-    <Compile Include="Stranici\DobavlenieDoc.xaml.cs">
-      <DependentUpon>DobavlenieDoc.xaml</DependentUpon>
+    <Compile Include="Stranici\DobavlenieRedaktirovanieDoc.xaml.cs">
+      <DependentUpon>DobavlenieRedaktirovanieDoc.xaml</DependentUpon>
     </Compile>
     <Compile Include="Stranici\Document.xaml.cs">
       <DependentUpon>Document.xaml</DependentUpon>
@@ -155,7 +155,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Stranici\DobavlenieDoc.xaml">
+    <Page Include="Stranici\DobavlenieRedaktirovanieDoc.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

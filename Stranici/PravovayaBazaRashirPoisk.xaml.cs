@@ -233,5 +233,10 @@ namespace LegistOS.Stranici
 
             UpdateServices();
         }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            UpdateServices();
+        }
     }
 }

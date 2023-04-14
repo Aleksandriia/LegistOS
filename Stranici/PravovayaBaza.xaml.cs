@@ -115,8 +115,9 @@ namespace LegistOS.Stranici
 
         private void BtnRedactirovanie_Click(object sender, RoutedEventArgs e)
         {
+            Classi.GlobalPeremen.dobRedDoc = 2;
             var ddoc = (sender as Button).DataContext as Classi.DDocument;
-            NavigationService.Navigate(new DobavlenieDoc(ddoc));
+            NavigationService.Navigate(new Stranici.DobavlenieRedaktirovanieDoc(ddoc));
         }
 
         private void BtnYdalenie_Click(object sender, RoutedEventArgs e)
@@ -135,7 +136,14 @@ namespace LegistOS.Stranici
 
         private void BtnDobavlenie_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Stranici.DobavlenieDoc());
+            Classi.GlobalPeremen.dobRedDoc = 1;
+            NavigationService.Navigate(new Stranici.DobavlenieRedaktirovanieDoc());
+            //Stranici.DobavlenieDoc.TBZagolovokDIDoc.Text = "Добавление документа";
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            UpdateServices();
         }
     }
 }

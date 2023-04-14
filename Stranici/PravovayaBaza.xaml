@@ -7,7 +7,7 @@
       xmlns:Classi="clr-namespace:LegistOS.Classi"
       
       mc:Ignorable="d" 
-      d:DesignHeight="700" d:DesignWidth="1440"
+      d:DesignHeight="700" d:DesignWidth="1440" Loaded="Page_Loaded"
       Title="Правовая база" >
     <!--xmlns:theme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2"-->
     <Page.Resources>
