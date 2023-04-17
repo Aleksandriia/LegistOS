@@ -60,10 +60,10 @@
 
             <!-- Поля для ввода данных -->
             <StackPanel Orientation="Vertical">
-                <TextBox x:Name="TBNomerDoc" Style="{StaticResource TBOsn}" />
-                <TextBox x:Name="TBNazvanieDoc" Style="{StaticResource TBOsn}" />
-                <TextBox x:Name="TBDataNachDoc" Style="{StaticResource TBOsn}" />
-                <TextBox x:Name="TBDataKonDoc" Style="{StaticResource TBOsn}" />
+                <TextBox x:Name="TBNomerDoc" Style="{StaticResource TBOsn}" Width="250" />
+                <TextBox x:Name="TBNazvanieDoc" Style="{StaticResource TBOsn}" Width="250" />
+                <TextBox x:Name="TBDataNachDoc" Style="{StaticResource TBOsn}" Width="250" />
+                <TextBox x:Name="TBDataKonDoc" Style="{StaticResource TBOsn}" Width="250" />
 
                 <ComboBox x:Name="CBIzdavOrgan" Style="{StaticResource CBDobav}"
                           DisplayMemberPath="nazOrgana" SelectionChanged="CBIzdavOrgan_SelectionChanged"/>
@@ -79,7 +79,7 @@
                           DisplayMemberPath="nazNPA" SelectionChanged="CBNPA_SelectionChanged"/>
 
                 <Button x:Name="BtnSohranenie" Content="Сохранить" 
-                        Style="{StaticResource BtnDeistv}" 
+                        Style="{StaticResource BtnDeistv}" Width="250"
                         Margin="0,50,0,0" Click="BtnSohranenie_Click" />
             </StackPanel>
         </StackPanel>
@@ -88,8 +88,10 @@
         <!-- Поля для ввода больших данных -->
         <StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="1"
                     HorizontalAlignment="Left" VerticalAlignment="Center" >
+            <TextBlock Text="Краткое описание:" Margin="15,0,0,-8" />
             <TextBox x:Name="TBKratOpisanie" 
                      Style="{StaticResource TBDobMalOpisanieDoc}" />
+            <TextBlock Text="Описание:" Margin="15,0,0,-8" />
             <TextBox x:Name="TBOpisanie" 
                      Style="{StaticResource TBDobBolOpisanieDoc}" />
         </StackPanel>

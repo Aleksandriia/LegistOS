@@ -5,8 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LegistOS.Okna"
         mc:Ignorable="d"
-        Title="Главная" Height="830" Width="1440" WindowStartupLocation="CenterScreen"
-        MinHeight="829" MinWidth="1439" MaxHeight="831" MaxWidth="1439">
+        Title="Главная" Height="830" Width="1440" 
+        WindowStartupLocation="CenterScreen"
+        MinHeight="829" MinWidth="1439" MaxHeight="831" MaxWidth="1439"
+        Loaded="Window_Loaded">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30" />

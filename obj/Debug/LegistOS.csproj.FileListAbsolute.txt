@@ -72,3 +72,5 @@ E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\Pra
 E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\PravovayaBazaRashirPoisk.baml
 E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\DobavlenieRedaktirovanieDoc.g.cs
 E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\DobavlenieRedaktirovanieDoc.baml
+E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\SvetlayaTema.baml
+E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\TemnayaTema.baml

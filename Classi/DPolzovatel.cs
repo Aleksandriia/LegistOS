@@ -22,6 +22,7 @@ namespace LegistOS.Classi
         public string Pochta { get; set; }
         public string Parol { get; set; }
         public int Rol { get; set; }
+        public int Tema { get; set; }
     
         public virtual DRol DRol { get; set; }
     }

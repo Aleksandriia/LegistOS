@@ -70,6 +70,8 @@ namespace LegistOS.Stranici
             TBNazvanieDoc.Text = _currDocument.Nazvanie;
             TBDataNachDoc.Text = _currDocument.DataNach.ToString();
             TBDataKonDoc.Text = _currDocument.DataKon.ToString();
+            TBKratOpisanie.Text = _currDocument.KratOpisanie;
+            TBOpisanie.Text = _currDocument.Opisanie;
             CBIzdavOrgan.Text = _currDocument.DIzdavOrgan.NazvanieOrgana;
             CBVid.Text = _currDocument.DVid.NazvanieVida;
             CBPravBaza.Text = _currDocument.DPravovayaBaza.NazvanieBazi;
@@ -89,6 +91,14 @@ namespace LegistOS.Stranici
                     Nazvanie = TBNazvanieDoc.Text,
                     //DataNach = DateTime.Parse(TBDataNachDoc.Text),
                     //DataKon = DateTime.Parse(TBDataKonDoc.Text)
+                    KratOpisanie = TBKratOpisanie.Text,
+                    Opisanie = TBOpisanie.Text,
+                    IzdavOrgan = CBIzdavOrgan.SelectedIndex + 1,
+                    VidDoc = CBVid.SelectedIndex + 1,
+                    PravovayaBaza = CBPravBaza.SelectedIndex + 1,
+                    Status = CBStatus.SelectedIndex + 1,
+                    Region = CBRegion.SelectedIndex + 1,
+                    NPA = CBNPA.SelectedIndex + 1
                 };
 
                 App.Context.DDocuments.Add(docum);
@@ -102,12 +112,14 @@ namespace LegistOS.Stranici
                 _currDocument.Nazvanie = TBNazvanieDoc.Text;
                 //_currDocument.DataNach = DateTime.Parse(TBDataNachDoc.Text);
                 //_currDocument.DataKon = DateTime.Parse(TBDataKonDoc.Text);
-                /*_currDocument.DIzdavOrgan = TBPochta.Text;
-                _currDocument.DVid = PBParol.Password;
-                _currDocument.DPravovayaBaza = PBParol.Password;
-                _currDocument.DStatu = PBParol.Password;
-                _currDocument.DRegion = PBParol.Password;
-                _currDocument.DNPA = PBParol.Password;*/
+                _currDocument.KratOpisanie = TBKratOpisanie.Text;
+                _currDocument.Opisanie = TBOpisanie.Text;
+                _currDocument.IzdavOrgan = CBIzdavOrgan.SelectedIndex + 1;
+                _currDocument.VidDoc = CBVid.SelectedIndex + 1;
+                _currDocument.PravovayaBaza = CBPravBaza.SelectedIndex + 1;
+                _currDocument.Status = CBStatus.SelectedIndex + 1;
+                _currDocument.Region = CBRegion.SelectedIndex + 1;
+                _currDocument.NPA = CBNPA.SelectedIndex + 1;
 
                 App.Context.SaveChanges();
                 MessageBox.Show("Изменения успешно внесены.", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);

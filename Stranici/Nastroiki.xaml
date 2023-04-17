@@ -25,12 +25,15 @@
         <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="1"
                     VerticalAlignment="Top" HorizontalAlignment="Left" Margin="15">
             <TextBlock Text="Изменить тему" VerticalAlignment="Center" />
-            <Button x:Name="BtnSvetlaya" Style="{StaticResource BtnRegMal}" >
+            <Button x:Name="BtnSvetlaya" Style="{StaticResource BtnRegMal}" Click="BtnSvetlaya_Click" >
                 
             </Button>
-            <Button x:Name="BtnTemnaya" Style="{StaticResource BtnRegMal}" >
+            <Button x:Name="BtnTemnaya" Style="{StaticResource BtnRegMal}" Click="BtnTemnaya_Click"  >
 
             </Button>
+
+            <TextBlock Text="Для полноценного изменения темы рекомендуется перезайти в аккаунт"
+                       VerticalAlignment="Center" />
         </StackPanel>
 
         <Button x:Name="BtnNastroikaProfila" Content="Настройка профиля" 

@@ -4,28 +4,27 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="38a7a6ddb48847fca3412aae5018ac11" Name="Diagram1">
-        <EntityTypeShape EntityType="user37_dbModel.DDocument" Width="1.5" PointX="6.375" PointY="2.625" />
+      <Diagram DiagramId="38a7a6ddb48847fca3412aae5018ac11" Name="Diagram1" ZoomLevel="109">
         <EntityTypeShape EntityType="user37_dbModel.DIzdavOrgan" Width="1.5" PointX="3.375" PointY="2.375" />
         <EntityTypeShape EntityType="user37_dbModel.DNPA" Width="1.5" PointX="10.875" PointY="4.375" />
         <EntityTypeShape EntityType="user37_dbModel.DOrganUstarNazv" Width="1.5" PointX="0.5" PointY="2.25" />
-        <EntityTypeShape EntityType="user37_dbModel.DPolzovatel" Width="1.5" PointX="12.875" PointY="2.125" />
         <EntityTypeShape EntityType="user37_dbModel.DPravovayaBaza" Width="1.5" PointX="4" PointY="5.75" />
         <EntityTypeShape EntityType="user37_dbModel.DRegion" Width="1.5" PointX="8.875" PointY="5.875" />
         <EntityTypeShape EntityType="user37_dbModel.DRol" Width="1.5" PointX="10.75" PointY="2.125" />
         <EntityTypeShape EntityType="user37_dbModel.DStatu" Width="1.5" PointX="2.25" PointY="5.125" />
-        <EntityTypeShape EntityType="user37_dbModel.DTeg" Width="1.5" PointX="8.5" PointY="2.625" />
         <EntityTypeShape EntityType="user37_dbModel.DVid" Width="1.5" PointX="0.5" PointY="4.5" />
+        <AssociationConnector Association="user37_dbModel.FK_DOrganUstarNazv_DIzdavOrgan" />
+        <EntityTypeShape EntityType="user37_dbModel.DDocument" Width="1.5" PointX="6.625" PointY="2.375" />
+        <EntityTypeShape EntityType="user37_dbModel.DPolzovatel" Width="1.5" PointX="12.75" PointY="2.25" />
+        <EntityTypeShape EntityType="user37_dbModel.DTeg" Width="1.5" PointX="8.625" PointY="2.375" />
         <AssociationConnector Association="user37_dbModel.FK_DDocument_DIzdavOrgan" />
         <AssociationConnector Association="user37_dbModel.FK_DDocument_DNPA" />
         <AssociationConnector Association="user37_dbModel.FK_DDocument_DPravovayaBaza" />
         <AssociationConnector Association="user37_dbModel.FK_DDocument_DRegion" />
         <AssociationConnector Association="user37_dbModel.FK_DDocument_DStatus" />
-        <AssociationConnector Association="user37_dbModel.FK_DDocument_DVid" ManuallyRouted="false" >
-        </AssociationConnector>
-        <AssociationConnector Association="user37_dbModel.FK_DOrganUstarNazv_DIzdavOrgan" />
+        <AssociationConnector Association="user37_dbModel.FK_DDocument_DTeg" />
+        <AssociationConnector Association="user37_dbModel.FK_DDocument_DVid" />
         <AssociationConnector Association="user37_dbModel.FK_DPolzovatel_DRol" />
-        <AssociationConnector Association="user37_dbModel.DDocTeg" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

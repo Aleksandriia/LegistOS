@@ -40,10 +40,12 @@ namespace LegistOS.Okna
             if (polzovatel != null)
             {
                 App.dPolzovatel = polzovatel;
+                var currPolz = App.dPolzovatel;
 
                 //MessageBox.Show(polzovatel.ToString(), "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
 
                 Okna.Glavnaya glavnaya = new Okna.Glavnaya();
+                //glavnaya.Show(StyleProperty.);
                 glavnaya.Show();
                 this.Close();
             }

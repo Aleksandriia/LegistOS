@@ -26,10 +26,63 @@ namespace LegistOS.Okna
         {
             InitializeComponent();
 
+            //Glavnaya glavnaya = new Glavnaya();
+            //Glavnaya WindowStyle = WindowStyle{
+            //    if (App.dPolzovatel.Tema == 1)
+            //    {
+            //        ResourceDictionary dictionary = new ResourceDictionary();
+            //        dictionary.Source = new Uri("SvetlayaTema.xaml", UriKind.Relative);
+
+            //        // Динамически меняем коллекцию MergedDictionaries
+            //        Application.Current.Resources.MergedDictionaries[0] = dictionary;
+            //    }
+            //    else if (App.dPolzovatel.Tema == 2)
+            //    {
+            //        ResourceDictionary dictionary = new ResourceDictionary();
+            //        dictionary.Source = new Uri("TemnayaTema.xaml", UriKind.Relative);
+
+            //        // Динамически меняем коллекцию MergedDictionaries
+            //        Application.Current.Resources.MergedDictionaries[0] = dictionary;
+            //    };
+                
+            //}
+
             TBlFamiliaPolzpvatelya.Text = App.dPolzovatel.Familia;
 
+            if (App.dPolzovatel.Tema == 1)
+            {
+                ResourceDictionary dictionary = new ResourceDictionary();
+                dictionary.Source = new Uri("SvetlayaTema.xaml", UriKind.Relative);
+
+                // Динамически меняем коллекцию MergedDictionaries
+                Application.Current.Resources.MergedDictionaries[0] = dictionary;
+            }
+            else if (App.dPolzovatel.Tema == 2)
+            {
+                ResourceDictionary dictionary = new ResourceDictionary();
+                dictionary.Source = new Uri("TemnayaTema.xaml", UriKind.Relative);
+
+                // Динамически меняем коллекцию MergedDictionaries
+                Application.Current.Resources.MergedDictionaries[0] = dictionary;
+            }
+
             FrameMain.Navigate(new Stranici.PravovayaBaza());
+
+            
+            //glavnaya.Show();
+            //this.Close();
+
         }
+
+        private void Glavnaya_SourceUpdated(object sender, DataTransferEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        //public Glavnaya(Classi.DPolzovate polzovate )
+        //{
+        //    InitializeComponent();
+        //}
 
         private void BtnVMNastroiki_Click(object sender, RoutedEventArgs e)
         {
@@ -46,6 +99,26 @@ namespace LegistOS.Okna
         private void BtnVMPravBaza_Click(object sender, RoutedEventArgs e)
         {
             FrameMain.Navigate(new Stranici.PravovayaBaza());
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (App.dPolzovatel.Tema == 1)
+            {
+                ResourceDictionary dictionary = new ResourceDictionary();
+                dictionary.Source = new Uri("SvetlayaTema.xaml", UriKind.Relative);
+
+                // Динамически меняем коллекцию MergedDictionaries
+                Application.Current.Resources.MergedDictionaries[0] = dictionary;
+            }
+            else if (App.dPolzovatel.Tema == 2)
+            {
+                ResourceDictionary dictionary = new ResourceDictionary();
+                dictionary.Source = new Uri("TemnayaTema.xaml", UriKind.Relative);
+
+                // Динамически меняем коллекцию MergedDictionaries
+                Application.Current.Resources.MergedDictionaries[0] = dictionary;
+            }
         }
     }
 }

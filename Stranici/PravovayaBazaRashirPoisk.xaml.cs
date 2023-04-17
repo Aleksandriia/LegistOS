@@ -30,7 +30,7 @@ namespace LegistOS.Stranici
             CBOrgenDoc.ItemsSource = App.Context.DIzdavOrgans.ToList();
             CBRegionDoc.ItemsSource = App.Context.DRegions.ToList();
 
-            CBTegDoc.IsEnabled = false;
+            //CBTegDoc.IsEnabled = false;
 
             UpdateServices();
         }
@@ -68,7 +68,7 @@ namespace LegistOS.Stranici
             if (CBTegDoc.SelectedIndex == -1) {  }
             else if (CBTegDoc.SelectedIndex != -1)
             {
-                docs = docs.Where(p => p.DTegs.ToString().Equals(Classi.GlobalPeremen.tegDocs.ToString())).ToList();
+                docs = docs.Where(p => p.Teg.ToString().Equals(Classi.GlobalPeremen.tegDocs.ToString())).ToList();
                 //docs = docs.Where(p => p.idDocumenta.Equals(tags.Where(q => q.idTega.ToString().Equals(Classi.GlobalPeremen.tegDocs.ToString())))).ToList();
                 //docs = docs.Where(p => p.DTegs.ToString().Equals(Classi.GlobalPeremen.tegDocs.ToString())) && docs.Where(p => p.idDocumenta.ToString().Equals(Classi.GlobalPeremen.tegDocs.ToString())).ToList();
                 //var dt = docs.Where(p => p.idDocumenta) == tags.Where(p => p.idTega).ToList();

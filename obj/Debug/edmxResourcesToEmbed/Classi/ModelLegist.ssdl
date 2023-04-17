@@ -1,13 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="Хранилище user37_dbModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityType Name="DDocTeg">
-    <Key>
-      <PropertyRef Name="idDocumenta" />
-      <PropertyRef Name="idTega" />
-    </Key>
-    <Property Name="idDocumenta" Type="int" Nullable="false" />
-    <Property Name="idTega" Type="int" Nullable="false" />
-  </EntityType>
   <EntityType Name="DDocument">
     <Key>
       <PropertyRef Name="idDocumenta" />
@@ -25,6 +17,7 @@
     <Property Name="Status" Type="int" />
     <Property Name="Region" Type="int" />
     <Property Name="NPA" Type="int" />
+    <Property Name="Teg" Type="int" />
     <Property Name="PytFaila" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="DIzdavOrgan">
@@ -63,6 +56,7 @@
     <Property Name="Pochta" Type="nvarchar(max)" />
     <Property Name="Parol" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Rol" Type="int" Nullable="false" />
+    <Property Name="Tema" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="DPravovayaBaza">
     <Key>
@@ -106,30 +100,6 @@
     <Property Name="idVida" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="NazvanieVida" Type="nvarchar" MaxLength="100" Nullable="false" />
   </EntityType>
-  <Association Name="FK_DDocTeg_DDocument">
-    <End Role="DDocument" Type="Self.DDocument" Multiplicity="1" />
-    <End Role="DDocTeg" Type="Self.DDocTeg" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="DDocument">
-        <PropertyRef Name="idDocumenta" />
-      </Principal>
-      <Dependent Role="DDocTeg">
-        <PropertyRef Name="idDocumenta" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_DDocTeg_DTeg">
-    <End Role="DTeg" Type="Self.DTeg" Multiplicity="1" />
-    <End Role="DDocTeg" Type="Self.DDocTeg" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="DTeg">
-        <PropertyRef Name="idTega" />
-      </Principal>
-      <Dependent Role="DDocTeg">
-        <PropertyRef Name="idTega" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_DDocument_DIzdavOrgan">
     <End Role="DIzdavOrgan" Type="Self.DIzdavOrgan" Multiplicity="0..1" />
     <End Role="DDocument" Type="Self.DDocument" Multiplicity="*" />
@@ -190,6 +160,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_DDocument_DTeg">
+    <End Role="DTeg" Type="Self.DTeg" Multiplicity="0..1" />
+    <End Role="DDocument" Type="Self.DDocument" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DTeg">
+        <PropertyRef Name="idTega" />
+      </Principal>
+      <Dependent Role="DDocument">
+        <PropertyRef Name="Teg" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_DDocument_DVid">
     <End Role="DVid" Type="Self.DVid" Multiplicity="0..1" />
     <End Role="DDocument" Type="Self.DDocument" Multiplicity="*" />
@@ -227,7 +209,6 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="Хранилище user37_dbModelContainer">
-    <EntitySet Name="DDocTeg" EntityType="Self.DDocTeg" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DDocument" EntityType="Self.DDocument" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DIzdavOrgan" EntityType="Self.DIzdavOrgan" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DNPA" EntityType="Self.DNPA" Schema="dbo" store:Type="Tables" />
@@ -239,14 +220,6 @@
     <EntitySet Name="DStatus" EntityType="Self.DStatus" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DTeg" EntityType="Self.DTeg" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DVid" EntityType="Self.DVid" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK_DDocTeg_DDocument" Association="Self.FK_DDocTeg_DDocument">
-      <End Role="DDocument" EntitySet="DDocument" />
-      <End Role="DDocTeg" EntitySet="DDocTeg" />
-    </AssociationSet>
-    <AssociationSet Name="FK_DDocTeg_DTeg" Association="Self.FK_DDocTeg_DTeg">
-      <End Role="DTeg" EntitySet="DTeg" />
-      <End Role="DDocTeg" EntitySet="DDocTeg" />
-    </AssociationSet>
     <AssociationSet Name="FK_DDocument_DIzdavOrgan" Association="Self.FK_DDocument_DIzdavOrgan">
       <End Role="DIzdavOrgan" EntitySet="DIzdavOrgan" />
       <End Role="DDocument" EntitySet="DDocument" />
@@ -265,6 +238,10 @@
     </AssociationSet>
     <AssociationSet Name="FK_DDocument_DStatus" Association="Self.FK_DDocument_DStatus">
       <End Role="DStatus" EntitySet="DStatus" />
+      <End Role="DDocument" EntitySet="DDocument" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DDocument_DTeg" Association="Self.FK_DDocument_DTeg">
+      <End Role="DTeg" EntitySet="DTeg" />
       <End Role="DDocument" EntitySet="DDocument" />
     </AssociationSet>
     <AssociationSet Name="FK_DDocument_DVid" Association="Self.FK_DDocument_DVid">

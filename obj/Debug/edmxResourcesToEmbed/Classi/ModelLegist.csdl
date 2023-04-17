@@ -1,17 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="user37_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityContainer Name="user37_dbEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="DDocuments" EntityType="user37_dbModel.DDocument" />
     <EntitySet Name="DIzdavOrgans" EntityType="user37_dbModel.DIzdavOrgan" />
     <EntitySet Name="DNPAs" EntityType="user37_dbModel.DNPA" />
     <EntitySet Name="DOrganUstarNazvs" EntityType="user37_dbModel.DOrganUstarNazv" />
-    <EntitySet Name="DPolzovatels" EntityType="user37_dbModel.DPolzovatel" />
     <EntitySet Name="DPravovayaBazas" EntityType="user37_dbModel.DPravovayaBaza" />
     <EntitySet Name="DRegions" EntityType="user37_dbModel.DRegion" />
     <EntitySet Name="DRols" EntityType="user37_dbModel.DRol" />
     <EntitySet Name="DStatus" EntityType="user37_dbModel.DStatu" />
-    <EntitySet Name="DTegs" EntityType="user37_dbModel.DTeg" />
     <EntitySet Name="DVids" EntityType="user37_dbModel.DVid" />
+    <AssociationSet Name="FK_DOrganUstarNazv_DIzdavOrgan" Association="user37_dbModel.FK_DOrganUstarNazv_DIzdavOrgan">
+      <End Role="DIzdavOrgan" EntitySet="DIzdavOrgans" />
+      <End Role="DOrganUstarNazv" EntitySet="DOrganUstarNazvs" />
+    </AssociationSet>
+    <EntitySet Name="DDocuments" EntityType="user37_dbModel.DDocument" />
+    <EntitySet Name="DPolzovatels" EntityType="user37_dbModel.DPolzovatel" />
+    <EntitySet Name="DTegs" EntityType="user37_dbModel.DTeg" />
     <AssociationSet Name="FK_DDocument_DIzdavOrgan" Association="user37_dbModel.FK_DDocument_DIzdavOrgan">
       <End Role="DIzdavOrgan" EntitySet="DIzdavOrgans" />
       <End Role="DDocument" EntitySet="DDocuments" />
@@ -32,57 +36,27 @@
       <End Role="DStatu" EntitySet="DStatus" />
       <End Role="DDocument" EntitySet="DDocuments" />
     </AssociationSet>
+    <AssociationSet Name="FK_DDocument_DTeg" Association="user37_dbModel.FK_DDocument_DTeg">
+      <End Role="DTeg" EntitySet="DTegs" />
+      <End Role="DDocument" EntitySet="DDocuments" />
+    </AssociationSet>
     <AssociationSet Name="FK_DDocument_DVid" Association="user37_dbModel.FK_DDocument_DVid">
       <End Role="DVid" EntitySet="DVids" />
       <End Role="DDocument" EntitySet="DDocuments" />
-    </AssociationSet>
-    <AssociationSet Name="FK_DOrganUstarNazv_DIzdavOrgan" Association="user37_dbModel.FK_DOrganUstarNazv_DIzdavOrgan">
-      <End Role="DIzdavOrgan" EntitySet="DIzdavOrgans" />
-      <End Role="DOrganUstarNazv" EntitySet="DOrganUstarNazvs" />
     </AssociationSet>
     <AssociationSet Name="FK_DPolzovatel_DRol" Association="user37_dbModel.FK_DPolzovatel_DRol">
       <End Role="DRol" EntitySet="DRols" />
       <End Role="DPolzovatel" EntitySet="DPolzovatels" />
     </AssociationSet>
-    <AssociationSet Name="DDocTegs" Association="user37_dbModel.DDocTeg">
-      <End Role="DDocument" EntitySet="DDocuments" />
-      <End Role="DTeg" EntitySet="DTegs" />
-    </AssociationSet>
   </EntityContainer>
-  <EntityType Name="DDocument">
-    <Key>
-      <PropertyRef Name="idDocumenta" />
-    </Key>
-    <Property Name="idDocumenta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Nomer" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-    <Property Name="Nazvanie" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="DataNach" Type="DateTime" Precision="0" />
-    <Property Name="DataKon" Type="DateTime" Precision="0" />
-    <Property Name="Opisanie" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="KratOpisanie" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="IzdavOrgan" Type="Int32" />
-    <Property Name="VidDoc" Type="Int32" />
-    <Property Name="PravovayaBaza" Type="Int32" />
-    <Property Name="Status" Type="Int32" />
-    <Property Name="Region" Type="Int32" />
-    <Property Name="NPA" Type="Int32" />
-    <Property Name="PytFaila" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="DIzdavOrgan" Relationship="user37_dbModel.FK_DDocument_DIzdavOrgan" FromRole="DDocument" ToRole="DIzdavOrgan" />
-    <NavigationProperty Name="DNPA" Relationship="user37_dbModel.FK_DDocument_DNPA" FromRole="DDocument" ToRole="DNPA" />
-    <NavigationProperty Name="DPravovayaBaza" Relationship="user37_dbModel.FK_DDocument_DPravovayaBaza" FromRole="DDocument" ToRole="DPravovayaBaza" />
-    <NavigationProperty Name="DRegion" Relationship="user37_dbModel.FK_DDocument_DRegion" FromRole="DDocument" ToRole="DRegion" />
-    <NavigationProperty Name="DStatu" Relationship="user37_dbModel.FK_DDocument_DStatus" FromRole="DDocument" ToRole="DStatu" />
-    <NavigationProperty Name="DVid" Relationship="user37_dbModel.FK_DDocument_DVid" FromRole="DDocument" ToRole="DVid" />
-    <NavigationProperty Name="DTegs" Relationship="user37_dbModel.DDocTeg" FromRole="DDocument" ToRole="DTeg" />
-  </EntityType>
   <EntityType Name="DIzdavOrgan">
     <Key>
       <PropertyRef Name="idIzdavOrgana" />
     </Key>
     <Property Name="idIzdavOrgana" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="NazvanieOrgana" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="DDocuments" Relationship="user37_dbModel.FK_DDocument_DIzdavOrgan" FromRole="DIzdavOrgan" ToRole="DDocument" />
     <NavigationProperty Name="DOrganUstarNazvs" Relationship="user37_dbModel.FK_DOrganUstarNazv_DIzdavOrgan" FromRole="DIzdavOrgan" ToRole="DOrganUstarNazv" />
+    <NavigationProperty Name="DDocuments" Relationship="user37_dbModel.FK_DDocument_DIzdavOrgan" FromRole="DIzdavOrgan" ToRole="DDocument" />
   </EntityType>
   <EntityType Name="DNPA">
     <Key>
@@ -102,20 +76,6 @@
     <Property Name="UstarNazvanie" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="DataIzmeneniya" Type="DateTime" Precision="0" />
     <NavigationProperty Name="DIzdavOrgan" Relationship="user37_dbModel.FK_DOrganUstarNazv_DIzdavOrgan" FromRole="DOrganUstarNazv" ToRole="DIzdavOrgan" />
-  </EntityType>
-  <EntityType Name="DPolzovatel">
-    <Key>
-      <PropertyRef Name="idPolzovatelya" />
-    </Key>
-    <Property Name="idPolzovatelya" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Familia" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Imya" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Otchestvo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Telefon" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
-    <Property Name="Pochta" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="Parol" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Rol" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="DRol" Relationship="user37_dbModel.FK_DPolzovatel_DRol" FromRole="DPolzovatel" ToRole="DRol" />
   </EntityType>
   <EntityType Name="DPravovayaBaza">
     <Key>
@@ -149,14 +109,6 @@
     <Property Name="NazvanieStatusa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="DDocuments" Relationship="user37_dbModel.FK_DDocument_DStatus" FromRole="DStatu" ToRole="DDocument" />
   </EntityType>
-  <EntityType Name="DTeg">
-    <Key>
-      <PropertyRef Name="idTega" />
-    </Key>
-    <Property Name="idTega" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="NazvanieTega" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="DDocuments" Relationship="user37_dbModel.DDocTeg" FromRole="DTeg" ToRole="DDocument" />
-  </EntityType>
   <EntityType Name="DVid">
     <Key>
       <PropertyRef Name="idVida" />
@@ -164,6 +116,68 @@
     <Property Name="idVida" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="NazvanieVida" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="DDocuments" Relationship="user37_dbModel.FK_DDocument_DVid" FromRole="DVid" ToRole="DDocument" />
+  </EntityType>
+  <Association Name="FK_DOrganUstarNazv_DIzdavOrgan">
+    <End Type="user37_dbModel.DIzdavOrgan" Role="DIzdavOrgan" Multiplicity="1" />
+    <End Type="user37_dbModel.DOrganUstarNazv" Role="DOrganUstarNazv" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DIzdavOrgan">
+        <PropertyRef Name="idIzdavOrgana" />
+      </Principal>
+      <Dependent Role="DOrganUstarNazv">
+        <PropertyRef Name="idOrgana" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="DDocument">
+    <Key>
+      <PropertyRef Name="idDocumenta" />
+    </Key>
+    <Property Name="idDocumenta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nomer" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Nazvanie" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DataNach" Type="DateTime" Precision="0" />
+    <Property Name="DataKon" Type="DateTime" Precision="0" />
+    <Property Name="Opisanie" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="KratOpisanie" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IzdavOrgan" Type="Int32" />
+    <Property Name="VidDoc" Type="Int32" />
+    <Property Name="PravovayaBaza" Type="Int32" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="Region" Type="Int32" />
+    <Property Name="NPA" Type="Int32" />
+    <Property Name="Teg" Type="Int32" />
+    <Property Name="PytFaila" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DIzdavOrgan" Relationship="user37_dbModel.FK_DDocument_DIzdavOrgan" FromRole="DDocument" ToRole="DIzdavOrgan" />
+    <NavigationProperty Name="DNPA" Relationship="user37_dbModel.FK_DDocument_DNPA" FromRole="DDocument" ToRole="DNPA" />
+    <NavigationProperty Name="DPravovayaBaza" Relationship="user37_dbModel.FK_DDocument_DPravovayaBaza" FromRole="DDocument" ToRole="DPravovayaBaza" />
+    <NavigationProperty Name="DRegion" Relationship="user37_dbModel.FK_DDocument_DRegion" FromRole="DDocument" ToRole="DRegion" />
+    <NavigationProperty Name="DStatu" Relationship="user37_dbModel.FK_DDocument_DStatus" FromRole="DDocument" ToRole="DStatu" />
+    <NavigationProperty Name="DTeg" Relationship="user37_dbModel.FK_DDocument_DTeg" FromRole="DDocument" ToRole="DTeg" />
+    <NavigationProperty Name="DVid" Relationship="user37_dbModel.FK_DDocument_DVid" FromRole="DDocument" ToRole="DVid" />
+  </EntityType>
+  <EntityType Name="DPolzovatel">
+    <Key>
+      <PropertyRef Name="idPolzovatelya" />
+    </Key>
+    <Property Name="idPolzovatelya" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Familia" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Imya" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Otchestvo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Telefon" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="Pochta" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Parol" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Rol" Type="Int32" Nullable="false" />
+    <Property Name="Tema" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="DRol" Relationship="user37_dbModel.FK_DPolzovatel_DRol" FromRole="DPolzovatel" ToRole="DRol" />
+  </EntityType>
+  <EntityType Name="DTeg">
+    <Key>
+      <PropertyRef Name="idTega" />
+    </Key>
+    <Property Name="idTega" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NazvanieTega" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DDocuments" Relationship="user37_dbModel.FK_DDocument_DTeg" FromRole="DTeg" ToRole="DDocument" />
   </EntityType>
   <Association Name="FK_DDocument_DIzdavOrgan">
     <End Type="user37_dbModel.DIzdavOrgan" Role="DIzdavOrgan" Multiplicity="0..1" />
@@ -225,6 +239,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_DDocument_DTeg">
+    <End Type="user37_dbModel.DTeg" Role="DTeg" Multiplicity="0..1" />
+    <End Type="user37_dbModel.DDocument" Role="DDocument" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DTeg">
+        <PropertyRef Name="idTega" />
+      </Principal>
+      <Dependent Role="DDocument">
+        <PropertyRef Name="Teg" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_DDocument_DVid">
     <End Type="user37_dbModel.DVid" Role="DVid" Multiplicity="0..1" />
     <End Type="user37_dbModel.DDocument" Role="DDocument" Multiplicity="*" />
@@ -234,18 +260,6 @@
       </Principal>
       <Dependent Role="DDocument">
         <PropertyRef Name="VidDoc" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_DOrganUstarNazv_DIzdavOrgan">
-    <End Type="user37_dbModel.DIzdavOrgan" Role="DIzdavOrgan" Multiplicity="1" />
-    <End Type="user37_dbModel.DOrganUstarNazv" Role="DOrganUstarNazv" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="DIzdavOrgan">
-        <PropertyRef Name="idIzdavOrgana" />
-      </Principal>
-      <Dependent Role="DOrganUstarNazv">
-        <PropertyRef Name="idOrgana" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -260,9 +274,5 @@
         <PropertyRef Name="Rol" />
       </Dependent>
     </ReferentialConstraint>
-  </Association>
-  <Association Name="DDocTeg">
-    <End Type="user37_dbModel.DDocument" Role="DDocument" Multiplicity="*" />
-    <End Type="user37_dbModel.DTeg" Role="DTeg" Multiplicity="*" />
   </Association>
 </Schema>

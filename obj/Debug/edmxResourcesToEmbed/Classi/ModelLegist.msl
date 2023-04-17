@@ -1,26 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="Хранилище user37_dbModelContainer" CdmEntityContainer="user37_dbEntities">
-    <EntitySetMapping Name="DDocuments">
-      <EntityTypeMapping TypeName="user37_dbModel.DDocument">
-        <MappingFragment StoreEntitySet="DDocument">
-          <ScalarProperty Name="PytFaila" ColumnName="PytFaila" />
-          <ScalarProperty Name="NPA" ColumnName="NPA" />
-          <ScalarProperty Name="Region" ColumnName="Region" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
-          <ScalarProperty Name="PravovayaBaza" ColumnName="PravovayaBaza" />
-          <ScalarProperty Name="VidDoc" ColumnName="VidDoc" />
-          <ScalarProperty Name="IzdavOrgan" ColumnName="IzdavOrgan" />
-          <ScalarProperty Name="KratOpisanie" ColumnName="KratOpisanie" />
-          <ScalarProperty Name="Opisanie" ColumnName="Opisanie" />
-          <ScalarProperty Name="DataKon" ColumnName="DataKon" />
-          <ScalarProperty Name="DataNach" ColumnName="DataNach" />
-          <ScalarProperty Name="Nazvanie" ColumnName="Nazvanie" />
-          <ScalarProperty Name="Nomer" ColumnName="Nomer" />
-          <ScalarProperty Name="idDocumenta" ColumnName="idDocumenta" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="DIzdavOrgans">
       <EntityTypeMapping TypeName="user37_dbModel.DIzdavOrgan">
         <MappingFragment StoreEntitySet="DIzdavOrgan">
@@ -45,20 +25,6 @@
           <ScalarProperty Name="UstarNazvanie" ColumnName="UstarNazvanie" />
           <ScalarProperty Name="idOrgana" ColumnName="idOrgana" />
           <ScalarProperty Name="idUstarNazvOrgana" ColumnName="idUstarNazvOrgana" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="DPolzovatels">
-      <EntityTypeMapping TypeName="user37_dbModel.DPolzovatel">
-        <MappingFragment StoreEntitySet="DPolzovatel">
-          <ScalarProperty Name="Rol" ColumnName="Rol" />
-          <ScalarProperty Name="Parol" ColumnName="Parol" />
-          <ScalarProperty Name="Pochta" ColumnName="Pochta" />
-          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
-          <ScalarProperty Name="Otchestvo" ColumnName="Otchestvo" />
-          <ScalarProperty Name="Imya" ColumnName="Imya" />
-          <ScalarProperty Name="Familia" ColumnName="Familia" />
-          <ScalarProperty Name="idPolzovatelya" ColumnName="idPolzovatelya" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -94,14 +60,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="DTegs">
-      <EntityTypeMapping TypeName="user37_dbModel.DTeg">
-        <MappingFragment StoreEntitySet="DTeg">
-          <ScalarProperty Name="NazvanieTega" ColumnName="NazvanieTega" />
-          <ScalarProperty Name="idTega" ColumnName="idTega" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="DVids">
       <EntityTypeMapping TypeName="user37_dbModel.DVid">
         <MappingFragment StoreEntitySet="DVid">
@@ -110,13 +68,49 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="DDocTegs" TypeName="user37_dbModel.DDocTeg" StoreEntitySet="DDocTeg">
-      <EndProperty Name="DTeg">
-        <ScalarProperty Name="idTega" ColumnName="idTega" />
-      </EndProperty>
-      <EndProperty Name="DDocument">
-        <ScalarProperty Name="idDocumenta" ColumnName="idDocumenta" />
-      </EndProperty>
-    </AssociationSetMapping>
+    <EntitySetMapping Name="DDocuments">
+      <EntityTypeMapping TypeName="user37_dbModel.DDocument">
+        <MappingFragment StoreEntitySet="DDocument">
+          <ScalarProperty Name="PytFaila" ColumnName="PytFaila" />
+          <ScalarProperty Name="Teg" ColumnName="Teg" />
+          <ScalarProperty Name="NPA" ColumnName="NPA" />
+          <ScalarProperty Name="Region" ColumnName="Region" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="PravovayaBaza" ColumnName="PravovayaBaza" />
+          <ScalarProperty Name="VidDoc" ColumnName="VidDoc" />
+          <ScalarProperty Name="IzdavOrgan" ColumnName="IzdavOrgan" />
+          <ScalarProperty Name="KratOpisanie" ColumnName="KratOpisanie" />
+          <ScalarProperty Name="Opisanie" ColumnName="Opisanie" />
+          <ScalarProperty Name="DataKon" ColumnName="DataKon" />
+          <ScalarProperty Name="DataNach" ColumnName="DataNach" />
+          <ScalarProperty Name="Nazvanie" ColumnName="Nazvanie" />
+          <ScalarProperty Name="Nomer" ColumnName="Nomer" />
+          <ScalarProperty Name="idDocumenta" ColumnName="idDocumenta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DPolzovatels">
+      <EntityTypeMapping TypeName="user37_dbModel.DPolzovatel">
+        <MappingFragment StoreEntitySet="DPolzovatel">
+          <ScalarProperty Name="Tema" ColumnName="Tema" />
+          <ScalarProperty Name="Rol" ColumnName="Rol" />
+          <ScalarProperty Name="Parol" ColumnName="Parol" />
+          <ScalarProperty Name="Pochta" ColumnName="Pochta" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Otchestvo" ColumnName="Otchestvo" />
+          <ScalarProperty Name="Imya" ColumnName="Imya" />
+          <ScalarProperty Name="Familia" ColumnName="Familia" />
+          <ScalarProperty Name="idPolzovatelya" ColumnName="idPolzovatelya" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DTegs">
+      <EntityTypeMapping TypeName="user37_dbModel.DTeg">
+        <MappingFragment StoreEntitySet="DTeg">
+          <ScalarProperty Name="NazvanieTega" ColumnName="NazvanieTega" />
+          <ScalarProperty Name="idTega" ColumnName="idTega" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

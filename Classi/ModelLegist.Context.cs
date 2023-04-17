@@ -25,16 +25,16 @@ namespace LegistOS.Classi
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<DDocument> DDocuments { get; set; }
         public virtual DbSet<DIzdavOrgan> DIzdavOrgans { get; set; }
         public virtual DbSet<DNPA> DNPAs { get; set; }
         public virtual DbSet<DOrganUstarNazv> DOrganUstarNazvs { get; set; }
-        public virtual DbSet<DPolzovatel> DPolzovatels { get; set; }
         public virtual DbSet<DPravovayaBaza> DPravovayaBazas { get; set; }
         public virtual DbSet<DRegion> DRegions { get; set; }
         public virtual DbSet<DRol> DRols { get; set; }
         public virtual DbSet<DStatu> DStatus { get; set; }
-        public virtual DbSet<DTeg> DTegs { get; set; }
         public virtual DbSet<DVid> DVids { get; set; }
+        public virtual DbSet<DDocument> DDocuments { get; set; }
+        public virtual DbSet<DPolzovatel> DPolzovatels { get; set; }
+        public virtual DbSet<DTeg> DTegs { get; set; }
     }
 }

@@ -17,16 +17,16 @@ namespace LegistOS.Classi
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public DIzdavOrgan()
         {
-            this.DDocuments = new HashSet<DDocument>();
             this.DOrganUstarNazvs = new HashSet<DOrganUstarNazv>();
+            this.DDocuments = new HashSet<DDocument>();
         }
     
         public int idIzdavOrgana { get; set; }
         public string NazvanieOrgana { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DDocument> DDocuments { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DOrganUstarNazv> DOrganUstarNazvs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DDocument> DDocuments { get; set; }
     }
 }
