@@ -26,13 +26,13 @@
                     VerticalAlignment="Top" HorizontalAlignment="Left" Margin="15">
             <TextBlock Text="Изменить тему" VerticalAlignment="Center" />
             <Button x:Name="BtnSvetlaya" Style="{StaticResource BtnRegMal}" Click="BtnSvetlaya_Click" >
-                
+                <Image Source="/Izobragenia/Znachki/streamline-interface-lighting-brightness-4--interface-essential--48x48.PNG" Width="20" />
             </Button>
             <Button x:Name="BtnTemnaya" Style="{StaticResource BtnRegMal}" Click="BtnTemnaya_Click"  >
-
+                <Image Source="/Izobragenia/Znachki/streamline-interface-lighting-brightness-3--interface-essential--48x48.PNG" Width="20" />
             </Button>
 
-            <TextBlock Text="Для полноценного изменения темы рекомендуется перезайти в аккаунт"
+            <TextBlock Text="   * Для полноценного изменения темы рекомендуется перезайти в аккаунт"
                        VerticalAlignment="Center" />
         </StackPanel>
 

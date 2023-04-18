@@ -42,6 +42,8 @@ namespace LegistOS.Stranici
             CBStatus.ItemsSource = App.Context.DStatus.ToList();
             CBRegion.ItemsSource = App.Context.DRegions.ToList();
             CBNPA.ItemsSource = App.Context.DNPAs.ToList();
+
+            DPDataKonDoc.Text = "";
         }
 
         public DobavlenieRedaktirovanieDoc(Classi.DDocument document)
@@ -68,8 +70,19 @@ namespace LegistOS.Stranici
 
             TBNomerDoc.Text = _currDocument.Nomer;
             TBNazvanieDoc.Text = _currDocument.Nazvanie;
-            TBDataNachDoc.Text = _currDocument.DataNach.ToString();
-            TBDataKonDoc.Text = _currDocument.DataKon.ToString();
+            DPDataNachDoc.SelectedDate = _currDocument.DataNach;
+            //DPDataKonDoc.SelectedDate = _currDocument.DataKon;
+            if (_currDocument.DataKon == null)
+                DPDataKonDoc.Text = "";
+            else
+            {
+                DPDataKonDoc.SelectedDate = _currDocument.DataKon;
+            }
+            
+            //DPDataNachDoc.Text = _currDocument.DataNach.ToString();
+            //DPDataKonDoc.Text = _currDocument.DataKon.ToString();
+            //TBDataNachDoc.Text = _currDocument.DataNach.ToString();
+            //TBDataKonDoc.Text = _currDocument.DataKon.ToString();
             TBKratOpisanie.Text = _currDocument.KratOpisanie;
             TBOpisanie.Text = _currDocument.Opisanie;
             CBIzdavOrgan.Text = _currDocument.DIzdavOrgan.NazvanieOrgana;
@@ -89,6 +102,8 @@ namespace LegistOS.Stranici
                 {
                     Nomer = TBNomerDoc.Text,
                     Nazvanie = TBNazvanieDoc.Text,
+                    DataNach = Convert.ToDateTime(DPDataNachDoc.SelectedDate.Value),
+                    //DataKon = Convert.ToDateTime(DPDataKonDoc.SelectedDate.Value),
                     //DataNach = DateTime.Parse(TBDataNachDoc.Text),
                     //DataKon = DateTime.Parse(TBDataKonDoc.Text)
                     KratOpisanie = TBKratOpisanie.Text,
@@ -110,6 +125,13 @@ namespace LegistOS.Stranici
             {
                 _currDocument.Nomer = TBNomerDoc.Text;
                 _currDocument.Nazvanie = TBNazvanieDoc.Text;
+                _currDocument.DataNach = Convert.ToDateTime(DPDataNachDoc.SelectedDate.Value);
+                /*if (DPDataKonDoc != null)
+                    _currDocument.DataKon = Convert.ToDateTime(DPDataKonDoc.SelectedDate.Value);
+                else
+                {
+                    _currDocument.DataKon = null;
+                }*/
                 //_currDocument.DataNach = DateTime.Parse(TBDataNachDoc.Text);
                 //_currDocument.DataKon = DateTime.Parse(TBDataKonDoc.Text);
                 _currDocument.KratOpisanie = TBKratOpisanie.Text;

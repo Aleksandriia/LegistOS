@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -25,6 +26,11 @@ namespace LegistOS.Stranici
         public Nastroiki()
         {
             InitializeComponent();
+
+            if (App.dPolzovatel.Tema == 1)
+                BtnSvetlaya.Background = (Brush)(new BrushConverter().ConvertFrom("#5EADBC"));
+            else if (App.dPolzovatel.Tema == 2)
+                BtnTemnaya.Background = (Brush)(new BrushConverter().ConvertFrom("#146675"));
         }
 
         public Nastroiki(Classi.DPolzovatel polzovatel)
@@ -32,6 +38,11 @@ namespace LegistOS.Stranici
             InitializeComponent();
 
             _currPolzovatel = polzovatel;
+            if (App.dPolzovatel.Tema == 1)
+                BtnSvetlaya.Background = (Brush)(new BrushConverter().ConvertFrom("#5EADBC"));
+            else if (App.dPolzovatel.Tema == 2)
+                BtnTemnaya.Background = (Brush)(new BrushConverter().ConvertFrom("#146675"));
+            
         }
 
         private void BtnNastroikaProfila_Click(object sender, RoutedEventArgs e)
@@ -56,6 +67,11 @@ namespace LegistOS.Stranici
 
             // Динамически меняем коллекцию MergedDictionaries
             Application.Current.Resources.MergedDictionaries[0] = dictionary;
+
+            BtnTemnaya.Background = (Brush)(new BrushConverter().ConvertFrom("#146675"));
+            BtnSvetlaya.Background = (Brush)(new BrushConverter().ConvertFrom("#1DAFCA"));
+            BtnNastroikaProfila.Background = (Brush)(new BrushConverter().ConvertFrom("#1DAFCA"));
+            TBZagolovokN.Foreground = new SolidColorBrush(Colors.White);
         }
 
         private void BtnSvetlaya_Click(object sender, RoutedEventArgs e)
@@ -71,6 +87,11 @@ namespace LegistOS.Stranici
 
             // Динамически меняем коллекцию MergedDictionaries
             Application.Current.Resources.MergedDictionaries[0] = dictionary;
+
+            BtnSvetlaya.Background = (Brush)(new BrushConverter().ConvertFrom("#5EADBC"));
+            BtnTemnaya.Background = (Brush)(new BrushConverter().ConvertFrom("#55DFF9"));
+            BtnNastroikaProfila.Background = (Brush)(new BrushConverter().ConvertFrom("#55DFF9"));
+            TBZagolovokN.Foreground = new SolidColorBrush(Colors.Black);
         }
     }
 }

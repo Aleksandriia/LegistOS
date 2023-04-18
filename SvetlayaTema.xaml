@@ -688,4 +688,27 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+    <!-- DatePicker -->
+
+    <Style x:Key="DPOsn" TargetType="DatePicker" >
+        <Setter Property="Margin" Value="5" />
+        <Setter Property="Padding" Value="3" />
+        <Setter Property="Width" Value="150" />
+        <Setter Property="Height" Value="25" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Cursor" Value="IBeam" />
+        <Setter Property="FontFamily" Value="Tw Cen MT" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Background" Value="White" />
+        <Setter Property="BorderBrush" Value="{StaticResource AksentCvet}" />
+        <Setter Property="BorderThickness" Value="1.4" />
+        <Setter Property="Foreground" Value="#000000" />
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="5" />
+            </Style>
+        </Style.Resources>
+    </Style>
+    
 </ResourceDictionary>

@@ -264,6 +264,8 @@
       <DependentUpon>ModelLegist.edmx</DependentUpon>
       <LastGenOutput>ModelLegist.cs</LastGenOutput>
     </Content>
+    <Resource Include="Izobragenia\Znachki\streamline-interface-lighting-brightness-3--interface-essential--48x48.PNG" />
+    <Resource Include="Izobragenia\Znachki\streamline-interface-lighting-brightness-4--interface-essential--48x48.PNG" />
     <Resource Include="Izobragenia\Znachki\streamline-interface-user-square-alternate--interface-essential--48x48.PNG" />
     <Resource Include="Izobragenia\Znachki\streamline-interface-logout--interface-essential--48x48.PNG" />
     <Resource Include="Izobragenia\Znachki\streamline-computer-desktop-help--computer-devices--48x48.PNG" />
