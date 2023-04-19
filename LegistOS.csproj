@@ -131,6 +131,9 @@
     <Compile Include="Stranici\Document.xaml.cs">
       <DependentUpon>Document.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Stranici\IzdOrgan.xaml.cs">
+      <DependentUpon>IzdOrgan.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Stranici\NastroikaProfila.xaml.cs">
       <DependentUpon>NastroikaProfila.xaml</DependentUpon>
     </Compile>
@@ -142,6 +145,12 @@
     </Compile>
     <Compile Include="Stranici\PravovayaBazaRashirPoisk.xaml.cs">
       <DependentUpon>PravovayaBazaRashirPoisk.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Stranici\Region.xaml.cs">
+      <DependentUpon>Region.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Stranici\Vid.xaml.cs">
+      <DependentUpon>Vid.xaml</DependentUpon>
     </Compile>
     <Page Include="Okna\Avtorizatia.xaml">
       <SubType>Designer</SubType>
@@ -163,6 +172,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Stranici\IzdOrgan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Stranici\NastroikaProfila.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -176,6 +189,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Stranici\PravovayaBazaRashirPoisk.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stranici\Region.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stranici\Vid.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

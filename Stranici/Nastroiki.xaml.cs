@@ -93,5 +93,20 @@ namespace LegistOS.Stranici
             BtnNastroikaProfila.Background = (Brush)(new BrushConverter().ConvertFrom("#55DFF9"));
             TBZagolovokN.Foreground = new SolidColorBrush(Colors.Black);
         }
+
+        private void BtnRegion_Click(object sender, RoutedEventArgs e)
+        {
+            FrameIzdOrganVidRegion.Navigate(new Stranici.Region());
+        }
+
+        private void BtnVid_Click(object sender, RoutedEventArgs e)
+        {
+            FrameIzdOrganVidRegion.Navigate(new Stranici.Vid());
+        }
+
+        private void BtnIzdOrgan_Click(object sender, RoutedEventArgs e)
+        {
+            FrameIzdOrganVidRegion.Navigate(new Stranici.IzdOrgan());
+        }
     }
 }

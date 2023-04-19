@@ -16,6 +16,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="35" />
             <RowDefinition Height="*" /> 
+            <RowDefinition Height="5*" /> 
         </Grid.RowDefinitions>
 
         <TextBlock Text="Настройки" x:Name="TBZagolovokN" 
@@ -34,11 +35,55 @@
 
             <TextBlock Text="   * Для полноценного изменения темы рекомендуется перезайти в аккаунт"
                        VerticalAlignment="Center" />
+            
         </StackPanel>
 
         <Button x:Name="BtnNastroikaProfila" Content="Настройка профиля" 
                 HorizontalAlignment="Right" VerticalAlignment="Top" 
                 Style="{StaticResource BtnDeistv}"
                 Grid.Column="1" Grid.Row="1" Margin="15" Click="BtnNastroikaProfila_Click"/>
+
+        
+        
+        <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="1">
+            <Button x:Name="BtnIzdOrgan" Background="{x:Null}" BorderBrush="{x:Null}"
+                        Width="180" Height="35" Click="BtnIzdOrgan_Click" >
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel x:Name="SPIzdOrg" Style="{StaticResource SPBokMenu}" Width="175" >
+                        <TextBlock Text="Органы издания" Style="{StaticResource TBlBokMenu}" />
+                    </StackPanel>
+                </StackPanel>
+            </Button>
+
+            <Button x:Name="BtnVid" Background="{x:Null}" BorderBrush="{x:Null}"
+                        Width="180" Height="35" Click="BtnVid_Click" >
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel x:Name="SPVid" Style="{StaticResource SPBokMenu}" Width="175" >
+                        <TextBlock Text="Виды" Style="{StaticResource TBlBokMenu}" />
+                    </StackPanel>
+                </StackPanel>
+            </Button>
+
+            <!--<Button x:Name="BtnNPA" Background="{x:Null}" BorderBrush="{x:Null}"
+                        Width="180" Height="35" Click="BtnConstitutiya_Click" >
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel x:Name="SPNPA" Style="{StaticResource SPBokMenu}" Width="175" >
+                        <TextBlock Text="НПА" Style="{StaticResource TBlBokMenu}" />
+                    </StackPanel>
+                </StackPanel>
+            </Button>-->
+
+            <Button x:Name="BtnRegion" Background="{x:Null}" BorderBrush="{x:Null}"
+                        Width="180" Height="35" Click="BtnRegion_Click" >
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel x:Name="SPRegion" Style="{StaticResource SPBokMenu}" Width="175" >
+                        <TextBlock Text="Регионы" Style="{StaticResource TBlBokMenu}" />
+                    </StackPanel>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+
+        <Frame x:Name="FrameIzdOrganVidRegion" NavigationUIVisibility="Hidden" 
+               Grid.Row="2" Grid.Column="1" Margin="10" />
     </Grid>
 </Page>

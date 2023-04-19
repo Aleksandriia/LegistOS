@@ -74,3 +74,9 @@ E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\Dob
 E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\DobavlenieRedaktirovanieDoc.baml
 E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\SvetlayaTema.baml
 E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\TemnayaTema.baml
+E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\Region.g.cs
+E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\Region.baml
+E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\IzdOrgan.g.cs
+E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\Vid.g.cs
+E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\IzdOrgan.baml
+E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\Vid.baml

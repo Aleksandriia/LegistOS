@@ -1,0 +1,54 @@
+﻿<Page x:Class="LegistOS.Stranici.IzdOrgan"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LegistOS.Stranici"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Органы издания">
+
+    <Grid>
+        <!-- Область вывода органов издания -->
+        <ListView x:Name="LVIzdOrgan" Margin="9.8,10,10,10.4"
+                  Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="4"
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                  Background="{x:Null}" BorderBrush="{x:Null}">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Vertical"
+                               HorizontalAlignment="Left"/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <StackPanel Grid.Column="1" Orientation="Vertical" 
+                                    HorizontalAlignment="Left" Margin="5">
+
+                            <StackPanel Orientation="Horizontal" >
+                                <TextBlock Text="{Binding NazvanieOrgana}" 
+                                       HorizontalAlignment="Left" Width="300" />
+                                <StackPanel Orientation="Horizontal" Margin="0,-12,0,0" >
+                                    <Button Name="BtnRedactirovanie"
+                                        Click="BtnRedactirovanie_Click"
+                                        Style="{StaticResource BtnPodrobnee}"
+                                        Visibility="{Binding AdminContrVidimost}" >
+                                        <TextBlock Text="Редактировать" FontSize="12" />
+                                    </Button>
+
+                                    <Button Name="BtnYdalenie"
+                                        Click="BtnYdalenie_Click"
+                                        Style="{StaticResource BtnPodrobnee}"
+                                        Visibility="{Binding AdminContrVidimost}" >
+                                        <TextBlock Text="Удалить" FontSize="12" />
+                                    </Button>
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>
