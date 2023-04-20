@@ -27,6 +27,19 @@ namespace LegistOS.Stranici
         {
             InitializeComponent();
 
+            if (App.dPolzovatel.Rol == 1)
+            {
+                BtnIzdOrgan.Visibility = Visibility.Visible;
+                BtnRegion.Visibility = Visibility.Visible;
+                BtnVid.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                BtnIzdOrgan.Visibility = Visibility.Collapsed;
+                BtnRegion.Visibility = Visibility.Collapsed;
+                BtnVid.Visibility = Visibility.Collapsed;
+            }
+
             if (App.dPolzovatel.Tema == 1)
                 BtnSvetlaya.Background = (Brush)(new BrushConverter().ConvertFrom("#5EADBC"));
             else if (App.dPolzovatel.Tema == 2)

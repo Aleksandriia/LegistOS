@@ -46,8 +46,9 @@
         
         
         <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="1">
+            
             <Button x:Name="BtnIzdOrgan" Background="{x:Null}" BorderBrush="{x:Null}"
-                        Width="180" Height="35" Click="BtnIzdOrgan_Click" >
+                    Width="180" Height="35" Click="BtnIzdOrgan_Click" >
                 <StackPanel Orientation="Horizontal">
                     <StackPanel x:Name="SPIzdOrg" Style="{StaticResource SPBokMenu}" Width="175" >
                         <TextBlock Text="Органы издания" Style="{StaticResource TBlBokMenu}" />
@@ -56,7 +57,8 @@
             </Button>
 
             <Button x:Name="BtnVid" Background="{x:Null}" BorderBrush="{x:Null}"
-                        Width="180" Height="35" Click="BtnVid_Click" >
+                    Width="180" Height="35" Click="BtnVid_Click"
+                    Visibility="{Binding AdminContVidimost}" >
                 <StackPanel Orientation="Horizontal">
                     <StackPanel x:Name="SPVid" Style="{StaticResource SPBokMenu}" Width="175" >
                         <TextBlock Text="Виды" Style="{StaticResource TBlBokMenu}" />
@@ -74,7 +76,8 @@
             </Button>-->
 
             <Button x:Name="BtnRegion" Background="{x:Null}" BorderBrush="{x:Null}"
-                        Width="180" Height="35" Click="BtnRegion_Click" >
+                    Width="180" Height="35" Click="BtnRegion_Click"
+                    Visibility="{Binding AdminContVidimost}" Cursor="" >
                 <StackPanel Orientation="Horizontal">
                     <StackPanel x:Name="SPRegion" Style="{StaticResource SPBokMenu}" Width="175" >
                         <TextBlock Text="Регионы" Style="{StaticResource TBlBokMenu}" />

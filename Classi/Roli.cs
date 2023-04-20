@@ -33,4 +33,76 @@ namespace LegistOS.Classi
             }
         }
     }
+
+    public partial class DIzdavOrgan
+    {
+        public string AdminContrVidimost
+        {
+            get
+            {
+                // 1 - админ, 2 - пользователь
+                if (App.dPolzovatel.Rol == 1)
+                {
+                    return "Visible";
+                }
+                else if (App.dPolzovatel.Rol == 2)
+                {
+                    return "Hidden";
+                }
+                else
+                {
+                    //return "Collapsed";
+                    return "Hidden";
+                }
+            }
+        }
+    }
+
+    public partial class DVid
+    {
+        public string AdminContrVidimost
+        {
+            get
+            {
+                // 1 - админ, 2 - пользователь
+                if (App.dPolzovatel.Rol == 1)
+                {
+                    return "Visible";
+                }
+                else if (App.dPolzovatel.Rol == 2)
+                {
+                    return "Hidden";
+                }
+                else
+                {
+                    //return "Collapsed";
+                    return "Hidden";
+                }
+            }
+        }
+    }
+
+    public partial class DRegion
+    {
+        public string AdminContrVidimost
+        {
+            get
+            {
+                // 1 - админ, 2 - пользователь
+                if (App.dPolzovatel.Rol == 1)
+                {
+                    return "Visible";
+                }
+                else if (App.dPolzovatel.Rol == 2)
+                {
+                    return "Hidden";
+                }
+                else
+                {
+                    //return "Collapsed";
+                    return "Hidden";
+                }
+            }
+        }
+    }
 }
