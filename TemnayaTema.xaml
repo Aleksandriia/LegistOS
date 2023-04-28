@@ -6,7 +6,8 @@
     <SolidColorBrush x:Key="AksentCvet" Color="#1DAFCA" />
     <SolidColorBrush x:Key="AksentDopCvet" Color="#146675" />
     <SolidColorBrush x:Key="NeActivnyiCvet" Color="#6C8C92" />
-    <SolidColorBrush x:Key="PodlojkaBel" Color="#343434" />
+    <SolidColorBrush x:Key="PodlojkaChern" Color="#343434" />
+    <SolidColorBrush x:Key="PodlojkaBel" Color="#474747" />
     <SolidColorBrush x:Key="PodlojkaSin" Color="#748C90 " />
     <SolidColorBrush x:Key="SerayaInf" Color="#999999" />
     <SolidColorBrush x:Key="TextKrasn" Color="#D44242" />
@@ -209,7 +210,7 @@
         <Setter Property="Cursor" Value="IBeam" />
         <Setter Property="FontFamily" Value="Tw Cen MT" />
         <Setter Property="FontSize" Value="14" />
-        <Setter Property="Background" Value="{StaticResource PodlojkaBel}" />
+        <Setter Property="Background" Value="{StaticResource PodlojkaChern}" />
         <Setter Property="BorderBrush" Value="{StaticResource AksentCvet}" />
         <Setter Property="BorderThickness" Value="1.4" />
         <Setter Property="Foreground" Value="{StaticResource TextBel}" />
@@ -234,7 +235,7 @@
         <Setter Property="Cursor" Value="IBeam" />
         <Setter Property="FontFamily" Value="Tw Cen MT" />
         <Setter Property="FontSize" Value="14" />
-        <Setter Property="Background" Value="{StaticResource PodlojkaBel}" />
+        <Setter Property="Background" Value="{StaticResource PodlojkaChern}" />
         <Setter Property="BorderBrush" Value="{StaticResource AksentCvet}" />
         <Setter Property="BorderThickness" Value="1.4" />
         <Setter Property="Foreground" Value="{StaticResource TextBel}" />
@@ -254,7 +255,7 @@
         <Setter Property="FontFamily" Value="Tw Cen MT" />
         <Setter Property="FontSize" Value="14" />
         <Setter Property="Foreground" Value="{StaticResource TextBel}" />
-        <Setter Property="Background" Value="{StaticResource PodlojkaBel}" />
+        <Setter Property="Background" Value="Transparent" />
         <Setter Property="BorderBrush" Value="{StaticResource AksentCvet}" />
         <Setter Property="BorderThickness" Value="1.4" />
         <Style.Resources>
@@ -273,7 +274,7 @@
         <Setter Property="FontFamily" Value="Tw Cen MT" />
         <Setter Property="FontSize" Value="14" />
         <Setter Property="Foreground" Value="{StaticResource TextBel}" />
-        <Setter Property="Background" Value="{StaticResource PodlojkaBel}" />
+        <Setter Property="Background" Value="Transparent" />
         <Setter Property="BorderBrush" Value="{StaticResource AksentCvet}" />
         <Setter Property="BorderThickness" Value="1.4" />
         <Style.Resources>
@@ -292,7 +293,7 @@
         <Setter Property="FontFamily" Value="Tw Cen MT" />
         <Setter Property="FontSize" Value="14" />
         <Setter Property="Foreground" Value="{StaticResource TextBel}" />
-        <Setter Property="Background" Value="{StaticResource PodlojkaBel}" />
+        <Setter Property="Background" Value="Transparent" />
         <Setter Property="BorderBrush" Value="{StaticResource AksentCvet}" />
         <Setter Property="BorderThickness" Value="1.4" />
         <Style.Resources>
@@ -310,7 +311,7 @@
         <Setter Property="FontSize" Value="18" />
         <Setter Property="TextWrapping" Value="Wrap" />
         <Setter Property="Foreground" Value="{StaticResource TextBel}" />
-        <Setter Property="Background" Value="{StaticResource PodlojkaBel}" />
+        <Setter Property="Background" Value="Transparent" />
         <Setter Property="BorderBrush" Value="{StaticResource AksentCvet}" />
         <Setter Property="BorderThickness" Value="1.4" />
         <Style.Resources>
@@ -330,7 +331,7 @@
         <Setter Property="FontSize" Value="14" />
         <Setter Property="TextWrapping" Value="Wrap" />
         <Setter Property="Foreground" Value="{StaticResource TextBel}" />
-        <Setter Property="Background" Value="{StaticResource PodlojkaBel}" />
+        <Setter Property="Background" Value="Transparent" />
         <Setter Property="BorderBrush" Value="{StaticResource AksentCvet}" />
         <Setter Property="BorderThickness" Value="1.4" />
         <Style.Resources>
@@ -349,7 +350,7 @@
         <Setter Property="FontSize" Value="14" />
         <Setter Property="TextWrapping" Value="Wrap" />
         <Setter Property="Foreground" Value="{StaticResource TextBel}" />
-        <Setter Property="Background" Value="{StaticResource PodlojkaBel}" />
+        <Setter Property="Background" Value="Transparent" />
         <Setter Property="BorderBrush" Value="{StaticResource AksentCvet}" />
         <Setter Property="BorderThickness" Value="1.4" />
         <Style.Resources>
@@ -473,7 +474,7 @@
         <Setter Property="FontFamily" Value="Tw Cen MT" />
         <Setter Property="FontSize" Value="14" />
         <Setter Property="Foreground" Value="{StaticResource TextBel}" />
-        <Setter Property="Background" Value="{StaticResource PodlojkaBel}" />
+        <Setter Property="Background" Value="{StaticResource PodlojkaChern}" />
         <Setter Property="BorderBrush" Value="{StaticResource AksentCvet}" />
         <Setter Property="BorderThickness" Value="1.4" />
         <Style.Resources>
@@ -722,7 +723,7 @@
         <Setter Property="Cursor" Value="IBeam" />
         <Setter Property="FontFamily" Value="Tw Cen MT" />
         <Setter Property="FontSize" Value="14" />
-        <Setter Property="Background" Value="{StaticResource PodlojkaBel}" />
+        <Setter Property="Background" Value="{StaticResource PodlojkaChern}" />
         <Setter Property="BorderBrush" Value="{StaticResource AksentCvet}" />
         <Setter Property="BorderThickness" Value="1.4" />
         <Setter Property="Foreground" Value="{StaticResource TextBel}" />

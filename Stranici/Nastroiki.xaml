@@ -19,9 +19,15 @@
             <RowDefinition Height="5*" /> 
         </Grid.RowDefinitions>
 
-        <TextBlock Text="Настройки" x:Name="TBZagolovokN" 
+        <StackPanel x:Name="SPVerhPolojka"
+                    Grid.Column="1" Grid.Row="0" 
+                    Background="{StaticResource PodlojkaBel}">
+            <TextBlock Text="Настройки" x:Name="TBZagolovokN" 
                    Style="{StaticResource TBlZagolovok}" Grid.Column="1" Grid.Row="0" 
                    HorizontalAlignment="Left" VerticalAlignment="Center" />
+        </StackPanel>
+
+        <Rectangle x:Name="RtgBokMeny" Fill="{StaticResource PodlojkaBel}" Grid.Column="0" Grid.RowSpan="3" />
 
         <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="1"
                     VerticalAlignment="Top" HorizontalAlignment="Left" Margin="15">
@@ -51,7 +57,7 @@
                     Width="180" Height="35" Click="BtnIzdOrgan_Click" >
                 <StackPanel Orientation="Horizontal">
                     <StackPanel x:Name="SPIzdOrg" Style="{StaticResource SPBokMenu}" Width="175" >
-                        <TextBlock Text="Органы издания" Style="{StaticResource TBlBokMenu}" />
+                        <TextBlock x:Name="TBlIzdOrg" Text="Органы издания" Style="{StaticResource TBlBokMenu}" />
                     </StackPanel>
                 </StackPanel>
             </Button>
@@ -61,7 +67,7 @@
                     Visibility="{Binding AdminContVidimost}" >
                 <StackPanel Orientation="Horizontal">
                     <StackPanel x:Name="SPVid" Style="{StaticResource SPBokMenu}" Width="175" >
-                        <TextBlock Text="Виды" Style="{StaticResource TBlBokMenu}" />
+                        <TextBlock x:Name="TBlVid" Text="Виды" Style="{StaticResource TBlBokMenu}" />
                     </StackPanel>
                 </StackPanel>
             </Button>
@@ -80,7 +86,7 @@
                     Visibility="{Binding AdminContVidimost}" Cursor="" >
                 <StackPanel Orientation="Horizontal">
                     <StackPanel x:Name="SPRegion" Style="{StaticResource SPBokMenu}" Width="175" >
-                        <TextBlock Text="Регионы" Style="{StaticResource TBlBokMenu}" />
+                        <TextBlock x:Name="TBlRegion" Text="Регионы" Style="{StaticResource TBlBokMenu}" />
                     </StackPanel>
                 </StackPanel>
             </Button>

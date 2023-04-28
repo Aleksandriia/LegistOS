@@ -85,6 +85,17 @@ namespace LegistOS.Stranici
             BtnSvetlaya.Background = (Brush)(new BrushConverter().ConvertFrom("#1DAFCA"));
             BtnNastroikaProfila.Background = (Brush)(new BrushConverter().ConvertFrom("#1DAFCA"));
             TBZagolovokN.Foreground = new SolidColorBrush(Colors.White);
+            SPVerhPolojka.Background = (Brush)(new BrushConverter().ConvertFrom("#474747"));
+            RtgBokMeny.Fill = (Brush)(new BrushConverter().ConvertFrom("#474747"));
+            //BtnIzdOrgan.Background = (Brush)(new BrushConverter().ConvertFrom("#748C90"));
+            //BtnRegion.Background = (Brush)(new BrushConverter().ConvertFrom("#748C90"));
+            //BtnVid.Background = (Brush)(new BrushConverter().ConvertFrom("#748C90"));
+            SPVid.Background = (Brush)(new BrushConverter().ConvertFrom("#748C90"));
+            SPIzdOrg.Background = (Brush)(new BrushConverter().ConvertFrom("#748C90"));
+            SPRegion.Background = (Brush)(new BrushConverter().ConvertFrom("#748C90"));
+            TBlRegion.Foreground = new SolidColorBrush(Colors.White);
+            TBlIzdOrg.Foreground = new SolidColorBrush(Colors.White);
+            TBlVid.Foreground = new SolidColorBrush(Colors.White);
         }
 
         private void BtnSvetlaya_Click(object sender, RoutedEventArgs e)
@@ -105,6 +116,17 @@ namespace LegistOS.Stranici
             BtnTemnaya.Background = (Brush)(new BrushConverter().ConvertFrom("#55DFF9"));
             BtnNastroikaProfila.Background = (Brush)(new BrushConverter().ConvertFrom("#55DFF9"));
             TBZagolovokN.Foreground = new SolidColorBrush(Colors.Black);
+            SPVerhPolojka.Background = (Brush)(new BrushConverter().ConvertFrom("#F4F4F4")); 
+            RtgBokMeny.Fill = (Brush)(new BrushConverter().ConvertFrom("#F4F4F4")); 
+            //BtnIzdOrgan.Background = (Brush)(new BrushConverter().ConvertFrom("#FFCCE9F0"));
+            //BtnRegion.Background = (Brush)(new BrushConverter().ConvertFrom("#FFCCE9F0"));
+            //BtnVid.Background = (Brush)(new BrushConverter().ConvertFrom("#FFCCE9F0"));
+            SPVid.Background = (Brush)(new BrushConverter().ConvertFrom("#FFCCE9F0"));
+            SPIzdOrg.Background = (Brush)(new BrushConverter().ConvertFrom("#FFCCE9F0"));
+            SPRegion.Background = (Brush)(new BrushConverter().ConvertFrom("#FFCCE9F0"));
+            TBlRegion.Foreground = new SolidColorBrush(Colors.Black);
+            TBlIzdOrg.Foreground = new SolidColorBrush(Colors.Black);
+            TBlVid.Foreground = new SolidColorBrush(Colors.Black);
         }
 
         private void BtnRegion_Click(object sender, RoutedEventArgs e)

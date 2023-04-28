@@ -17,8 +17,8 @@
         </Grid.RowDefinitions> 
 
         <StackPanel Orientation="Horizontal" Grid.Row="0" >
-            <Image x:Name="ImgLogoMal" Source="/Izobragenia/logo3long.700х200.png"
-                   Height="25" Margin="2" 
+            <Image x:Name="ImgLogoMal" Source="/Izobragenia/logo1.250х250.png"
+                   Height="25" Margin="7,0,0,0" 
                    VerticalAlignment="Center" HorizontalAlignment="Left"/>
         </StackPanel>
         

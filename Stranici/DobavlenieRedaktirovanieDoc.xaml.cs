@@ -154,14 +154,15 @@ namespace LegistOS.Stranici
         {
             if (TBNomerDoc.Text != null || TBNazvanieDoc.Text != null ||
                 TBKratOpisanie.Text != null || TBOpisanie.Text != null ||
-                CBIzdavOrgan.Text != null || CBVid.Text != null || CBPravBaza.Text != null ||
-                CBStatus.Text != null || CBRegion.Text != null || CBNPA.Text != null)
+                CBIzdavOrgan.SelectedIndex != -1 || CBVid.SelectedIndex != -1 || CBPravBaza.SelectedIndex != -1 ||
+                CBStatus.SelectedIndex != -1 || CBRegion.SelectedIndex != -1 || CBNPA.SelectedIndex != -1)
             {
                 if (MessageBox.Show("Изменения не были внесены.\nВы действительно хотите выйти?", "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
                 {
                     NavigationService.GoBack();
                 }
             }
+            else { NavigationService.GoBack(); }
         }
 
         private void CBVid_SelectionChanged(object sender, SelectionChangedEventArgs e)
