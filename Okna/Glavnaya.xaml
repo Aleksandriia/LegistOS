@@ -44,6 +44,12 @@
                        Width="48"/>
             </Button>
 
+            <Button x:Name="BtnVMIzdOrgani" Style="{StaticResource BtnVerhMenu}"
+                    ToolTip="Органы" Click="BtnVMIzdOrgani_Click" >
+                <Image x:Name="ImgIzdOrgani" Source="/Izobragenia/Znachki/streamline-travel-places-column-1--maps-travel--48x48.PNG"
+                       Width="48"/>
+            </Button>
+
             <Button x:Name="BtnVMNastroiki" Style="{StaticResource BtnVerhMenu}" 
                     Click="BtnVMNastroiki_Click" ToolTip="Настройки" >
                 <Image x:Name="ImgNastroiki" Source="/Izobragenia/Znachki/streamline-interface-setting-cog--interface-essential--48x48.PNG"

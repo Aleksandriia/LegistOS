@@ -134,6 +134,9 @@
     <Compile Include="Stranici\IzdOrgan.xaml.cs">
       <DependentUpon>IzdOrgan.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Stranici\IzdOrgani.xaml.cs">
+      <DependentUpon>IzdOrgani.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Stranici\NastroikaProfila.xaml.cs">
       <DependentUpon>NastroikaProfila.xaml</DependentUpon>
     </Compile>
@@ -173,6 +176,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Stranici\IzdOrgan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stranici\IzdOrgani.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -285,6 +292,7 @@
       <DependentUpon>ModelLegist.edmx</DependentUpon>
       <LastGenOutput>ModelLegist.cs</LastGenOutput>
     </Content>
+    <Resource Include="Izobragenia\Znachki\streamline-travel-places-column-1--maps-travel--48x48.PNG" />
     <Resource Include="Izobragenia\Znachki\streamline-interface-lighting-brightness-3--interface-essential--48x48.PNG" />
     <Resource Include="Izobragenia\Znachki\streamline-interface-lighting-brightness-4--interface-essential--48x48.PNG" />
     <Resource Include="Izobragenia\Znachki\streamline-interface-user-square-alternate--interface-essential--48x48.PNG" />

@@ -29,6 +29,7 @@ namespace LegistOS.Stranici
             CBTegDoc.ItemsSource = App.Context.DTegs.ToList();
             CBOrgenDoc.ItemsSource = App.Context.DIzdavOrgans.ToList();
             CBRegionDoc.ItemsSource = App.Context.DRegions.ToList();
+            CBStatusDoc.ItemsSource = App.Context.DStatus.ToList();
 
             //CBTegDoc.IsEnabled = false;
 
@@ -88,6 +89,12 @@ namespace LegistOS.Stranici
             else if (CBRegionDoc.SelectedIndex != -1)
             {
                 docs = docs.Where(p => p.Region.ToString().Equals(Classi.GlobalPeremen.regionDocs.ToString())).ToList();
+            }
+
+            if (CBStatusDoc.SelectedIndex == -1) { }
+            else if (CBStatusDoc.SelectedIndex != -1)
+            {
+                docs = docs.Where(p => p.Status.ToString().Equals(Classi.GlobalPeremen.statusDocs.ToString())).ToList();
             }
 
             LVPravovayaBaza.ItemsSource = docs;
@@ -190,6 +197,7 @@ namespace LegistOS.Stranici
                 Classi.GlobalPeremen.tegDocs = CBTegDoc.SelectedIndex + 1;
                 Classi.GlobalPeremen.IzdOrganDocs = CBOrgenDoc.SelectedIndex + 1;
                 Classi.GlobalPeremen.regionDocs = CBRegionDoc.SelectedIndex + 1;
+                Classi.GlobalPeremen.statusDocs = CBStatusDoc.SelectedIndex + 1;
 
                 UpdateServices();
             }
@@ -222,6 +230,7 @@ namespace LegistOS.Stranici
             CBTegDoc.Text = "";
             CBOrgenDoc.Text = "";
             CBRegionDoc.Text = "";
+            CBStatusDoc.Text = "";
 
             Classi.GlobalPeremen.nomerDocs = TBNomer.Text;
             Classi.GlobalPeremen.NachData = TBDataNach.Text;
@@ -230,6 +239,7 @@ namespace LegistOS.Stranici
             Classi.GlobalPeremen.tegDocs = Convert.ToInt32(CBTegDoc.SelectedItem);
             Classi.GlobalPeremen.IzdOrganDocs = Convert.ToInt32(CBOrgenDoc.SelectedItem);
             Classi.GlobalPeremen.regionDocs = Convert.ToInt32(CBRegionDoc.SelectedItem);
+            Classi.GlobalPeremen.statusDocs = Convert.ToInt32(CBStatusDoc.SelectedItem);
 
             UpdateServices();
         }
@@ -237,6 +247,16 @@ namespace LegistOS.Stranici
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             UpdateServices();
+        }
+
+        private void CBTegDoc_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void CBStatusDoc_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

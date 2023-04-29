@@ -16,6 +16,7 @@ namespace LegistOS.Classi
         public static int tegDocs = -1;
         public static int IzdOrganDocs = -1;
         public static int regionDocs = -1;
+        public static int statusDocs = -1;
 
         public static int IDdoc = -1;
         public static int idPolzov = -1;

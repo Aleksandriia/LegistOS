@@ -44,9 +44,18 @@
             <StackPanel Orientation="Horizontal">
                 <StackPanel Orientation="Vertical" Width="525"
                             HorizontalAlignment="Left" >
-                    <TextBlock x:Name="TBlNomer" Text="№" Margin="15,0,0,0" />
-                    <TextBox x:Name="TBNomer" Style="{StaticResource TBOsn}" 
-                             Width="189" HorizontalAlignment="Left" Margin="10,0,0,0" />
+                    <StackPanel Orientation="Horizontal" >
+                        <TextBlock x:Name="TBlNomer" Text="№" Margin="15,0,0,0" />
+                        <TextBlock x:Name="TBlStatus" Text="Статус" Margin="135,0,0,0" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" >
+                        <TextBox x:Name="TBNomer" Style="{StaticResource TBOsn}" 
+                                 Width="140" HorizontalAlignment="Left" Margin="10,0,0,0" />
+
+                        <ComboBox x:Name="CBStatusDoc" Style="{StaticResource CBOsn}" 
+                                  Width="140" Margin="10,0,0,0"
+                                  DisplayMemberPath="nazStatusa" SelectionChanged="CBStatusDoc_SelectionChanged"  />
+                    </StackPanel>
 
                     <TextBlock x:Name="TBlVidDoc" Text="Вид документа:" Margin="15,10,0,-5" />
                     <ComboBox x:Name="CBVidDoc" Style="{StaticResource CBOsn}"
@@ -66,7 +75,7 @@
                             HorizontalAlignment="Left" >
                     <StackPanel Orientation="Horizontal">
                         <TextBlock x:Name="TBlDataNach" Text="Дата с:" Margin="10,0,0,0" />
-                        <TextBlock x:Name="TBlDataKon" Text="Дата по:" Margin="44,0,0,0" />
+                        <TextBlock x:Name="TBlDataKon" Text="Дата по:" Margin="104,0,0,0" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <TextBox x:Name="TBDataNach" 

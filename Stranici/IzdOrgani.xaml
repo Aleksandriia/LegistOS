@@ -1,0 +1,90 @@
+﻿<Page x:Class="LegistOS.Stranici.IzdOrgani"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LegistOS.Stranici"
+      mc:Ignorable="d" 
+      d:DesignHeight="700" d:DesignWidth="1440"
+      Title="IzdOrgani">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Column="1" Grid.Row="0" Background="{StaticResource PodlojkaBel}">
+            <TextBlock Text="Органы" x:Name="TBZagolovokNP" 
+                       Style="{StaticResource TBlZagolovok}" 
+                       HorizontalAlignment="Left" VerticalAlignment="Center" />
+        </StackPanel>
+
+        <!-- Поиск -->
+        <StackPanel Orientation="Vertical" 
+                    HorizontalAlignment="Center" VerticalAlignment="Center"
+                    Grid.Row="1" Grid.Column="1" >
+            <StackPanel Orientation="Horizontal" >
+                <TextBox x:Name="TBoxPoisk" TextChanged="TBoxSearch_TextChanged"
+                         Style="{StaticResource TBPoisk}" Width="1200" />
+                <!--<Button x:Name="BtnRashirPoisk"
+                        Click="BtnRashirPoisk_Click"
+                        Style="{StaticResource BtnRashPoisk}"
+                        VerticalAlignment="Center" >
+                    <TextBlock Text="Расширенный поиск..." />
+                </Button>-->
+            </StackPanel>
+        </StackPanel>
+
+        <!-- Боковое меню -->
+        <Rectangle Fill="{StaticResource PodlojkaBel}" 
+                   Grid.Column="0" Grid.RowSpan="3" />
+
+        <!-- Область вывода органов издания -->
+        <ListView x:Name="LVIzdOrgan" Margin="9.8,10,10,10.4"
+                  Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="4"
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                  Background="{x:Null}" BorderBrush="{x:Null}">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Vertical"
+                               HorizontalAlignment="Left"/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <StackPanel Grid.Column="1" Orientation="Vertical" 
+                                    HorizontalAlignment="Left" Margin="5">
+
+                            <StackPanel Orientation="Horizontal" >
+                                <TextBlock Text="{Binding NazvanieOrgana}" 
+                                       HorizontalAlignment="Left" Width="300" />
+                                <!--<StackPanel Orientation="Horizontal" Margin="0,-12,0,0" >
+                                    <Button Name="BtnRedactirovanie"
+                                        Click="BtnRedactirovanie_Click"
+                                        Style="{StaticResource BtnPodrobnee}"
+                                        Visibility="{Binding AdminContrVidimost}" >
+                                        <TextBlock Text="Редактировать" FontSize="12" />
+                                    </Button>
+
+                                    <Button Name="BtnYdalenie"
+                                        Click="BtnYdalenie_Click"
+                                        Style="{StaticResource BtnPodrobnee}"
+                                        Visibility="{Binding AdminContrVidimost}" >
+                                        <TextBlock Text="Удалить" FontSize="12" />
+                                    </Button>
+                                </StackPanel>-->
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>

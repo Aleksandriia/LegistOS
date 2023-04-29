@@ -120,5 +120,10 @@ namespace LegistOS.Okna
                 Application.Current.Resources.MergedDictionaries[0] = dictionary;
             }
         }
+
+        private void BtnVMIzdOrgani_Click(object sender, RoutedEventArgs e)
+        {
+            FrameMain.Navigate(new Stranici.IzdOrgani());
+        }
     }
 }

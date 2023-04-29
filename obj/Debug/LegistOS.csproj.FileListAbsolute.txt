@@ -80,3 +80,5 @@ E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\Izd
 E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\Vid.g.cs
 E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\IzdOrgan.baml
 E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\Vid.baml
+E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\IzdOrgani.g.cs
+E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\IzdOrgani.baml
