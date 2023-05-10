@@ -112,5 +112,14 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="DIzbrannoes">
+      <EntityTypeMapping TypeName="user37_dbModel.DIzbrannoe">
+        <MappingFragment StoreEntitySet="DIzbrannoe">
+          <ScalarProperty Name="idDocumenta" ColumnName="idDocumenta" />
+          <ScalarProperty Name="idPolzovatelya" ColumnName="idPolzovatelya" />
+          <ScalarProperty Name="idIzbrannogo" ColumnName="idIzbrannogo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

@@ -258,5 +258,33 @@ namespace LegistOS.Stranici
         {
 
         }
+
+        private void BtnDobavlenie_Click(object sender, RoutedEventArgs e)
+        {
+            Classi.GlobalPeremen.dobRedDoc = 1;
+            NavigationService.Navigate(new Stranici.DobavlenieRedaktirovanieDoc());
+            //Stranici.DobavlenieDoc.TBZagolovokDIDoc.Text = "Добавление документа";
+        }
+
+        private void BtnYdalenie_Click(object sender, RoutedEventArgs e)
+        {
+            var docc = (sender as Button).DataContext as Classi.DDocument;
+
+            if (MessageBox.Show($"Вы уверены, что хотите удалить документ№: " +
+                $"{docc.Nomer}?", "Внимание", MessageBoxButton.YesNo,
+                MessageBoxImage.Warning) == MessageBoxResult.Yes)
+            {
+                App.Context.DDocuments.Remove(docc);
+                App.Context.SaveChanges();
+                UpdateServices();
+            }
+        }
+
+        private void BtnRedactirovanie_Click(object sender, RoutedEventArgs e)
+        {
+            Classi.GlobalPeremen.dobRedDoc = 2;
+            var ddoc = (sender as Button).DataContext as Classi.DDocument;
+            NavigationService.Navigate(new Stranici.DobavlenieRedaktirovanieDoc(ddoc));
+        }
     }
 }

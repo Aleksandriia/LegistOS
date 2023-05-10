@@ -25,6 +25,14 @@
           <Property Name="Teg" Type="int" />
           <Property Name="PytFaila" Type="nvarchar(max)" />
         </EntityType>
+        <EntityType Name="DIzbrannoe">
+          <Key>
+            <PropertyRef Name="idIzbrannogo" />
+          </Key>
+          <Property Name="idIzbrannogo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idPolzovatelya" Type="int" Nullable="false" />
+          <Property Name="idDocumenta" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="DIzdavOrgan">
           <Key>
             <PropertyRef Name="idIzdavOrgana" />
@@ -189,6 +197,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_DIzbrannoe_DDocument">
+          <End Role="DDocument" Type="Self.DDocument" Multiplicity="1" />
+          <End Role="DIzbrannoe" Type="Self.DIzbrannoe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DDocument">
+              <PropertyRef Name="idDocumenta" />
+            </Principal>
+            <Dependent Role="DIzbrannoe">
+              <PropertyRef Name="idDocumenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DIzbrannoe_DPolzovatel">
+          <End Role="DPolzovatel" Type="Self.DPolzovatel" Multiplicity="1" />
+          <End Role="DIzbrannoe" Type="Self.DIzbrannoe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DPolzovatel">
+              <PropertyRef Name="idPolzovatelya" />
+            </Principal>
+            <Dependent Role="DIzbrannoe">
+              <PropertyRef Name="idPolzovatelya" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_DOrganUstarNazv_DIzdavOrgan">
           <End Role="DIzdavOrgan" Type="Self.DIzdavOrgan" Multiplicity="1" />
           <End Role="DOrganUstarNazv" Type="Self.DOrganUstarNazv" Multiplicity="*" />
@@ -215,6 +247,7 @@
         </Association>
         <EntityContainer Name="Хранилище user37_dbModelContainer">
           <EntitySet Name="DDocument" EntityType="Self.DDocument" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DIzbrannoe" EntityType="Self.DIzbrannoe" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DIzdavOrgan" EntityType="Self.DIzdavOrgan" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DNPA" EntityType="Self.DNPA" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DOrganUstarNazv" EntityType="Self.DOrganUstarNazv" Schema="dbo" store:Type="Tables" />
@@ -252,6 +285,14 @@
           <AssociationSet Name="FK_DDocument_DVid" Association="Self.FK_DDocument_DVid">
             <End Role="DVid" EntitySet="DVid" />
             <End Role="DDocument" EntitySet="DDocument" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DIzbrannoe_DDocument" Association="Self.FK_DIzbrannoe_DDocument">
+            <End Role="DDocument" EntitySet="DDocument" />
+            <End Role="DIzbrannoe" EntitySet="DIzbrannoe" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DIzbrannoe_DPolzovatel" Association="Self.FK_DIzbrannoe_DPolzovatel">
+            <End Role="DPolzovatel" EntitySet="DPolzovatel" />
+            <End Role="DIzbrannoe" EntitySet="DIzbrannoe" />
           </AssociationSet>
           <AssociationSet Name="FK_DOrganUstarNazv_DIzdavOrgan" Association="Self.FK_DOrganUstarNazv_DIzdavOrgan">
             <End Role="DIzdavOrgan" EntitySet="DIzdavOrgan" />
@@ -313,6 +354,15 @@
           <AssociationSet Name="FK_DPolzovatel_DRol" Association="user37_dbModel.FK_DPolzovatel_DRol">
             <End Role="DRol" EntitySet="DRols" />
             <End Role="DPolzovatel" EntitySet="DPolzovatels" />
+          </AssociationSet>
+          <EntitySet Name="DIzbrannoes" EntityType="user37_dbModel.DIzbrannoe" />
+          <AssociationSet Name="FK_DIzbrannoe_DDocument" Association="user37_dbModel.FK_DIzbrannoe_DDocument">
+            <End Role="DDocument" EntitySet="DDocuments" />
+            <End Role="DIzbrannoe" EntitySet="DIzbrannoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DIzbrannoe_DPolzovatel" Association="user37_dbModel.FK_DIzbrannoe_DPolzovatel">
+            <End Role="DPolzovatel" EntitySet="DPolzovatels" />
+            <End Role="DIzbrannoe" EntitySet="DIzbrannoes" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="DIzdavOrgan">
@@ -421,6 +471,7 @@
           <NavigationProperty Name="DStatu" Relationship="user37_dbModel.FK_DDocument_DStatus" FromRole="DDocument" ToRole="DStatu" />
           <NavigationProperty Name="DTeg" Relationship="user37_dbModel.FK_DDocument_DTeg" FromRole="DDocument" ToRole="DTeg" />
           <NavigationProperty Name="DVid" Relationship="user37_dbModel.FK_DDocument_DVid" FromRole="DDocument" ToRole="DVid" />
+          <NavigationProperty Name="DIzbrannoes" Relationship="user37_dbModel.FK_DIzbrannoe_DDocument" FromRole="DDocument" ToRole="DIzbrannoe" />
         </EntityType>
         <EntityType Name="DPolzovatel">
           <Key>
@@ -436,6 +487,7 @@
           <Property Name="Rol" Type="Int32" Nullable="false" />
           <Property Name="Tema" Type="Int32" Nullable="false" />
           <NavigationProperty Name="DRol" Relationship="user37_dbModel.FK_DPolzovatel_DRol" FromRole="DPolzovatel" ToRole="DRol" />
+          <NavigationProperty Name="DIzbrannoes" Relationship="user37_dbModel.FK_DIzbrannoe_DPolzovatel" FromRole="DPolzovatel" ToRole="DIzbrannoe" />
         </EntityType>
         <EntityType Name="DTeg">
           <Key>
@@ -538,6 +590,40 @@
             </Principal>
             <Dependent Role="DPolzovatel">
               <PropertyRef Name="Rol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="DIzbrannoe">
+          <Key>
+            <PropertyRef Name="idIzbrannogo" />
+          </Key>
+          <Property Name="idIzbrannogo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idPolzovatelya" Type="Int32" Nullable="false" />
+          <Property Name="idDocumenta" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="DDocument" Relationship="user37_dbModel.FK_DIzbrannoe_DDocument" FromRole="DIzbrannoe" ToRole="DDocument" />
+          <NavigationProperty Name="DPolzovatel" Relationship="user37_dbModel.FK_DIzbrannoe_DPolzovatel" FromRole="DIzbrannoe" ToRole="DPolzovatel" />
+        </EntityType>
+        <Association Name="FK_DIzbrannoe_DDocument">
+          <End Type="user37_dbModel.DDocument" Role="DDocument" Multiplicity="1" />
+          <End Type="user37_dbModel.DIzbrannoe" Role="DIzbrannoe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DDocument">
+              <PropertyRef Name="idDocumenta" />
+            </Principal>
+            <Dependent Role="DIzbrannoe">
+              <PropertyRef Name="idDocumenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DIzbrannoe_DPolzovatel">
+          <End Type="user37_dbModel.DPolzovatel" Role="DPolzovatel" Multiplicity="1" />
+          <End Type="user37_dbModel.DIzbrannoe" Role="DIzbrannoe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DPolzovatel">
+              <PropertyRef Name="idPolzovatelya" />
+            </Principal>
+            <Dependent Role="DIzbrannoe">
+              <PropertyRef Name="idPolzovatelya" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -655,6 +741,15 @@
               <MappingFragment StoreEntitySet="DTeg">
                 <ScalarProperty Name="NazvanieTega" ColumnName="NazvanieTega" />
                 <ScalarProperty Name="idTega" ColumnName="idTega" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DIzbrannoes">
+            <EntityTypeMapping TypeName="user37_dbModel.DIzbrannoe">
+              <MappingFragment StoreEntitySet="DIzbrannoe">
+                <ScalarProperty Name="idDocumenta" ColumnName="idDocumenta" />
+                <ScalarProperty Name="idPolzovatelya" ColumnName="idPolzovatelya" />
+                <ScalarProperty Name="idIzbrannogo" ColumnName="idIzbrannogo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

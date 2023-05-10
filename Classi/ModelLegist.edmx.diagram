@@ -15,7 +15,7 @@
         <EntityTypeShape EntityType="user37_dbModel.DVid" Width="1.5" PointX="0.5" PointY="4.5" />
         <AssociationConnector Association="user37_dbModel.FK_DOrganUstarNazv_DIzdavOrgan" />
         <EntityTypeShape EntityType="user37_dbModel.DDocument" Width="1.5" PointX="6.625" PointY="2.375" />
-        <EntityTypeShape EntityType="user37_dbModel.DPolzovatel" Width="1.5" PointX="12.75" PointY="2.25" />
+        <EntityTypeShape EntityType="user37_dbModel.DPolzovatel" Width="1.5" PointX="12.625" PointY="2" />
         <EntityTypeShape EntityType="user37_dbModel.DTeg" Width="1.5" PointX="8.625" PointY="2.375" />
         <AssociationConnector Association="user37_dbModel.FK_DDocument_DIzdavOrgan" />
         <AssociationConnector Association="user37_dbModel.FK_DDocument_DNPA" />
@@ -25,6 +25,9 @@
         <AssociationConnector Association="user37_dbModel.FK_DDocument_DTeg" />
         <AssociationConnector Association="user37_dbModel.FK_DDocument_DVid" />
         <AssociationConnector Association="user37_dbModel.FK_DPolzovatel_DRol" />
+        <EntityTypeShape EntityType="user37_dbModel.DIzbrannoe" Width="1.5" PointX="12.625" PointY="5.625" />
+        <AssociationConnector Association="user37_dbModel.FK_DIzbrannoe_DDocument" />
+        <AssociationConnector Association="user37_dbModel.FK_DIzbrannoe_DPolzovatel" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -14,6 +14,12 @@ namespace LegistOS.Classi
     
     public partial class DDocument
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public DDocument()
+        {
+            this.DIzbrannoes = new HashSet<DIzbrannoe>();
+        }
+    
         public int idDocumenta { get; set; }
         public string Nomer { get; set; }
         public string Nazvanie { get; set; }
@@ -37,5 +43,7 @@ namespace LegistOS.Classi
         public virtual DStatu DStatu { get; set; }
         public virtual DTeg DTeg { get; set; }
         public virtual DVid DVid { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DIzbrannoe> DIzbrannoes { get; set; }
     }
 }

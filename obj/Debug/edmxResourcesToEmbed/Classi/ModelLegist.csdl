@@ -48,6 +48,15 @@
       <End Role="DRol" EntitySet="DRols" />
       <End Role="DPolzovatel" EntitySet="DPolzovatels" />
     </AssociationSet>
+    <EntitySet Name="DIzbrannoes" EntityType="user37_dbModel.DIzbrannoe" />
+    <AssociationSet Name="FK_DIzbrannoe_DDocument" Association="user37_dbModel.FK_DIzbrannoe_DDocument">
+      <End Role="DDocument" EntitySet="DDocuments" />
+      <End Role="DIzbrannoe" EntitySet="DIzbrannoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DIzbrannoe_DPolzovatel" Association="user37_dbModel.FK_DIzbrannoe_DPolzovatel">
+      <End Role="DPolzovatel" EntitySet="DPolzovatels" />
+      <End Role="DIzbrannoe" EntitySet="DIzbrannoes" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="DIzdavOrgan">
     <Key>
@@ -155,6 +164,7 @@
     <NavigationProperty Name="DStatu" Relationship="user37_dbModel.FK_DDocument_DStatus" FromRole="DDocument" ToRole="DStatu" />
     <NavigationProperty Name="DTeg" Relationship="user37_dbModel.FK_DDocument_DTeg" FromRole="DDocument" ToRole="DTeg" />
     <NavigationProperty Name="DVid" Relationship="user37_dbModel.FK_DDocument_DVid" FromRole="DDocument" ToRole="DVid" />
+    <NavigationProperty Name="DIzbrannoes" Relationship="user37_dbModel.FK_DIzbrannoe_DDocument" FromRole="DDocument" ToRole="DIzbrannoe" />
   </EntityType>
   <EntityType Name="DPolzovatel">
     <Key>
@@ -170,6 +180,7 @@
     <Property Name="Rol" Type="Int32" Nullable="false" />
     <Property Name="Tema" Type="Int32" Nullable="false" />
     <NavigationProperty Name="DRol" Relationship="user37_dbModel.FK_DPolzovatel_DRol" FromRole="DPolzovatel" ToRole="DRol" />
+    <NavigationProperty Name="DIzbrannoes" Relationship="user37_dbModel.FK_DIzbrannoe_DPolzovatel" FromRole="DPolzovatel" ToRole="DIzbrannoe" />
   </EntityType>
   <EntityType Name="DTeg">
     <Key>
@@ -272,6 +283,40 @@
       </Principal>
       <Dependent Role="DPolzovatel">
         <PropertyRef Name="Rol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="DIzbrannoe">
+    <Key>
+      <PropertyRef Name="idIzbrannogo" />
+    </Key>
+    <Property Name="idIzbrannogo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idPolzovatelya" Type="Int32" Nullable="false" />
+    <Property Name="idDocumenta" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="DDocument" Relationship="user37_dbModel.FK_DIzbrannoe_DDocument" FromRole="DIzbrannoe" ToRole="DDocument" />
+    <NavigationProperty Name="DPolzovatel" Relationship="user37_dbModel.FK_DIzbrannoe_DPolzovatel" FromRole="DIzbrannoe" ToRole="DPolzovatel" />
+  </EntityType>
+  <Association Name="FK_DIzbrannoe_DDocument">
+    <End Type="user37_dbModel.DDocument" Role="DDocument" Multiplicity="1" />
+    <End Type="user37_dbModel.DIzbrannoe" Role="DIzbrannoe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DDocument">
+        <PropertyRef Name="idDocumenta" />
+      </Principal>
+      <Dependent Role="DIzbrannoe">
+        <PropertyRef Name="idDocumenta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DIzbrannoe_DPolzovatel">
+    <End Type="user37_dbModel.DPolzovatel" Role="DPolzovatel" Multiplicity="1" />
+    <End Type="user37_dbModel.DIzbrannoe" Role="DIzbrannoe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DPolzovatel">
+        <PropertyRef Name="idPolzovatelya" />
+      </Principal>
+      <Dependent Role="DIzbrannoe">
+        <PropertyRef Name="idPolzovatelya" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

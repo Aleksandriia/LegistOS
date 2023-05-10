@@ -131,17 +131,22 @@ namespace LegistOS.Stranici
 
         private void BtnRegion_Click(object sender, RoutedEventArgs e)
         {
-            FrameIzdOrganVidRegion.Navigate(new Stranici.Region());
+            FrameIzdOrganVidRegionIzbrannoe.Navigate(new Stranici.Region());
         }
 
         private void BtnVid_Click(object sender, RoutedEventArgs e)
         {
-            FrameIzdOrganVidRegion.Navigate(new Stranici.Vid());
+            FrameIzdOrganVidRegionIzbrannoe.Navigate(new Stranici.Vid());
         }
 
         private void BtnIzdOrgan_Click(object sender, RoutedEventArgs e)
         {
-            FrameIzdOrganVidRegion.Navigate(new Stranici.IzdOrgan());
+            FrameIzdOrganVidRegionIzbrannoe.Navigate(new Stranici.IzdOrgan());
+        }
+
+        private void BtnIzbrannoe_Click(object sender, RoutedEventArgs e)
+        {
+            FrameIzdOrganVidRegionIzbrannoe.Navigate(new Stranici.Izbrannoe());
         }
     }
 }

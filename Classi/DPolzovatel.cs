@@ -14,6 +14,12 @@ namespace LegistOS.Classi
     
     public partial class DPolzovatel
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public DPolzovatel()
+        {
+            this.DIzbrannoes = new HashSet<DIzbrannoe>();
+        }
+    
         public int idPolzovatelya { get; set; }
         public string Familia { get; set; }
         public string Imya { get; set; }
@@ -25,5 +31,7 @@ namespace LegistOS.Classi
         public int Tema { get; set; }
     
         public virtual DRol DRol { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DIzbrannoe> DIzbrannoes { get; set; }
     }
 }

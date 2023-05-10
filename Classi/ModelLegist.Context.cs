@@ -36,5 +36,6 @@ namespace LegistOS.Classi
         public virtual DbSet<DDocument> DDocuments { get; set; }
         public virtual DbSet<DPolzovatel> DPolzovatels { get; set; }
         public virtual DbSet<DTeg> DTegs { get; set; }
+        public virtual DbSet<DIzbrannoe> DIzbrannoes { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LegistOS.Classi;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -42,7 +43,7 @@ namespace LegistOS.Stranici
             CBStatus.ItemsSource = App.Context.DStatus.ToList();
             CBRegion.ItemsSource = App.Context.DRegions.ToList();
             CBNPA.ItemsSource = App.Context.DNPAs.ToList();
-
+                        
             DPDataKonDoc.Text = "";
         }
 
@@ -71,18 +72,12 @@ namespace LegistOS.Stranici
             TBNomerDoc.Text = _currDocument.Nomer;
             TBNazvanieDoc.Text = _currDocument.Nazvanie;
             DPDataNachDoc.SelectedDate = _currDocument.DataNach;
-            //DPDataKonDoc.SelectedDate = _currDocument.DataKon;
             if (_currDocument.DataKon == null)
                 DPDataKonDoc.Text = "";
             else
             {
                 DPDataKonDoc.SelectedDate = _currDocument.DataKon;
             }
-            
-            //DPDataNachDoc.Text = _currDocument.DataNach.ToString();
-            //DPDataKonDoc.Text = _currDocument.DataKon.ToString();
-            //TBDataNachDoc.Text = _currDocument.DataNach.ToString();
-            //TBDataKonDoc.Text = _currDocument.DataKon.ToString();
             TBKratOpisanie.Text = _currDocument.KratOpisanie;
             TBOpisanie.Text = _currDocument.Opisanie;
             CBIzdavOrgan.Text = _currDocument.DIzdavOrgan.NazvanieOrgana;
@@ -102,10 +97,8 @@ namespace LegistOS.Stranici
                 {
                     Nomer = TBNomerDoc.Text,
                     Nazvanie = TBNazvanieDoc.Text,
-                    DataNach = Convert.ToDateTime(DPDataNachDoc.SelectedDate.Value),
-                    //DataKon = Convert.ToDateTime(DPDataKonDoc.SelectedDate.Value),
-                    //DataNach = DateTime.Parse(TBDataNachDoc.Text),
-                    //DataKon = DateTime.Parse(TBDataKonDoc.Text)
+                    DataNach = DPDataNachDoc.SelectedDate,
+                    DataKon = DPDataKonDoc.SelectedDate,
                     KratOpisanie = TBKratOpisanie.Text,
                     Opisanie = TBOpisanie.Text,
                     IzdavOrgan = CBIzdavOrgan.SelectedIndex + 1,
@@ -125,15 +118,13 @@ namespace LegistOS.Stranici
             {
                 _currDocument.Nomer = TBNomerDoc.Text;
                 _currDocument.Nazvanie = TBNazvanieDoc.Text;
-                _currDocument.DataNach = Convert.ToDateTime(DPDataNachDoc.SelectedDate.Value);
-                /*if (DPDataKonDoc != null)
-                    _currDocument.DataKon = Convert.ToDateTime(DPDataKonDoc.SelectedDate.Value);
+                _currDocument.DataNach = DPDataNachDoc.SelectedDate;
+                if (DPDataKonDoc != null)
+                    _currDocument.DataKon = DPDataKonDoc.SelectedDate;
                 else
                 {
                     _currDocument.DataKon = null;
-                }*/
-                //_currDocument.DataNach = DateTime.Parse(TBDataNachDoc.Text);
-                //_currDocument.DataKon = DateTime.Parse(TBDataKonDoc.Text);
+                }
                 _currDocument.KratOpisanie = TBKratOpisanie.Text;
                 _currDocument.Opisanie = TBOpisanie.Text;
                 _currDocument.IzdavOrgan = CBIzdavOrgan.SelectedIndex + 1;
@@ -152,17 +143,39 @@ namespace LegistOS.Stranici
 
         private void BtnNazad_Click(object sender, RoutedEventArgs e)
         {
-            if (TBNomerDoc.Text != null || TBNazvanieDoc.Text != null ||
-                TBKratOpisanie.Text != null || TBOpisanie.Text != null ||
-                CBIzdavOrgan.SelectedIndex != -1 || CBVid.SelectedIndex != -1 || CBPravBaza.SelectedIndex != -1 ||
-                CBStatus.SelectedIndex != -1 || CBRegion.SelectedIndex != -1 || CBNPA.SelectedIndex != -1)
+            if (Classi.GlobalPeremen.dobRedDoc == 1)
+            {
+                if (TBNomerDoc.Text != null || TBNazvanieDoc.Text != null ||
+                    TBKratOpisanie.Text != null || TBOpisanie.Text != null ||
+                    CBIzdavOrgan.Text != null || CBVid.Text != null || 
+                    CBPravBaza.Text != null || CBStatus.Text != null || 
+                    CBRegion.Text != null || CBNPA.Text != null
+                    /*CBIzdavOrgan.SelectedIndex != -1 || CBVid.SelectedIndex != -1 || CBPravBaza.SelectedIndex != -1 ||
+                    CBStatus.SelectedIndex != -1 || CBRegion.SelectedIndex != -1 || CBNPA.SelectedIndex != -1 ||
+                    CBIzdavOrgan.SelectedIndex != 0 || CBVid.SelectedIndex != 0 || CBPravBaza.SelectedIndex != 0 ||
+                    CBStatus.SelectedIndex != 0 || CBRegion.SelectedIndex != 0 || CBNPA.SelectedIndex != 0*/)
+                {
+                    if (MessageBox.Show("Изменения не были внесены.\nВы действительно хотите выйти?", "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+                    {
+                        NavigationService.GoBack();
+                    }
+                }
+                else if (TBNomerDoc.Text == null && TBNazvanieDoc.Text == null &&
+                        TBKratOpisanie.Text == null && TBOpisanie.Text == null &&
+                        CBIzdavOrgan.Text == null && CBVid.Text == null &&
+                        CBPravBaza.Text == null && CBStatus.Text == null &&
+                        CBRegion.Text == null && CBNPA.Text == null) 
+                { 
+                    NavigationService.GoBack(); 
+                }
+            }
+            else if (Classi.GlobalPeremen.dobRedDoc == 2)
             {
                 if (MessageBox.Show("Изменения не были внесены.\nВы действительно хотите выйти?", "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
                 {
                     NavigationService.GoBack();
                 }
             }
-            else { NavigationService.GoBack(); }
         }
 
         private void CBVid_SelectionChanged(object sender, SelectionChangedEventArgs e)

@@ -142,7 +142,7 @@
                             <TextBlock Text="{Binding status}" 
                                        HorizontalAlignment="Left"
                                        Style="{StaticResource TBlStatus}"/>
-                            <StackPanel Orientation="Horizontal">
+                            <StackPanel Orientation="Horizontal" MinWidth="1210">
                                 <TextBlock Text="Закон №" Style="{StaticResource ZagPravB}" />
                                 <TextBlock Text="{Binding Nomer}" 
                                        HorizontalAlignment="Left"

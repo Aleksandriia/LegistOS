@@ -44,8 +44,10 @@ namespace LegistOS.Okna
             //        // Динамически меняем коллекцию MergedDictionaries
             //        Application.Current.Resources.MergedDictionaries[0] = dictionary;
             //    };
-                
+
             //}
+
+            Classi.GlobalPeremen.idPolzov = App.dPolzovatel.idPolzovatelya;
 
             TBlFamiliaPolzpvatelya.Text = App.dPolzovatel.Familia;
 

@@ -49,10 +49,18 @@
                 Style="{StaticResource BtnDeistv}"
                 Grid.Column="1" Grid.Row="1" Margin="15" Click="BtnNastroikaProfila_Click"/>
 
-        
-        
+        <Button x:Name="BtnIzbrannoe" Background="{x:Null}" BorderBrush="{x:Null}"
+                    Width="180" Height="35" Click="BtnIzbrannoe_Click"
+                Grid.Column="0" Grid.Row="0">
+            <StackPanel Orientation="Horizontal">
+                <StackPanel x:Name="SPIzbrannoe" Style="{StaticResource SPBokMenu}" Width="175" >
+                    <TextBlock x:Name="TBlIzbrannoe" Text="Избранное" Style="{StaticResource TBlBokMenu}" />
+                </StackPanel>
+            </StackPanel>
+        </Button>
+
         <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="1">
-            
+
             <Button x:Name="BtnIzdOrgan" Background="{x:Null}" BorderBrush="{x:Null}"
                     Width="180" Height="35" Click="BtnIzdOrgan_Click" >
                 <StackPanel Orientation="Horizontal">
@@ -92,7 +100,7 @@
             </Button>
         </StackPanel>
 
-        <Frame x:Name="FrameIzdOrganVidRegion" NavigationUIVisibility="Hidden" 
+        <Frame x:Name="FrameIzdOrganVidRegionIzbrannoe" NavigationUIVisibility="Hidden" 
                Grid.Row="2" Grid.Column="1" Margin="10" />
     </Grid>
 </Page>

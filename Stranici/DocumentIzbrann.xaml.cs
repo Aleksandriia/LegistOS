@@ -1,8 +1,6 @@
-﻿using LegistOS.Classi;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -10,32 +8,24 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Markup;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Xml.Linq;
 
 namespace LegistOS.Stranici
 {
     /// <summary>
-    /// Логика взаимодействия для Document.xaml
+    /// Логика взаимодействия для DocumentIzbrann.xaml
     /// </summary>
-    public partial class Document : Page
+    public partial class DocumentIzbrann : Page
     {
-        //private Classi.DIzbrannoe dIzbrannoe = null;
-                
-        public Document()
+        public DocumentIzbrann()
         {
             InitializeComponent();
-
-            //dIzbrannoe.idPolzovatelya = App.dPolzovatel.idPolzovatelya;
-
-            //UpdateServices();
         }
 
-        public Document(Classi.DDocument document)
+        public DocumentIzbrann(Classi.DDocument document)
         {
             InitializeComponent();
 
@@ -45,22 +35,23 @@ namespace LegistOS.Stranici
             {
                 Classi.GlobalPeremen.IDdoc = document.idDocumenta;
             }
-            
+
 
             TBlNazvanieDoc.Text = document.Nazvanie;
             TBlNomerDoc.Text = document.Nomer;
             TBOpisanie.Text = document.Opisanie;
 
-            switch (document.Status) {
+            switch (document.Status)
+            {
                 case 1:
-                TBlStatusDoc.Text = "Действующие";
-                break;
+                    TBlStatusDoc.Text = "Действующие";
+                    break;
                 case 2:
-                TBlStatusDoc.Text = "Не вступившие в силу";
-                break;
+                    TBlStatusDoc.Text = "Не вступившие в силу";
+                    break;
                 case 3:
-                TBlStatusDoc.Text = "Утратившие силу";
-                break;
+                    TBlStatusDoc.Text = "Утратившие силу";
+                    break;
             }
 
             switch (document.VidDoc)
@@ -130,7 +121,7 @@ namespace LegistOS.Stranici
                     TBlRegionDoc.Text = "Ярославская область";
                     break;
             }
-                
+
             switch (document.IzdavOrgan)
             {
                 case 1:
@@ -192,54 +183,6 @@ namespace LegistOS.Stranici
         private void BtnNazad_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.GoBack();
-        }
-
-        private void BtnIzbranDob_Click(object sender, RoutedEventArgs e)
-        {
-            //Classi.DDocument dDoc = null;
-            var proverka = App.Context.DIzbrannoes;
-
-            Classi.DIzbrannoe dIzbrannoe = null;
-            dIzbrannoe.idPolzovatelya = Classi.GlobalPeremen.idPolzov;
-            dIzbrannoe.idDocumenta = Classi.GlobalPeremen.IDdoc;
-
-            proverka = proverka.Where(p => p.DPolzovatel.idPolzovatelya.Equals(Classi.GlobalPeremen.idPolzov) && p.DDocument.idDocumenta.Equals(Classi.GlobalPeremen.IDdoc)).Count;
-
-            if (proverka.Count == 0)
-            {
-                var izbran = new Classi.DIzbrannoe
-                {
-                    idDocumenta = Classi.GlobalPeremen.IDdoc,
-                    idPolzovatelya = App.dPolzovatel.idPolzovatelya
-                };
-
-                App.Context.DIzbrannoes.Add(izbran);
-                App.Context.SaveChanges();
-                MessageBox.Show("Документ успешно добавлен в избранное.", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
-            }
-            else
-            {
-                MessageBox.Show("Документ уже добавлен в избранное.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-
-            //if (ParserContext.ReferenceEquals(Classi.GlobalPeremen.IDdoc == DIzbranno))) { 
-            //if (dIzbrannoe.idPolzovatelya != Classi.GlobalPeremen.idPolzov && dIzbrannoe.idDocumenta != Classi.GlobalPeremen.IDdoc)
-            //{
-
-                /*var izbran = new Classi.DIzbrannoe
-                {
-                    idDocumenta = Classi.GlobalPeremen.IDdoc,
-                    idPolzovatelya = App.dPolzovatel.idPolzovatelya
-                };
-
-                App.Context.DIzbrannoes.Add(izbran);
-                App.Context.SaveChanges();
-                MessageBox.Show("Документ успешно добавлен в избранное.", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);*/
-                //NavigationService.GoBack();
-            //}
-            //else
-                //MessageBox.Show("Документ уже добавлен в избранное.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-            //}
         }
     }
 }

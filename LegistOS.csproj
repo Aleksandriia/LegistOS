@@ -75,6 +75,9 @@
     <Compile Include="Classi\DDocument.cs">
       <DependentUpon>ModelLegist.tt</DependentUpon>
     </Compile>
+    <Compile Include="Classi\DIzbrannoe.cs">
+      <DependentUpon>ModelLegist.tt</DependentUpon>
+    </Compile>
     <Compile Include="Classi\DIzdavOrgan.cs">
       <DependentUpon>ModelLegist.tt</DependentUpon>
     </Compile>
@@ -107,6 +110,7 @@
       <DependentUpon>ModelLegist.tt</DependentUpon>
     </Compile>
     <Compile Include="Classi\GlobalPeremen.cs" />
+    <Compile Include="Classi\Izbrannoe.cs" />
     <Compile Include="Classi\KonverterDati.cs" />
     <Compile Include="Classi\ModelLegist.Context.cs">
       <AutoGen>True</AutoGen>
@@ -130,6 +134,12 @@
     </Compile>
     <Compile Include="Stranici\Document.xaml.cs">
       <DependentUpon>Document.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Stranici\DocumentIzbrann.xaml.cs">
+      <DependentUpon>DocumentIzbrann.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Stranici\Izbrannoe.xaml.cs">
+      <DependentUpon>Izbrannoe.xaml</DependentUpon>
     </Compile>
     <Compile Include="Stranici\IzdOrgan.xaml.cs">
       <DependentUpon>IzdOrgan.xaml</DependentUpon>
@@ -172,6 +182,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Stranici\Document.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stranici\DocumentIzbrann.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stranici\Izbrannoe.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -292,6 +310,7 @@
       <DependentUpon>ModelLegist.edmx</DependentUpon>
       <LastGenOutput>ModelLegist.cs</LastGenOutput>
     </Content>
+    <Resource Include="Izobragenia\Znachki\streamline-interface-bookmark-double--interface-essential--48x48.PNG" />
     <Resource Include="Izobragenia\Znachki\streamline-travel-places-column-1--maps-travel--48x48.PNG" />
     <Resource Include="Izobragenia\Znachki\streamline-interface-lighting-brightness-3--interface-essential--48x48.PNG" />
     <Resource Include="Izobragenia\Znachki\streamline-interface-lighting-brightness-4--interface-essential--48x48.PNG" />
