@@ -58,6 +58,9 @@ namespace LegistOS.Stranici
             var npa = App.Context.DNPAs.ToList();
 
             //LViewNLA.ItemsSource = nla;
+
+            /* Вывод количества записей */
+            TBlKolvoZapisey.Text = "Найдено записей: " + docs.Count.ToString();
         }
 
         private void BtnVsyaBaza_Click(object sender, RoutedEventArgs e)

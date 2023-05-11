@@ -15,7 +15,7 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="35" />
-            <RowDefinition Height="50" />
+            <RowDefinition Height="80" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
@@ -39,6 +39,8 @@
                     <TextBlock Text="Расширенный поиск..." />
                 </Button>-->
             </StackPanel>
+            <TextBlock x:Name="TBlKolvoZapisey" Text="Найдено записей: "
+                       Style="{StaticResource TBlDopolnitInf}" Margin="10" />
         </StackPanel>
 
         <!-- Боковое меню -->

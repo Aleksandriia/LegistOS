@@ -15,7 +15,7 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="35" />
-            <RowDefinition Height="200" />
+            <RowDefinition Height="220" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
@@ -40,7 +40,7 @@
                     <TextBlock Text="Обычный поиск" />
                 </Button>
             </StackPanel>
-            
+
             <StackPanel Orientation="Horizontal">
                 <StackPanel Orientation="Vertical" Width="525"
                             HorizontalAlignment="Left" >
@@ -60,7 +60,7 @@
                     <TextBlock x:Name="TBlVidDoc" Text="Вид документа:" Margin="15,10,0,-5" />
                     <ComboBox x:Name="CBVidDoc" Style="{StaticResource CBOsn}"
                               DisplayMemberPath="nazVida" SelectionChanged="CBVidDoc_SelectionChanged" >
-                        
+
                     </ComboBox>
 
                     <TextBlock x:Name="TBlTegDoc" Text="Тег:" Margin="15,10,0,-5" />
@@ -109,7 +109,7 @@
                                   SelectionChanged="CBPravovayaBaza_SelectionChanged" >
                         </ComboBox>
                     </StackPanel>
-                    
+
                 </StackPanel>
 
                 <StackPanel Orientation="Vertical" Width="220"
@@ -120,6 +120,10 @@
                             Style="{StaticResource BtnSredDeistv}" HorizontalAlignment="Left" />
                 </StackPanel>
             </StackPanel>
+            
+            <!-- Вывод количества записей -->
+            <TextBlock x:Name="TBlKolvoZapisey" Text="Найдено записей: "
+                       Style="{StaticResource TBlDopolnitInf}" Margin="10" />
         </StackPanel>
 
         <!-- Боковое меню -->

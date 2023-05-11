@@ -23,7 +23,7 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="35" />
-            <RowDefinition Height="50" />
+            <RowDefinition Height="85" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
@@ -35,8 +35,8 @@
 
         <!-- Поиск -->
         <StackPanel Orientation="Vertical" 
-                    HorizontalAlignment="Center" VerticalAlignment="Center"
-                    Grid.Row="1" Grid.Column="1" >
+                    HorizontalAlignment="Center" VerticalAlignment="Top"
+                    Grid.Row="1" Grid.Column="1" Margin="0,10,0,0" >
             <StackPanel Orientation="Horizontal" >
                 <TextBox x:Name="TBoxPoisk" TextChanged="TBoxSearch_TextChanged"
                          Style="{StaticResource TBPoisk}" />
@@ -47,6 +47,8 @@
                     <TextBlock Text="Расширенный поиск..." />
                 </Button>
             </StackPanel>
+            <TextBlock x:Name="TBlKolvoZapisey" Text="Найдено записей: "
+                       Style="{StaticResource TBlDopolnitInf}" Margin="10" />
         </StackPanel>
 
         <!-- Боковое меню -->

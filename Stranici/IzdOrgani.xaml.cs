@@ -35,6 +35,8 @@ namespace LegistOS.Stranici
 
             LVIzdOrgan.ItemsSource = organ;
 
+            /* Вывод количества записей */
+            TBlKolvoZapisey.Text = "Найдено записей: " + organ.Count.ToString();
         }
 
         private void TBoxSearch_TextChanged(object sender, TextChangedEventArgs e)

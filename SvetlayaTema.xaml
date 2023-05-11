@@ -386,6 +386,13 @@
         <Setter Property="Foreground" Value="{StaticResource TextKrasn}" />
     </Style>
 
+    <Style x:Key="TBlDopolnitInf" TargetType="TextBlock" >
+        <Setter Property="Height" Value="auto" />
+        <Setter Property="FontFamily" Value="Tw Cen MT" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="Foreground" Value="{StaticResource SerayaInf}" />
+    </Style>
+
     <Style x:Key="TBlBokIng" TargetType="TextBlock" >
         <Setter Property="Height" Value="auto" />
         <Setter Property="MaxWidth" Value="170" />

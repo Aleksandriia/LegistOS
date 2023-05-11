@@ -150,8 +150,10 @@ namespace LegistOS.Okna
                 oshibka.AppendLine("Пароль превышает максимально допустимы размер;");
             if (PBParol.Password.Length < 8)
                 oshibka.AppendLine("Пароль слишком простой. Количество символов не меньше 8;");
+            if (TBTelefon.Text.Length != 11)
+                oshibka.AppendLine("Телефон должен состоять из 11 цифр, пример: 89998887766;");
 
-                if (oshibka.Length > 0)
+            if (oshibka.Length > 0)
                 oshibka.Insert(0, "Устраните следующие ошибки:\n");
 
             return oshibka.ToString();

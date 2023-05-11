@@ -106,6 +106,9 @@ namespace LegistOS.Stranici
 
             /* Боковое меню */
             var npa = App.Context.DNPAs.ToList();
+
+            /* Вывод количества записей */
+            TBlKolvoZapisey.Text = "Найдено записей: " + docs.Count.ToString();
         }
 
         private void BtnObichPoisk_Click(object sender, RoutedEventArgs e)
@@ -159,6 +162,9 @@ namespace LegistOS.Stranici
 
             LVPravovayaBaza.ItemsSource = docs;
             //UpdateServices();
+
+            /* Вывод количества записей */
+            TBlKolvoZapisey.Text = "Найдено записей: " + docs.Count.ToString();
         }
 
         private void BtnPodrobnee_Click(object sender, RoutedEventArgs e)
