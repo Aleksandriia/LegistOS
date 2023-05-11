@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -88,57 +89,117 @@ namespace LegistOS.Stranici
             CBNPA.Text = _currDocument.DNPA.NazvanieNPA;
         }
 
+        private string ProverkaOshibok()
+        {
+            var oshibka = new StringBuilder();
+
+            var povtor = App.Context.DDocuments.ToList().FirstOrDefault(p => p.Nomer.ToLower() == TBNomerDoc.Text.ToLower() && p.Nazvanie.ToLower() == TBNazvanieDoc.Text.ToLower());
+            if (povtor != null && povtor != _currDocument)
+                oshibka.AppendLine("Такой документ уже есть в базе данных;");
+
+            if (string.IsNullOrWhiteSpace(TBNomerDoc.Text))
+                oshibka.AppendLine("Номер документа обязателен для заполнения;");
+            if (string.IsNullOrWhiteSpace(TBNazvanieDoc.Text))
+                oshibka.AppendLine("Название документа обязательно для заполнения;");
+            if (string.IsNullOrWhiteSpace(TBKratOpisanie.Text))
+                oshibka.AppendLine("Краткое описание обязательно для заполнения;");
+            if (string.IsNullOrWhiteSpace(TBOpisanie.Text))
+                oshibka.AppendLine("Описание обязательно для заполнения;");
+            if (string.IsNullOrWhiteSpace(DPDataNachDoc.Text))
+                oshibka.AppendLine("Дата начала обязательна для заполнения;");
+
+            if (Regex.IsMatch(TBNomerDoc.Text, @"[a-zA-Zа-яА-Я]"))
+                oshibka.AppendLine("Номер документа должен содержать только цифры;");
+            if (CBIzdavOrgan.Text.Length <= 0)
+                oshibka.AppendLine("Необходимо выбрать издавший орган;");
+            if (CBVid.Text.Length <= 0)
+                oshibka.AppendLine("Необходимо выбрать вид документа;");
+            if (CBPravBaza.Text.Length <= 0)
+                oshibka.AppendLine("Необходимо выбрать правовую базу;");
+            if (CBStatus.Text.Length <= 0)
+                oshibka.AppendLine("Необходимо выбрать статус документа;");
+            if (CBRegion.Text.Length <= 0)
+                oshibka.AppendLine("Необходимо выбрать регион;");
+            if (CBNPA.Text.Length <= 0)
+                oshibka.AppendLine("Необходимо выбрать НПА;");
+
+            /*if (Regex.IsMatch(TBFamilia.Text, @"[0-9!@#$%^&*()_+=?:;№\|/<>.,\[\]\{\}\]$\']")) //a-zA-Zа-яА-Я
+                oshibka.AppendLine("Фамилия должна содержать только буквы;");
+            if (Regex.IsMatch(TBImya.Text, @"[0-9!@#$%^&*()_+=?:;№\|/<>.,\[\]\{\}\]$\']"))
+                oshibka.AppendLine("Имя должно содержать только буквы;");
+            if (Regex.IsMatch(TBOtchestvo.Text, @"[0-9!@#$%^&*()_+=?:;№\|/<>.,\[\]\{\}\]$\']"))
+                oshibka.AppendLine("Отчество должно содержать только буквы;");
+            
+            if (!(System.Text.RegularExpressions.Regex.IsMatch(TBPochta.Text, "[@.]")) && !(System.Text.RegularExpressions.Regex.IsMatch(TBPochta.Text, "[.]")))
+                oshibka.AppendLine("Введите правильный формат почты - обязанельное использование знаков \'@ и .\';");
+
+            if (PBParol.Password.Length > 20)
+                oshibka.AppendLine("Пароль превышает максимально допустимы размер;");
+            if (PBParol.Password.Length < 8)
+                oshibka.AppendLine("Пароль слишком простой. Количество символов не меньше 8;");*/
+
+            if (oshibka.Length > 0)
+                oshibka.Insert(0, "Устраните следующие ошибки:\n");
+
+            return oshibka.ToString();
+        }
 
         private void BtnSohranenie_Click(object sender, RoutedEventArgs e)
         {
-            if (_currDocument == null)
-            {
-                var docum = new Classi.DDocument
-                {
-                    Nomer = TBNomerDoc.Text,
-                    Nazvanie = TBNazvanieDoc.Text,
-                    DataNach = DPDataNachDoc.SelectedDate,
-                    DataKon = DPDataKonDoc.SelectedDate,
-                    KratOpisanie = TBKratOpisanie.Text,
-                    Opisanie = TBOpisanie.Text,
-                    IzdavOrgan = CBIzdavOrgan.SelectedIndex + 1,
-                    VidDoc = CBVid.SelectedIndex + 1,
-                    PravovayaBaza = CBPravBaza.SelectedIndex + 1,
-                    Status = CBStatus.SelectedIndex + 1,
-                    Region = CBRegion.SelectedIndex + 1,
-                    NPA = CBNPA.SelectedIndex + 1
-                };
-
-                App.Context.DDocuments.Add(docum);
-                App.Context.SaveChanges();
-                MessageBox.Show("Данные успешно внесены.", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
-                //NavigationService.GoBack();
-            }
+            var soobhenieOshibok = ProverkaOshibok();
+            if (soobhenieOshibok.Length > 0)
+                MessageBox.Show(soobhenieOshibok, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             else
             {
-                _currDocument.Nomer = TBNomerDoc.Text;
-                _currDocument.Nazvanie = TBNazvanieDoc.Text;
-                _currDocument.DataNach = DPDataNachDoc.SelectedDate;
-                if (DPDataKonDoc != null)
-                    _currDocument.DataKon = DPDataKonDoc.SelectedDate;
+                if (_currDocument == null)
+                {
+                    var docum = new Classi.DDocument
+                    {
+                        Nomer = TBNomerDoc.Text,
+                        Nazvanie = TBNazvanieDoc.Text,
+                        DataNach = DPDataNachDoc.SelectedDate,
+                        DataKon = DPDataKonDoc.SelectedDate,
+                        KratOpisanie = TBKratOpisanie.Text,
+                        Opisanie = TBOpisanie.Text,
+                        IzdavOrgan = CBIzdavOrgan.SelectedIndex + 1,
+                        VidDoc = CBVid.SelectedIndex + 1,
+                        PravovayaBaza = CBPravBaza.SelectedIndex + 1,
+                        Status = CBStatus.SelectedIndex + 1,
+                        Region = CBRegion.SelectedIndex + 1,
+                        NPA = CBNPA.SelectedIndex + 1
+                    };
+
+                    App.Context.DDocuments.Add(docum);
+                    App.Context.SaveChanges();
+                    MessageBox.Show("Данные успешно внесены.", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
+                    //NavigationService.GoBack();
+                }
                 else
                 {
-                    _currDocument.DataKon = null;
+                    _currDocument.Nomer = TBNomerDoc.Text;
+                    _currDocument.Nazvanie = TBNazvanieDoc.Text;
+                    _currDocument.DataNach = DPDataNachDoc.SelectedDate;
+                    if (DPDataKonDoc != null)
+                        _currDocument.DataKon = DPDataKonDoc.SelectedDate;
+                    else
+                    {
+                        _currDocument.DataKon = null;
+                    }
+                    _currDocument.KratOpisanie = TBKratOpisanie.Text;
+                    _currDocument.Opisanie = TBOpisanie.Text;
+                    _currDocument.IzdavOrgan = CBIzdavOrgan.SelectedIndex + 1;
+                    _currDocument.VidDoc = CBVid.SelectedIndex + 1;
+                    _currDocument.PravovayaBaza = CBPravBaza.SelectedIndex + 1;
+                    _currDocument.Status = CBStatus.SelectedIndex + 1;
+                    _currDocument.Region = CBRegion.SelectedIndex + 1;
+                    _currDocument.NPA = CBNPA.SelectedIndex + 1;
+
+                    App.Context.SaveChanges();
+                    MessageBox.Show("Изменения успешно внесены.", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
-                _currDocument.KratOpisanie = TBKratOpisanie.Text;
-                _currDocument.Opisanie = TBOpisanie.Text;
-                _currDocument.IzdavOrgan = CBIzdavOrgan.SelectedIndex + 1;
-                _currDocument.VidDoc = CBVid.SelectedIndex + 1;
-                _currDocument.PravovayaBaza = CBPravBaza.SelectedIndex + 1;
-                _currDocument.Status = CBStatus.SelectedIndex + 1;
-                _currDocument.Region = CBRegion.SelectedIndex + 1;
-                _currDocument.NPA = CBNPA.SelectedIndex + 1;
 
-                App.Context.SaveChanges();
-                MessageBox.Show("Изменения успешно внесены.", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
+                NavigationService.GoBack();
             }
-
-            NavigationService.GoBack();
         }
 
         private void BtnNazad_Click(object sender, RoutedEventArgs e)

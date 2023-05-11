@@ -30,8 +30,7 @@ namespace LegistOS.Stranici
             CBOrgenDoc.ItemsSource = App.Context.DIzdavOrgans.ToList();
             CBRegionDoc.ItemsSource = App.Context.DRegions.ToList();
             CBStatusDoc.ItemsSource = App.Context.DStatus.ToList();
-
-            //CBTegDoc.IsEnabled = false;
+            CBPravovayaBaza.ItemsSource = App.Context.DPravovayaBazas.ToList();
 
             UpdateServices();
         }
@@ -95,6 +94,12 @@ namespace LegistOS.Stranici
             else if (CBStatusDoc.SelectedIndex != -1)
             {
                 docs = docs.Where(p => p.Status.ToString().Equals(Classi.GlobalPeremen.statusDocs.ToString())).ToList();
+            }
+
+            if (CBPravovayaBaza.SelectedIndex == -1) { }
+            else if (CBPravovayaBaza.SelectedIndex != -1)
+            {
+                docs = docs.Where(p => p.PravovayaBaza.ToString().Equals(Classi.GlobalPeremen.pravovayaBaza.ToString())).ToList();
             }
 
             LVPravovayaBaza.ItemsSource = docs;
@@ -184,9 +189,9 @@ namespace LegistOS.Stranici
 
         private void BtnNayti_Click(object sender, RoutedEventArgs e)
         {
-            var errorMessage = CheckErrors();
-            if (errorMessage.Length > 0)
-                MessageBox.Show(errorMessage, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            var soobhenieOshibki = ProverkaOshibok();
+            if (soobhenieOshibki.Length > 0)
+                MessageBox.Show(soobhenieOshibki, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             else
             {
                 Classi.GlobalPeremen.nomerDocs = TBNomer.Text;
@@ -198,26 +203,27 @@ namespace LegistOS.Stranici
                 Classi.GlobalPeremen.IzdOrganDocs = CBOrgenDoc.SelectedIndex + 1;
                 Classi.GlobalPeremen.regionDocs = CBRegionDoc.SelectedIndex + 1;
                 Classi.GlobalPeremen.statusDocs = CBStatusDoc.SelectedIndex + 1;
+                Classi.GlobalPeremen.pravovayaBaza = CBPravovayaBaza.SelectedIndex + 1;
 
                 UpdateServices();
             }
         }
 
-        private string CheckErrors()
+        private string ProverkaOshibok()
         {
-            var errorBuilder = new StringBuilder();
+            var proverkavvoda = new StringBuilder();
 
             if (TBNomer.Text != "")
             {
                 int nDoc = 0;
                 if (int.TryParse(TBNomer.Text, out nDoc) == false || nDoc <= 0)
-                    errorBuilder.AppendLine("Номер документа должен быть положительным числом;");
+                    proverkavvoda.AppendLine("Номер документа должен быть положительным числом;");
             }
 
-            if (errorBuilder.Length > 0)
-                errorBuilder.Insert(0, "Устраните следующие ошибки:\n");
+            if (proverkavvoda.Length > 0)
+                proverkavvoda.Insert(0, "Устраните следующие ошибки:\n");
 
-            return errorBuilder.ToString();
+            return proverkavvoda.ToString();
         }
 
         private void BtnSbros_Click(object sender, RoutedEventArgs e)
@@ -231,6 +237,7 @@ namespace LegistOS.Stranici
             CBOrgenDoc.Text = "";
             CBRegionDoc.Text = "";
             CBStatusDoc.Text = "";
+            CBPravovayaBaza.Text = "";
 
             Classi.GlobalPeremen.nomerDocs = TBNomer.Text;
             Classi.GlobalPeremen.NachData = TBDataNach.Text;
@@ -240,6 +247,7 @@ namespace LegistOS.Stranici
             Classi.GlobalPeremen.IzdOrganDocs = Convert.ToInt32(CBOrgenDoc.SelectedItem);
             Classi.GlobalPeremen.regionDocs = Convert.ToInt32(CBRegionDoc.SelectedItem);
             Classi.GlobalPeremen.statusDocs = Convert.ToInt32(CBStatusDoc.SelectedItem);
+            Classi.GlobalPeremen.pravovayaBaza = Convert.ToInt32(CBPravovayaBaza.SelectedItem);
 
             UpdateServices();
         }
@@ -263,7 +271,6 @@ namespace LegistOS.Stranici
         {
             Classi.GlobalPeremen.dobRedDoc = 1;
             NavigationService.Navigate(new Stranici.DobavlenieRedaktirovanieDoc());
-            //Stranici.DobavlenieDoc.TBZagolovokDIDoc.Text = "Добавление документа";
         }
 
         private void BtnYdalenie_Click(object sender, RoutedEventArgs e)
@@ -285,6 +292,11 @@ namespace LegistOS.Stranici
             Classi.GlobalPeremen.dobRedDoc = 2;
             var ddoc = (sender as Button).DataContext as Classi.DDocument;
             NavigationService.Navigate(new Stranici.DobavlenieRedaktirovanieDoc(ddoc));
+        }
+
+        private void CBPravovayaBaza_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

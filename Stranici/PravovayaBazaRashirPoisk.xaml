@@ -93,12 +93,23 @@
 
                     </ComboBox>
 
-                    <TextBlock x:Name="TBlRegionDoc" Text="Регион:" Margin="10,10,0,-5" />
-                    <ComboBox x:Name="CBRegionDoc" Margin="0,5,0,0"
-                              Style="{StaticResource CBOsn}"
-                              DisplayMemberPath="nazRegiona" SelectionChanged="CBRegionDoc_SelectionChanged" >
-
-                    </ComboBox>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock x:Name="TBlRegionDoc" Text="Регион:" Margin="10,10,0,0" />
+                        <TextBlock x:Name="TBlPravovayaBaza" Text="Правовая база:" Margin="104,10,0,0" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <ComboBox x:Name="CBRegionDoc" Margin="0,0,0,0"
+                                  Style="{StaticResource CBOsn}" Width="140"
+                                  DisplayMemberPath="nazRegiona" 
+                                  SelectionChanged="CBRegionDoc_SelectionChanged" >
+                        </ComboBox>
+                        <ComboBox x:Name="CBPravovayaBaza" Margin="10,0,0,0"
+                                  Style="{StaticResource CBOsn}" Width="140"
+                                  DisplayMemberPath="nazBazi" 
+                                  SelectionChanged="CBPravovayaBaza_SelectionChanged" >
+                        </ComboBox>
+                    </StackPanel>
+                    
                 </StackPanel>
 
                 <StackPanel Orientation="Vertical" Width="220"

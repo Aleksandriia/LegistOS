@@ -59,7 +59,6 @@ namespace LegistOS.Okna
 
                 TBlParolProsmotr.Text = PBParol.Password.ToString();
             }
-
         }
 
         private void BtnSkritParol_Click(object sender, RoutedEventArgs e)
@@ -113,73 +112,58 @@ namespace LegistOS.Okna
             avtorizatia.Show();
             this.Close();
         }
-                
+
+        private string ProverkaOshibok()
+        {
+            var oshibka = new StringBuilder();
+
+            var povtor = App.Context.DPolzovatels.ToList().FirstOrDefault(p => p.Pochta.ToLower() == TBPochta.Text.ToLower()); //  && p.Parol.ToLower() == PBParol.Password.ToLower()
+            if (povtor != null && povtor != _dPolzovatel)
+                oshibka.AppendLine("Аккаунт с такой почтой уже существует;");
+
+            if (ChBPrinatVse.IsChecked == false)
+                oshibka.AppendLine("Необходимо принять условия использования приложения;");
+
+            if (string.IsNullOrWhiteSpace(TBFamilia.Text))
+                oshibka.AppendLine("Поле Фамилия обязательно для заполнения;");
+            if (string.IsNullOrWhiteSpace(TBImya.Text))
+                oshibka.AppendLine("Поле Имя обязательно для заполнения;");
+            if (string.IsNullOrWhiteSpace(TBTelefon.Text))
+                oshibka.AppendLine("Поле Телефон обязательно для заполнения;");
+            if (string.IsNullOrWhiteSpace(TBPochta.Text))
+                oshibka.AppendLine("Поле Почта обязательно для заполнения;");
+            if (string.IsNullOrWhiteSpace(PBParol.Password))
+                oshibka.AppendLine("Поле Пароль обязательно для заполнения;");
+
+            if (Regex.IsMatch(TBFamilia.Text, @"[0-9!@#$%^&*()_+=?:;№\|/<>.,\[\]\{\}\]$\']")) //a-zA-Zа-яА-Я
+                oshibka.AppendLine("Фамилия должна содержать только буквы;");
+            if (Regex.IsMatch(TBImya.Text, @"[0-9!@#$%^&*()_+=?:;№\|/<>.,\[\]\{\}\]$\']"))
+                oshibka.AppendLine("Имя должно содержать только буквы;");
+            if (Regex.IsMatch(TBOtchestvo.Text, @"[0-9!@#$%^&*()_+=?:;№\|/<>.,\[\]\{\}\]$\']"))
+                oshibka.AppendLine("Отчество должно содержать только буквы;");
+            if (Regex.IsMatch(TBTelefon.Text, @"[a-zA-Zа-яА-Я]"))
+                oshibka.AppendLine("Телефон должен содержать только цифры;");
+            if (!(System.Text.RegularExpressions.Regex.IsMatch(TBPochta.Text, "[@.]")) && !(System.Text.RegularExpressions.Regex.IsMatch(TBPochta.Text, "[.]")))
+                oshibka.AppendLine("Введите правильный формат почты - обязанельное использование знаков \'@ и .\';");
+
+            if (PBParol.Password.Length > 20)
+                oshibka.AppendLine("Пароль превышает максимально допустимы размер;");
+            if (PBParol.Password.Length < 8)
+                oshibka.AppendLine("Пароль слишком простой. Количество символов не меньше 8;");
+
+                if (oshibka.Length > 0)
+                oshibka.Insert(0, "Устраните следующие ошибки:\n");
+
+            return oshibka.ToString();
+        }
+
         private void BtnRegistratia_Click(object sender, RoutedEventArgs e)
         {
-            
-            //if (ChBPrinatVse.IsChecked == true)
-            //{
-            if (PBParol.Password.Length > 20)
-            {
-                MessageBox.Show("Пароль превышает максимально допустимы размер!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-                PBParol.Focus();
-            }
-            else if (PBParol.Password.Length < 8)
-            {
-                MessageBox.Show("Пароль слишком простой!\n Количество символов не меньше 8.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-                PBParol.Focus();
-            }
-            else if (Regex.IsMatch(TBFamilia.Text, @"[0-9!@#$%^&*()_+=?:;№\|/<>.,\[\]\{\}\]$\']")) //a-zA-Zа-яА-Я
-            {
-                MessageBox.Show("Фамилия должна содержать только буквы!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-            else if (Regex.IsMatch(TBImya.Text, @"[0-9!@#$%^&*()_+=?:;№\|/<>.,\[\]\{\}\]$\']")) //a-zA-Zа-яА-Я
-            {
-                MessageBox.Show("Имя должно содержать только буквы!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-            else if (Regex.IsMatch(TBOtchestvo.Text, @"[0-9!@#$%^&*()_+=?:;№\|/<>.,\[\]\{\}\]$\']")) //a-zA-Zа-яА-Я  TBOtchestvo.Text != null
-            {
-                //if (Regex.IsMatch(TBOtchestvo.Text, @"[0-9!@#$%^&*()_+=?:;№\|/<>.,\[\]\{\}\]$\']"))
-                    MessageBox.Show("Отчество должно содержать только буквы!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-            else if (Regex.IsMatch(TBTelefon.Text, @"[a-zA-Zа-яА-Я]")) //a-zA-Zа-яА-Я
-            {
-                MessageBox.Show("Телефон должен содержать только цифры!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-            else if (!(System.Text.RegularExpressions.Regex.IsMatch(TBPochta.Text, "[@.]")) && !(System.Text.RegularExpressions.Regex.IsMatch(TBPochta.Text, "[.]")))
-            {
-                MessageBox.Show("Введите правильный формат почты!\nОбязанельное использование знаков \'@ и .\'");
-                /*if (System.Text.RegularExpressions.Regex.IsMatch(TBPochta.Text, "[.]"))
-                {
-                    pochtaPravilno = true;
-                }
-                else
-                {
-                    MessageBox.Show("Введите правильный формат почты!\nОбязанельное использование знаков \'@ и .\'");
-                }*/
-            }
-            /*else if (System.Text.RegularExpressions.Regex.IsMatch(TBPochta.Text, "[@.]"))
-            {
-                if (System.Text.RegularExpressions.Regex.IsMatch(TBPochta.Text, "[.]"))
-                {
-
-                    //mail_succes = 1;
-                }
-                else
-                {
-                    MessageBox.Show("Введите правильный формат почты!");
-                }
-            }
+            var soobhenieOshibok = ProverkaOshibok();
+            if (soobhenieOshibok.Length > 0)
+                MessageBox.Show(soobhenieOshibok, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             else
             {
-                MessageBox.Show("Введите правильный формат почты!");
-            }*/
-
-            
-
-            //}
-            else if (ChBPrinatVse.IsChecked == true)
-            {
                 BtnRegistratia.IsEnabled = true;
                 var polzpvatel = new Classi.DPolzovatel
                 {
@@ -189,7 +173,8 @@ namespace LegistOS.Okna
                     Telefon = TBTelefon.Text,
                     Pochta = TBPochta.Text,
                     Parol = PBParol.Password,
-                    Rol = 2
+                    Rol = 2,
+                    Tema = 1
                 };
 
                 App.Context.DPolzovatels.Add(polzpvatel);
@@ -200,40 +185,6 @@ namespace LegistOS.Okna
                 avtorizatia.Show();
                 this.Close();
             }
-
-            /*else
-            {
-                BtnRegistratia.IsEnabled = true;
-                var polzpvatel = new Classi.DPolzovatel
-                {
-                    Familia = TBFamilia.Text,
-                    Imya = TBImya.Text,
-                    Otchestvo = TBOtchestvo.Text,
-                    Telefon = TBTelefon.Text,
-                    Pochta = TBPochta.Text,
-                    Parol = PBParol.Password,
-                    Rol = 2
-                };
-
-                App.Context.DPolzovatels.Add(polzpvatel);
-                App.Context.SaveChanges();
-                MessageBox.Show("Данные успешно добавлены.", "Сообщение", MessageBoxButton.OK, MessageBoxImage.Information);
-
-                Avtorizatia avtorizatia = new Avtorizatia();
-                avtorizatia.Show();
-                this.Close();
-            }*/
-
-            else if (ChBPrinatVse.IsChecked == false)
-            {
-                BtnRegistratia.IsEnabled = false;
-                //ChBPrinatVse.BorderBrush = BorderBrush.
-            }
-            else if (ChBPrinatVse.IsChecked != true)
-            {
-                BtnRegistratia.IsEnabled = false;
-            }
-
         }
 
         private void ChBPrinatVse_Checked(object sender, RoutedEventArgs e)
