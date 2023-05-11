@@ -21,6 +21,7 @@ namespace LegistOS.Okna
     public partial class Registratia : Window
     {
         private Classi.DPolzovatel _dPolzovatel = null;
+        bool pochtaPravilno = false;
 
         public Registratia()
         {
@@ -49,7 +50,7 @@ namespace LegistOS.Okna
                 MessageBox.Show("Пароль превышает максимально допустимы размер!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                 PBParol.Focus();
             }
-            else 
+            else
             {
                 BtnSkritParol.Visibility = Visibility.Visible;
                 TBlParolProsmotr.Visibility = Visibility.Visible;
@@ -58,7 +59,7 @@ namespace LegistOS.Okna
 
                 TBlParolProsmotr.Text = PBParol.Password.ToString();
             }
-            
+
         }
 
         private void BtnSkritParol_Click(object sender, RoutedEventArgs e)
@@ -82,7 +83,7 @@ namespace LegistOS.Okna
             //};
         }
 
-        private static string GeneratorParola (int dlina)
+        private static string GeneratorParola(int dlina)
         {
             string parol = "";
             string simvoli = "qwertyuiopasdfghjklzxcvbnm" + "1234567890" + "!#$%&*?" + "QWERTYUIOPASDFGHJKLZXCVBNM";
@@ -95,7 +96,6 @@ namespace LegistOS.Okna
             }
             return parol;
         }
-
 
         private void BtnGenerirovanieParola_Click(object sender, RoutedEventArgs e)
         {
@@ -113,10 +113,72 @@ namespace LegistOS.Okna
             avtorizatia.Show();
             this.Close();
         }
-
+                
         private void BtnRegistratia_Click(object sender, RoutedEventArgs e)
         {
-            if (ChBPrinatVse.IsChecked == true)
+            
+            //if (ChBPrinatVse.IsChecked == true)
+            //{
+            if (PBParol.Password.Length > 20)
+            {
+                MessageBox.Show("Пароль превышает максимально допустимы размер!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                PBParol.Focus();
+            }
+            else if (PBParol.Password.Length < 8)
+            {
+                MessageBox.Show("Пароль слишком простой!\n Количество символов не меньше 8.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                PBParol.Focus();
+            }
+            else if (Regex.IsMatch(TBFamilia.Text, @"[0-9!@#$%^&*()_+=?:;№\|/<>.,\[\]\{\}\]$\']")) //a-zA-Zа-яА-Я
+            {
+                MessageBox.Show("Фамилия должна содержать только буквы!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else if (Regex.IsMatch(TBImya.Text, @"[0-9!@#$%^&*()_+=?:;№\|/<>.,\[\]\{\}\]$\']")) //a-zA-Zа-яА-Я
+            {
+                MessageBox.Show("Имя должно содержать только буквы!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else if (Regex.IsMatch(TBOtchestvo.Text, @"[0-9!@#$%^&*()_+=?:;№\|/<>.,\[\]\{\}\]$\']")) //a-zA-Zа-яА-Я  TBOtchestvo.Text != null
+            {
+                //if (Regex.IsMatch(TBOtchestvo.Text, @"[0-9!@#$%^&*()_+=?:;№\|/<>.,\[\]\{\}\]$\']"))
+                    MessageBox.Show("Отчество должно содержать только буквы!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else if (Regex.IsMatch(TBTelefon.Text, @"[a-zA-Zа-яА-Я]")) //a-zA-Zа-яА-Я
+            {
+                MessageBox.Show("Телефон должен содержать только цифры!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else if (!(System.Text.RegularExpressions.Regex.IsMatch(TBPochta.Text, "[@.]")) && !(System.Text.RegularExpressions.Regex.IsMatch(TBPochta.Text, "[.]")))
+            {
+                MessageBox.Show("Введите правильный формат почты!\nОбязанельное использование знаков \'@ и .\'");
+                /*if (System.Text.RegularExpressions.Regex.IsMatch(TBPochta.Text, "[.]"))
+                {
+                    pochtaPravilno = true;
+                }
+                else
+                {
+                    MessageBox.Show("Введите правильный формат почты!\nОбязанельное использование знаков \'@ и .\'");
+                }*/
+            }
+            /*else if (System.Text.RegularExpressions.Regex.IsMatch(TBPochta.Text, "[@.]"))
+            {
+                if (System.Text.RegularExpressions.Regex.IsMatch(TBPochta.Text, "[.]"))
+                {
+
+                    //mail_succes = 1;
+                }
+                else
+                {
+                    MessageBox.Show("Введите правильный формат почты!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Введите правильный формат почты!");
+            }*/
+
+            
+
+            //}
+            else if (ChBPrinatVse.IsChecked == true)
             {
                 BtnRegistratia.IsEnabled = true;
                 var polzpvatel = new Classi.DPolzovatel
@@ -138,6 +200,30 @@ namespace LegistOS.Okna
                 avtorizatia.Show();
                 this.Close();
             }
+
+            /*else
+            {
+                BtnRegistratia.IsEnabled = true;
+                var polzpvatel = new Classi.DPolzovatel
+                {
+                    Familia = TBFamilia.Text,
+                    Imya = TBImya.Text,
+                    Otchestvo = TBOtchestvo.Text,
+                    Telefon = TBTelefon.Text,
+                    Pochta = TBPochta.Text,
+                    Parol = PBParol.Password,
+                    Rol = 2
+                };
+
+                App.Context.DPolzovatels.Add(polzpvatel);
+                App.Context.SaveChanges();
+                MessageBox.Show("Данные успешно добавлены.", "Сообщение", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                Avtorizatia avtorizatia = new Avtorizatia();
+                avtorizatia.Show();
+                this.Close();
+            }*/
+
             else if (ChBPrinatVse.IsChecked == false)
             {
                 BtnRegistratia.IsEnabled = false;

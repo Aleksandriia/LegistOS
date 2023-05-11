@@ -1,6 +1,7 @@
 ﻿using LegistOS.Classi;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Net.NetworkInformation;
 using System.Text;
@@ -24,8 +25,9 @@ namespace LegistOS.Stranici
     /// </summary>
     public partial class Document : Page
     {
-        //private Classi.DIzbrannoe dIzbrannoe = null;
-                
+        private Classi.DIzbrannoe dIzbrannoe = null;
+        //private var proverka = App.Context.DIzbrannoes.Any();
+
         public Document()
         {
             InitializeComponent();
@@ -40,11 +42,10 @@ namespace LegistOS.Stranici
             InitializeComponent();
 
             //dIzbrannoe.idPolzovatelya = App.dPolzovatel.idPolzovatelya;
+            //dIzbrannoe.idDocumenta = document.idDocumenta;
 
-            if (Classi.GlobalPeremen.IDdoc == 0)
-            {
-                Classi.GlobalPeremen.IDdoc = document.idDocumenta;
-            }
+            Classi.GlobalPeremen.IDdoc = document.idDocumenta;
+            
             
 
             TBlNazvanieDoc.Text = document.Nazvanie;
@@ -196,17 +197,18 @@ namespace LegistOS.Stranici
 
         private void BtnIzbranDob_Click(object sender, RoutedEventArgs e)
         {
+            //App.Context.DIzbrannoes.ToList().Equals(dIzbrannoe.idPolzovatelya == Classi.GlobalPeremen.idPolzov && dIzbrannoe.idDocumenta == Classi.GlobalPeremen.IDdoc));
+
             //Classi.DDocument dDoc = null;
             var proverka = App.Context.DIzbrannoes;
 
-            Classi.DIzbrannoe dIzbrannoe = null;
-            dIzbrannoe.idPolzovatelya = Classi.GlobalPeremen.idPolzov;
-            dIzbrannoe.idDocumenta = Classi.GlobalPeremen.IDdoc;
-
-            proverka = proverka.Where(p => p.DPolzovatel.idPolzovatelya.Equals(Classi.GlobalPeremen.idPolzov) && p.DDocument.idDocumenta.Equals(Classi.GlobalPeremen.IDdoc)).Count;
-
-            if (proverka.Count == 0)
+            //Classi.DIzbrannoe dIzbrannoe = null;
+            /*
+            if((dIzbrannoe.idPolzovatelya != Classi.GlobalPeremen.idPolzov) && (dIzbrannoe.idDocumenta != Classi.GlobalPeremen.IDdoc))
             {
+                dIzbrannoe.idPolzovatelya = Classi.GlobalPeremen.idPolzov;
+                dIzbrannoe.idDocumenta = Classi.GlobalPeremen.IDdoc;
+
                 var izbran = new Classi.DIzbrannoe
                 {
                     idDocumenta = Classi.GlobalPeremen.IDdoc,
@@ -217,10 +219,33 @@ namespace LegistOS.Stranici
                 App.Context.SaveChanges();
                 MessageBox.Show("Документ успешно добавлен в избранное.", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
             }
-            else
+            else if (proverka.Equals(dIzbrannoe.idPolzovatelya == Classi.GlobalPeremen.idPolzov && dIzbrannoe.idDocumenta == Classi.GlobalPeremen.IDdoc))
             {
                 MessageBox.Show("Документ уже добавлен в избранное.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
+            }*/
+            
+
+            //proverka = proverka.Where(p => p.DPolzovatel.idPolzovatelya.Equals(Classi.GlobalPeremen.idPolzov) && p.DDocument.idDocumenta.Equals(Classi.GlobalPeremen.IDdoc)).Count;
+            //proverka = (p => p.DPolzovatel.idPolzovatelya.Equals(Classi.GlobalPeremen.idPolzov) && p.DDocument.idDocumenta.Equals(Classi.GlobalPeremen.IDdoc)).Count;
+            //if (proverka.Equals(DPolzovatel.idPolzovatelya == Classi.GlobalPeremen.idPolzov && p.DDocument.idDocumenta == Classi.GlobalPeremen.IDdoc).ToString())
+            //if (proverka = proverka.Equals(p => p.DPolzovatel.idPolzovatelya.Equals(Classi.GlobalPeremen.idPolzov) && p.DDocument.idDocumenta.Equals(Classi.GlobalPeremen.IDdoc)))
+
+            //if (/*proverka == 0*/)
+            //{
+                var izbran = new Classi.DIzbrannoe
+                {
+                    idDocumenta = Classi.GlobalPeremen.IDdoc,
+                    idPolzovatelya = App.dPolzovatel.idPolzovatelya
+                };
+
+                App.Context.DIzbrannoes.Add(izbran);
+                App.Context.SaveChanges();
+                MessageBox.Show("Документ успешно добавлен в избранное.", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Документ уже добавлен в избранное.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            //}
 
             //if (ParserContext.ReferenceEquals(Classi.GlobalPeremen.IDdoc == DIzbranno))) { 
             //if (dIzbrannoe.idPolzovatelya != Classi.GlobalPeremen.idPolzov && dIzbrannoe.idDocumenta != Classi.GlobalPeremen.IDdoc)
