@@ -66,7 +66,14 @@
 
                             <StackPanel Orientation="Horizontal" >
                                 <TextBlock Text="{Binding NazvanieOrgana}" 
-                                       HorizontalAlignment="Left" Width="300" />
+                                           HorizontalAlignment="Left" Width="300"
+                                           VerticalAlignment="Center" />
+                                <Button Name="BtnPodrobnee"
+                                        Click="BtnPodrobnee_Click"
+                                        Style="{StaticResource BtnPodrobnee}"
+                                        VerticalAlignment="Center" >
+                                    <TextBlock Text="Подробнее..." />
+                                </Button>
                                 <!--<StackPanel Orientation="Horizontal" Margin="0,-12,0,0" >
                                     <Button Name="BtnRedactirovanie"
                                         Click="BtnRedactirovanie_Click"

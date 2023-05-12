@@ -66,6 +66,7 @@
     <Property Name="NazvanieOrgana" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="DOrganUstarNazvs" Relationship="user37_dbModel.FK_DOrganUstarNazv_DIzdavOrgan" FromRole="DIzdavOrgan" ToRole="DOrganUstarNazv" />
     <NavigationProperty Name="DDocuments" Relationship="user37_dbModel.FK_DDocument_DIzdavOrgan" FromRole="DIzdavOrgan" ToRole="DDocument" />
+    <Property Name="OpisanieOrgana" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="DNPA">
     <Key>

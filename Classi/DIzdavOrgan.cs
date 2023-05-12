@@ -23,6 +23,7 @@ namespace LegistOS.Classi
     
         public int idIzdavOrgana { get; set; }
         public string NazvanieOrgana { get; set; }
+        public string OpisanieOrgana { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DOrganUstarNazv> DOrganUstarNazvs { get; set; }

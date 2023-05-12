@@ -34,6 +34,7 @@
     </Key>
     <Property Name="idIzdavOrgana" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="NazvanieOrgana" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="OpisanieOrgana" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="DNPA">
     <Key>

@@ -102,3 +102,5 @@ F:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\Reg
 F:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\Vid.baml
 E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\DocumentIzbrann.g.cs
 E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\DocumentIzbrann.baml
+E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\OpisanieIzdOrgana.g.cs
+E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\OpisanieIzdOrgana.baml

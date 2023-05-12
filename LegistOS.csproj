@@ -153,6 +153,9 @@
     <Compile Include="Stranici\Nastroiki.xaml.cs">
       <DependentUpon>Nastroiki.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Stranici\OpisanieIzdOrgana.xaml.cs">
+      <DependentUpon>OpisanieIzdOrgana.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Stranici\PravovayaBaza.xaml.cs">
       <DependentUpon>PravovayaBaza.xaml</DependentUpon>
     </Compile>
@@ -206,6 +209,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Stranici\Nastroiki.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stranici\OpisanieIzdOrgana.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

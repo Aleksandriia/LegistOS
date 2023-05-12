@@ -39,6 +39,7 @@
           </Key>
           <Property Name="idIzdavOrgana" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NazvanieOrgana" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="OpisanieOrgana" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="DNPA">
           <Key>
@@ -373,6 +374,7 @@
           <Property Name="NazvanieOrgana" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="DOrganUstarNazvs" Relationship="user37_dbModel.FK_DOrganUstarNazv_DIzdavOrgan" FromRole="DIzdavOrgan" ToRole="DOrganUstarNazv" />
           <NavigationProperty Name="DDocuments" Relationship="user37_dbModel.FK_DDocument_DIzdavOrgan" FromRole="DIzdavOrgan" ToRole="DDocument" />
+          <Property Name="OpisanieOrgana" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="DNPA">
           <Key>
@@ -636,6 +638,7 @@
           <EntitySetMapping Name="DIzdavOrgans">
             <EntityTypeMapping TypeName="user37_dbModel.DIzdavOrgan">
               <MappingFragment StoreEntitySet="DIzdavOrgan">
+                <ScalarProperty Name="OpisanieOrgana" ColumnName="OpisanieOrgana" />
                 <ScalarProperty Name="NazvanieOrgana" ColumnName="NazvanieOrgana" />
                 <ScalarProperty Name="idIzdavOrgana" ColumnName="idIzdavOrgana" />
               </MappingFragment>
