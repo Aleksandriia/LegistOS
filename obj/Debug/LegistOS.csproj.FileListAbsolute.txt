@@ -104,3 +104,7 @@ E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\Doc
 E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\DocumentIzbrann.baml
 E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\OpisanieIzdOrgana.g.cs
 E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\OpisanieIzdOrgana.baml
+F:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\DocumentIzbrann.g.cs
+F:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\OpisanieIzdOrgana.g.cs
+F:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\DocumentIzbrann.baml
+F:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\OpisanieIzdOrgana.baml

@@ -25,6 +25,15 @@ namespace LegistOS.Stranici
         {
             InitializeComponent();
 
+            if (App.dPolzovatel.Rol == 1)
+            {
+                BtnDobavlenie.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                BtnDobavlenie.Visibility = Visibility.Collapsed;
+            }
+
             CBVidDoc.ItemsSource = App.Context.DVids.ToList();
             CBTegDoc.ItemsSource = App.Context.DTegs.ToList();
             CBOrgenDoc.ItemsSource = App.Context.DIzdavOrgans.ToList();

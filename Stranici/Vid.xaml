@@ -30,12 +30,12 @@
                                 <TextBlock Text="{Binding NazvanieVida}" 
                                        HorizontalAlignment="Left" Width="200" />
                                 <StackPanel Orientation="Horizontal" Margin="0,-12,0,0" >
-                                    <Button Name="BtnRedactirovanie"
+                                    <!--<Button Name="BtnRedactirovanie"
                                         Click="BtnRedactirovanie_Click"
                                         Style="{StaticResource BtnPodrobnee}"
                                         Visibility="{Binding AdminContrVidimost}" >
                                         <TextBlock Text="Редактировать" FontSize="12" />
-                                    </Button>
+                                    </Button>-->
 
                                     <Button Name="BtnYdalenie"
                                         Click="BtnYdalenie_Click"
