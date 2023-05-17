@@ -37,12 +37,19 @@
                                         <TextBlock Text="Редактировать" FontSize="12" />
                                     </Button>-->
 
-                                    <Button Name="BtnYdalenie"
+                                    <!--<Button Name="BtnPodrobnee"
+                                        Click="BtnPodrobnee_Click"
+                                        Style="{StaticResource BtnPodrobnee}"
+                                        VerticalAlignment="Center" >
+                                        <TextBlock Text="Подробнее..." />
+                                    </Button>-->
+
+                                    <!--<Button Name="BtnYdalenie"
                                         Click="BtnYdalenie_Click"
                                         Style="{StaticResource BtnPodrobnee}"
                                         Visibility="{Binding AdminContrVidimost}" >
                                         <TextBlock Text="Удалить" FontSize="12" />
-                                    </Button>
+                                    </Button>-->
                                 </StackPanel>
                             </StackPanel>
                         </StackPanel>

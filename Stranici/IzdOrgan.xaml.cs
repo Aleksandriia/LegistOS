@@ -54,5 +54,11 @@ namespace LegistOS.Stranici
         {
 
         }
+
+        //private void BtnPodrobnee_Click(object sender, RoutedEventArgs e)
+        //{
+        //    var organ = (sender as Button).DataContext as Classi.DIzdavOrgan;
+        //    NavigationService.Navigate(new Stranici.OpisanieIzdOrgana(organ));
+        //}
     }
 }
