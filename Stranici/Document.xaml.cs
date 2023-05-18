@@ -41,9 +41,6 @@ namespace LegistOS.Stranici
         {
             InitializeComponent();
 
-            //dIzbrannoe.idPolzovatelya = App.dPolzovatel.idPolzovatelya;
-            //dIzbrannoe.idDocumenta = document.idDocumenta;
-
             Classi.GlobalPeremen.IDdoc = document.idDocumenta;
             
             
@@ -197,18 +194,12 @@ namespace LegistOS.Stranici
 
         private void BtnIzbranDob_Click(object sender, RoutedEventArgs e)
         {
-            //App.Context.DIzbrannoes.ToList().Equals(dIzbrannoe.idPolzovatelya == Classi.GlobalPeremen.idPolzov && dIzbrannoe.idDocumenta == Classi.GlobalPeremen.IDdoc));
 
-            //Classi.DDocument dDoc = null;
-            var proverka = App.Context.DIzbrannoes;
-
-            //Classi.DIzbrannoe dIzbrannoe = null;
-            /*
-            if((dIzbrannoe.idPolzovatelya != Classi.GlobalPeremen.idPolzov) && (dIzbrannoe.idDocumenta != Classi.GlobalPeremen.IDdoc))
+            var proverka = App.Context.DIzbrannoes.ToList().FirstOrDefault(p => p.idPolzovatelya == Classi.GlobalPeremen.idPolzov && p.idDocumenta == Classi.GlobalPeremen.IDdoc); //  && p.Parol.ToLower() == PBParol.Password.ToLower()
+            if (proverka != null && proverka != dIzbrannoe)
+                MessageBox.Show("Вы уже подписаны на этот документ", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            else
             {
-                dIzbrannoe.idPolzovatelya = Classi.GlobalPeremen.idPolzov;
-                dIzbrannoe.idDocumenta = Classi.GlobalPeremen.IDdoc;
-
                 var izbran = new Classi.DIzbrannoe
                 {
                     idDocumenta = Classi.GlobalPeremen.IDdoc,
@@ -219,52 +210,7 @@ namespace LegistOS.Stranici
                 App.Context.SaveChanges();
                 MessageBox.Show("Документ успешно добавлен в избранное.", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
             }
-            else if (proverka.Equals(dIzbrannoe.idPolzovatelya == Classi.GlobalPeremen.idPolzov && dIzbrannoe.idDocumenta == Classi.GlobalPeremen.IDdoc))
-            {
-                MessageBox.Show("Документ уже добавлен в избранное.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-            }*/
-            
-
-            //proverka = proverka.Where(p => p.DPolzovatel.idPolzovatelya.Equals(Classi.GlobalPeremen.idPolzov) && p.DDocument.idDocumenta.Equals(Classi.GlobalPeremen.IDdoc)).Count;
-            //proverka = (p => p.DPolzovatel.idPolzovatelya.Equals(Classi.GlobalPeremen.idPolzov) && p.DDocument.idDocumenta.Equals(Classi.GlobalPeremen.IDdoc)).Count;
-            //if (proverka.Equals(DPolzovatel.idPolzovatelya == Classi.GlobalPeremen.idPolzov && p.DDocument.idDocumenta == Classi.GlobalPeremen.IDdoc).ToString())
-            //if (proverka = proverka.Equals(p => p.DPolzovatel.idPolzovatelya.Equals(Classi.GlobalPeremen.idPolzov) && p.DDocument.idDocumenta.Equals(Classi.GlobalPeremen.IDdoc)))
-
-            //if (/*proverka == 0*/)
-            //{
-                var izbran = new Classi.DIzbrannoe
-                {
-                    idDocumenta = Classi.GlobalPeremen.IDdoc,
-                    idPolzovatelya = App.dPolzovatel.idPolzovatelya
-                };
-
-                App.Context.DIzbrannoes.Add(izbran);
-                App.Context.SaveChanges();
-                MessageBox.Show("Документ успешно добавлен в избранное.", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Документ уже добавлен в избранное.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-            //}
-
-            //if (ParserContext.ReferenceEquals(Classi.GlobalPeremen.IDdoc == DIzbranno))) { 
-            //if (dIzbrannoe.idPolzovatelya != Classi.GlobalPeremen.idPolzov && dIzbrannoe.idDocumenta != Classi.GlobalPeremen.IDdoc)
-            //{
-
-                /*var izbran = new Classi.DIzbrannoe
-                {
-                    idDocumenta = Classi.GlobalPeremen.IDdoc,
-                    idPolzovatelya = App.dPolzovatel.idPolzovatelya
-                };
-
-                App.Context.DIzbrannoes.Add(izbran);
-                App.Context.SaveChanges();
-                MessageBox.Show("Документ успешно добавлен в избранное.", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);*/
-                //NavigationService.GoBack();
-            //}
-            //else
-                //MessageBox.Show("Документ уже добавлен в избранное.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-            //}
+                        
         }
     }
 }
