@@ -42,7 +42,6 @@ F:\6. Диплом\Приложение\LegistOS\LegistOS\bin\Debug\EntityFramew
 F:\6. Диплом\Приложение\LegistOS\LegistOS\bin\Debug\EntityFramework.xml
 F:\6. Диплом\Приложение\LegistOS\LegistOS\bin\Debug\EntityFramework.SqlServer.xml
 F:\6. Диплом\Приложение\LegistOS\LegistOS\bin\Debug\ru\EntityFramework.resources.dll
-F:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\LegistOS.csprojAssemblyReference.cache
 F:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Okna\Avtorizatia.g.cs
 F:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Okna\Glavnaya.g.cs
 F:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Okna\Registratia.g.cs
@@ -108,3 +107,6 @@ F:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\Doc
 F:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\OpisanieIzdOrgana.g.cs
 F:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\DocumentIzbrann.baml
 F:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\OpisanieIzdOrgana.baml
+F:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\LegistOS.csproj.AssemblyReference.cache
+F:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\LegistOS.csproj.SuggestedBindingRedirects.cache
+F:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\LegistOS.csproj.CoreCompileInputs.cache

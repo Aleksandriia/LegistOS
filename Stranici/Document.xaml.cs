@@ -208,7 +208,7 @@ namespace LegistOS.Stranici
 
                 App.Context.DIzbrannoes.Add(izbran);
                 App.Context.SaveChanges();
-                MessageBox.Show("Документ успешно добавлен в избранное.", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Документ успешно добавлен в избранное", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
             }
                         
         }
