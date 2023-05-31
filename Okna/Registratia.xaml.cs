@@ -61,21 +61,6 @@ namespace LegistOS.Okna
             TBlParolProsmotr.Visibility = Visibility.Hidden;
         }
 
-        private void BtnKopirovanieParola_Click(object sender, RoutedEventArgs e)
-        {
-            /*string parol = PBParol.Password;
-            Clipboard.SetText(parol);*/
-
-            //Clipboard.SetText(TBFamilia.Text);
-
-            //PBParol.Password.ToString().CopyTo();
-            //PBParol.Password.ToString().CopyTo(0, 'a', 4, 4);
-            //ApplicationCommands.Copy.Text.ToString();
-            //    {
-            //        PBParol.Password.ToString();
-            //};
-        }
-
         private static string GeneratorParola(int dlina)
         {
             // генерация пароля
@@ -99,7 +84,10 @@ namespace LegistOS.Okna
 
         private void BtnSoglashenia_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Добавить окно с соглашениями!", "Внимание", MessageBoxButton.OK, MessageBoxImage.Warning);
+            Classi.GlobalPeremen.FIO = null;
+            Classi.GlobalPeremen.FIO = TBFamilia.Text + " " + TBImya.Text + " " + TBOtchestvo.Text;
+            PolzovatelskoeSoglashenie polzovatelskoeSoglashenie = new PolzovatelskoeSoglashenie();
+            polzovatelskoeSoglashenie.Show();
         }
 
         private void BtnAvtorizatia_Click(object sender, RoutedEventArgs e)

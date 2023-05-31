@@ -110,3 +110,9 @@ F:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\Opi
 F:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\LegistOS.csproj.AssemblyReference.cache
 F:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\LegistOS.csproj.SuggestedBindingRedirects.cache
 F:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\LegistOS.csproj.CoreCompileInputs.cache
+E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Okna\PolzovatelskoeSoglashenie.g.cs
+E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Okna\PolzovatelskoeSoglashenie.baml
+E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\ObrabotkaPersonalDannih.g.cs
+E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\PolzovatelskoeSoglashenie.g.cs
+E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\ObrabotkaPersonalDannih.baml
+E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\PolzovatelskoeSoglashenie.baml

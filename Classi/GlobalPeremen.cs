@@ -23,5 +23,7 @@ namespace LegistOS.Classi
         public static int idPolzov = -1;
 
         public static int dobRedDoc = 0;
+
+        public static string FIO = null;
     }
 }

@@ -234,7 +234,6 @@
                                            Style="{StaticResource ZagPravB}"/>
                                 <TextBlock Text="»" Style="{StaticResource ZagPravB}" />
                             </StackPanel>
-                            <!-- Дата -->
                             <TextBlock Text="{Binding KratOpisanie}" 
                                        HorizontalAlignment="Left" Width="auto"
                                        TextWrapping="Wrap"

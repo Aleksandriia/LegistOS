@@ -1,0 +1,37 @@
+﻿<Window x:Class="LegistOS.Okna.PolzovatelskoeSoglashenie"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LegistOS.Okna"
+        mc:Ignorable="d"
+        Title="Пользовательское соглашение" Height="500" Width="900"
+        MinHeight="499" MinWidth="899" MaxHeight="501" MaxWidth="901"
+        Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Image x:Name="ImgLogoMal" Source="/Izobragenia/logo1.250х250.png"
+               Height="85" Margin="0,0,5,0" Grid.Row="0"
+               VerticalAlignment="Center" HorizontalAlignment="Right"/>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="0">
+            <Button x:Name="BtnSoglObrPersonDann" Style="{StaticResource BtnVerhMenu}"
+                    ToolTip="Обработка персональных данных" Click="BtnSoglObrPersonDann_Click" >
+                <Image x:Name="ImgObrPersDann" Width="48"
+                       Source="/Izobragenia/Znachki/streamline-interface-user-check--interface-essential--48x48.PNG" />
+            </Button>
+
+            <Button x:Name="BtnPolzovatelSoglashen" Style="{StaticResource BtnVerhMenu}"
+                    ToolTip="Пользовательское соглашение" Click="BtnPolzovatelSoglashen_Click" >
+                <Image x:Name="ImgPolzSoglas" Width="48"
+                       Source="/Izobragenia/Znachki/streamline-interface-file-clipboard-check--interface-essential--48x48.PNG" />
+            </Button>
+        </StackPanel>
+
+        <Frame x:Name="FUrSoglDoc" NavigationUIVisibility="Hidden" Grid.Row="1" />
+    </Grid>
+</Window>

@@ -52,9 +52,9 @@ namespace LegistOS.Stranici
 
         private void BtnPodrobnee_Click(object sender, RoutedEventArgs e)
         {
-            var iz = (sender as Button).DataContext as Classi.DIzbrannoe;
-            Classi.GlobalPeremen.IDdoc = iz.idDocumenta;
-            NavigationService.Navigate(new Stranici.DocumentIzbrann(iz.DDocument));
+            var izbr = (sender as Button).DataContext as Classi.DIzbrannoe;
+            Classi.GlobalPeremen.IDdoc = izbr.idDocumenta;
+            NavigationService.Navigate(new Stranici.DocumentIzbrann(izbr.DDocument));
         }
     }
 }

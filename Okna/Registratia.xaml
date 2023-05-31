@@ -83,11 +83,6 @@
                     <Image x:Name="ImgGlaz" Source="/Izobragenia/Znachki/streamline-interface-edit-view--interface-essential--48x48.PNG"
                            Width="18"/>
                 </Button>
-                <Button x:Name="BtnKopirovanieParola" Style="{StaticResource BtnRegMal}"
-                        Click="BtnKopirovanieParola_Click" IsEnabled="False">
-                    <Image x:Name="ImgKopia" Source="/Izobragenia/Znachki/streamline-interface-file-double--interface-essential--48x48.PNG"
-                           Width="18"/>
-                </Button>
             </StackPanel>
             
             <StackPanel Orientation="Horizontal" MaxHeight="40">
@@ -104,9 +99,9 @@
 
         <Button x:Name="BtnSoglashenia" Style="{StaticResource BtnRegMal}" 
                 Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top"
-                Click="BtnSoglashenia_Click" >
+                Click="BtnSoglashenia_Click" ToolTip="Посмотреть условия использования" >
             <Image x:Name="ImgPomoh" Source="/Izobragenia/Znachki/streamline-interface-help-question-square--interface-essential--48x48.PNG"
-                           Width="18"/>
+                   Width="18"/>
         </Button>
     </Grid>
 </Window>

@@ -126,8 +126,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelLegist.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Classi\ObrabotPersonalDannih.cs" />
+    <Compile Include="Classi\PolzovatSoglash.cs" />
     <Compile Include="Classi\Roli.cs" />
     <Compile Include="Classi\SortCB.cs" />
+    <Compile Include="Okna\PolzovatelskoeSoglashenie.xaml.cs">
+      <DependentUpon>PolzovatelskoeSoglashenie.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Stranici\DobavlenieRedaktirovanieDoc.xaml.cs">
       <DependentUpon>DobavlenieRedaktirovanieDoc.xaml</DependentUpon>
     </Compile>
@@ -152,8 +157,14 @@
     <Compile Include="Stranici\Nastroiki.xaml.cs">
       <DependentUpon>Nastroiki.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Stranici\ObrabotkaPersonalDannih.xaml.cs">
+      <DependentUpon>ObrabotkaPersonalDannih.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Stranici\OpisanieIzdOrgana.xaml.cs">
       <DependentUpon>OpisanieIzdOrgana.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Stranici\PolzovatelskoeSoglashenie.xaml.cs">
+      <DependentUpon>PolzovatelskoeSoglashenie.xaml</DependentUpon>
     </Compile>
     <Compile Include="Stranici\PravovayaBaza.xaml.cs">
       <DependentUpon>PravovayaBaza.xaml</DependentUpon>
@@ -172,6 +183,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Okna\Glavnaya.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Okna\PolzovatelskoeSoglashenie.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -211,7 +226,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Stranici\ObrabotkaPersonalDannih.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Stranici\OpisanieIzdOrgana.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stranici\PolzovatelskoeSoglashenie.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -316,6 +339,8 @@
       <DependentUpon>ModelLegist.edmx</DependentUpon>
       <LastGenOutput>ModelLegist.cs</LastGenOutput>
     </Content>
+    <Resource Include="Izobragenia\Znachki\streamline-interface-user-check--interface-essential--48x48.PNG" />
+    <Resource Include="Izobragenia\Znachki\streamline-interface-file-clipboard-check--interface-essential--48x48.PNG" />
     <Resource Include="Izobragenia\Znachki\streamline-interface-bookmark-double--interface-essential--48x48.PNG" />
     <Resource Include="Izobragenia\Znachki\streamline-travel-places-column-1--maps-travel--48x48.PNG" />
     <Resource Include="Izobragenia\Znachki\streamline-interface-lighting-brightness-3--interface-essential--48x48.PNG" />
