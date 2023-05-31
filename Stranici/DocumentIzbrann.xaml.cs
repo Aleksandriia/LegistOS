@@ -15,9 +15,6 @@ using System.Windows.Shapes;
 
 namespace LegistOS.Stranici
 {
-    /// <summary>
-    /// Логика взаимодействия для DocumentIzbrann.xaml
-    /// </summary>
     public partial class DocumentIzbrann : Page
     {
         public DocumentIzbrann()
@@ -29,13 +26,10 @@ namespace LegistOS.Stranici
         {
             InitializeComponent();
 
-            //dIzbrannoe.idPolzovatelya = App.dPolzovatel.idPolzovatelya;
-
             if (Classi.GlobalPeremen.IDdoc == 0)
             {
                 Classi.GlobalPeremen.IDdoc = document.idDocumenta;
             }
-
 
             TBlNazvanieDoc.Text = document.Nazvanie;
             TBlNomerDoc.Text = document.Nomer;
@@ -96,8 +90,6 @@ namespace LegistOS.Stranici
                     TBlVidDoc.Text = "Регламент";
                     break;
             }
-
-            //TBlTegDoc.Text = document.DTegs.ToString();
 
             switch (document.PravovayaBaza)
             {
@@ -177,7 +169,6 @@ namespace LegistOS.Stranici
                 TBlDataKoncaDoc.Text = "--------";
             else if (document.DataKon != null)
                 TBlDataKoncaDoc.Text = ((DateTime)document.DataKon).ToString("dd.MM.yyyy");
-
         }
 
         private void BtnNazad_Click(object sender, RoutedEventArgs e)

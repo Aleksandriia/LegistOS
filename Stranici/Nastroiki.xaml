@@ -80,15 +80,6 @@
                 </StackPanel>
             </Button>
 
-            <!--<Button x:Name="BtnNPA" Background="{x:Null}" BorderBrush="{x:Null}"
-                        Width="180" Height="35" Click="BtnConstitutiya_Click" >
-                <StackPanel Orientation="Horizontal">
-                    <StackPanel x:Name="SPNPA" Style="{StaticResource SPBokMenu}" Width="175" >
-                        <TextBlock Text="НПА" Style="{StaticResource TBlBokMenu}" />
-                    </StackPanel>
-                </StackPanel>
-            </Button>-->
-
             <Button x:Name="BtnRegion" Background="{x:Null}" BorderBrush="{x:Null}"
                     Width="200" Height="35" Click="BtnRegion_Click"
                     Visibility="{Binding AdminContVidimost}" Cursor="" >

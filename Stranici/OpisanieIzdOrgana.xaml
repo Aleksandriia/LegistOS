@@ -36,11 +36,6 @@
         <StackPanel Orientation="Vertical"
                     Grid.Row="1" Grid.Column="1" >
             <StackPanel Orientation="Horizontal">
-                <!--<TextBlock x:Name="TBlDocNomer" Text="{Binding NazvanieOrgana}"
-                           Style="{StaticResource TBlZagolovokDoc}" 
-                           Margin="20" FontWeight="SemiBold" />-->
-                <!--<TextBlock x:Name="TBlNomerDoc" Text="{Binding Nomer}" FontWeight="SemiBold"
-                           Style="{StaticResource TBlZagolovokDoc}" Margin="-10,20,0,0" />-->
             </StackPanel>
             <TextBlock x:Name="TBlNazvanieIzdOrg" Text="{Binding NazvanieOrgana}"
                        Style="{StaticResource TBlZagolovokDoc}"
@@ -51,7 +46,6 @@
                  x:Name="TBOpisanieIzdOrgana" IsReadOnly="True"
                  Style="{StaticResource TBOpisanieDoc}"
                  ScrollViewer.HorizontalScrollBarVisibility="Auto"
-                 ScrollViewer.VerticalScrollBarVisibility="Auto" Cursor="IBeam"
-                 />
+                 ScrollViewer.VerticalScrollBarVisibility="Auto" Cursor="IBeam" />
     </Grid>
 </Page>

@@ -16,9 +16,6 @@ using System.Windows.Shapes;
 
 namespace LegistOS.Stranici
 {
-    /// <summary>
-    /// Логика взаимодействия для Region.xaml
-    /// </summary>
     public partial class Region : Page
     {
         public Region()
@@ -33,25 +30,6 @@ namespace LegistOS.Stranici
             var region = App.Context.DRegions.ToList();
 
             LVRegion.ItemsSource = region;
-
-        }
-
-        private void BtnYdalenie_Click(object sender, RoutedEventArgs e)
-        {
-            var region = (sender as Button).DataContext as Classi.DRegion;
-
-            if (MessageBox.Show($"Вы уверены, что хотите удалить регион: " +
-                $"{region.NazvanieRegiona}?", "Внимание", MessageBoxButton.YesNo,
-                MessageBoxImage.Warning) == MessageBoxResult.Yes)
-            {
-                App.Context.DRegions.Remove(region);
-                App.Context.SaveChanges();
-                UpdateServices();
-            }
-        }
-
-        private void BtnRedactirovanie_Click(object sender, RoutedEventArgs e)
-        {
 
         }
     }

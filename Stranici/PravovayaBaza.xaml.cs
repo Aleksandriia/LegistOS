@@ -15,9 +15,6 @@ using System.Windows.Shapes;
 
 namespace LegistOS.Stranici
 {
-    /// <summary>
-    /// Логика взаимодействия для PravovayaBaza.xaml
-    /// </summary>
     public partial class PravovayaBaza : Page
     {
         public PravovayaBaza()
@@ -43,7 +40,6 @@ namespace LegistOS.Stranici
             docs = docs.Where(p => p.Nazvanie.ToLower().Contains(TBoxPoisk.Text.ToLower()) ||
                               p.KratOpisanie.ToLower().Contains(TBoxPoisk.Text.ToLower()) ||
                               p.Nomer.ToLower().Contains(TBoxPoisk.Text.ToLower())).ToList();
-            //docs = docs.Where(p => p.KratOpisanie.ToLower().Contains(TBoxPoisk.Text.ToLower())).ToList();
 
             if (Classi.Bazi.Vibrano > 0)
             {
@@ -56,8 +52,6 @@ namespace LegistOS.Stranici
 
             /* Боковое меню */
             var npa = App.Context.DNPAs.ToList();
-
-            //LViewNLA.ItemsSource = nla;
 
             /* Вывод количества записей */
             TBlKolvoZapisey.Text = "Найдено записей: " + docs.Count.ToString();
@@ -75,25 +69,25 @@ namespace LegistOS.Stranici
             UpdateServices();
         }
 
-        private void BtnFederaLaws_Click(object sender, RoutedEventArgs e)
+        private void BtnFederalnaya_Click(object sender, RoutedEventArgs e)
         {
             Classi.Bazi.Vibrano = 2;
             UpdateServices();
         }
 
-        private void BtnPresidentialDecrees_Click(object sender, RoutedEventArgs e)
+        private void BtnYkaziPrezidentaRF_Click(object sender, RoutedEventArgs e)
         {
             Classi.Bazi.Vibrano = 3;
             UpdateServices();
         }
 
-        private void BtnGovernmentDecrees_Click(object sender, RoutedEventArgs e)
+        private void BtnPostanovleniya_Click(object sender, RoutedEventArgs e)
         {
             Classi.Bazi.Vibrano = 4;
             UpdateServices();
         }
 
-        private void BtnNormativeAct_Click(object sender, RoutedEventArgs e)
+        private void BtnNormativnieActi_Click(object sender, RoutedEventArgs e)
         {
             Classi.Bazi.Vibrano = 5;
             UpdateServices();
@@ -112,7 +106,6 @@ namespace LegistOS.Stranici
 
         private void BtnRashirPoisk_Click(object sender, RoutedEventArgs e)
         {
-            //MessageBox.Show("В разработке", "Сообщение", MessageBoxButton.OK, MessageBoxImage.Information);
             NavigationService.Navigate(new Stranici.PravovayaBazaRashirPoisk());
         }
 
@@ -141,7 +134,6 @@ namespace LegistOS.Stranici
         {
             Classi.GlobalPeremen.dobRedDoc = 1;
             NavigationService.Navigate(new Stranici.DobavlenieRedaktirovanieDoc());
-            //Stranici.DobavlenieDoc.TBZagolovokDIDoc.Text = "Добавление документа";
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)

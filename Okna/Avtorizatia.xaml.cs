@@ -14,11 +14,13 @@ using System.Windows.Shapes;
 
 namespace LegistOS.Okna
 {
-    /// <summary>
-    /// Логика взаимодействия для Avtorizatia.xaml
-    /// </summary>
     public partial class Avtorizatia : Window
     {
+        // stanimir@example.net
+        // %nQvps4@01+nDEN
+        // user@mail.ru
+        // user1234
+
         public Avtorizatia()
         {
             InitializeComponent();
@@ -42,10 +44,7 @@ namespace LegistOS.Okna
                 App.dPolzovatel = polzovatel;
                 var currPolz = App.dPolzovatel;
 
-                //MessageBox.Show(polzovatel.ToString(), "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
-
                 Okna.Glavnaya glavnaya = new Okna.Glavnaya();
-                //glavnaya.Show(StyleProperty.);
                 glavnaya.Show();
                 this.Close();
             }
@@ -54,18 +53,6 @@ namespace LegistOS.Okna
                 MessageBox.Show("Пользователь с такими данными не найден.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                 TBPochta.Focus();
             }
-        }
-
-        private void BtnZapolnenie_Click(object sender, RoutedEventArgs e)
-        {
-            TBPochta.Text = "stanimir@example.net";
-            PBParol.Password = "%nQvps4@01+nDEN";
-        }
-
-        private void BtnAdminZapolnenie_Click(object sender, RoutedEventArgs e)
-        {
-            TBPochta.Text = "user@mail.ru";
-            PBParol.Password = "user1234";
-        }
+        }        
     }
 }

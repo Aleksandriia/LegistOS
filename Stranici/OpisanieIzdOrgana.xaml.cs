@@ -15,9 +15,6 @@ using System.Windows.Shapes;
 
 namespace LegistOS.Stranici
 {
-    /// <summary>
-    /// Логика взаимодействия для OpisanieIzdOrgana.xaml
-    /// </summary>
     public partial class OpisanieIzdOrgana : Page
     {
         private Classi.DIzdavOrgan dIzdavOrgan = null;

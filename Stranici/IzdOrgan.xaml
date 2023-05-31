@@ -30,26 +30,6 @@
                                 <TextBlock Text="{Binding NazvanieOrgana}" 
                                        HorizontalAlignment="Left" Width="300" />
                                 <StackPanel Orientation="Horizontal" Margin="0,-12,0,0" >
-                                    <!--<Button Name="BtnRedactirovanie"
-                                        Click="BtnRedactirovanie_Click"
-                                        Style="{StaticResource BtnPodrobnee}"
-                                        Visibility="{Binding AdminContrVidimost}" >
-                                        <TextBlock Text="Редактировать" FontSize="12" />
-                                    </Button>-->
-
-                                    <!--<Button Name="BtnPodrobnee"
-                                        Click="BtnPodrobnee_Click"
-                                        Style="{StaticResource BtnPodrobnee}"
-                                        VerticalAlignment="Center" >
-                                        <TextBlock Text="Подробнее..." />
-                                    </Button>-->
-
-                                    <!--<Button Name="BtnYdalenie"
-                                        Click="BtnYdalenie_Click"
-                                        Style="{StaticResource BtnPodrobnee}"
-                                        Visibility="{Binding AdminContrVidimost}" >
-                                        <TextBlock Text="Удалить" FontSize="12" />
-                                    </Button>-->
                                 </StackPanel>
                             </StackPanel>
                         </StackPanel>

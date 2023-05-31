@@ -15,13 +15,9 @@ using System.Windows.Shapes;
 
 namespace LegistOS.Okna
 {
-    /// <summary>
-    /// Логика взаимодействия для Registratia.xaml
-    /// </summary>
     public partial class Registratia : Window
     {
         private Classi.DPolzovatel _dPolzovatel = null;
-        bool pochtaPravilno = false;
 
         public Registratia()
         {
@@ -55,8 +51,6 @@ namespace LegistOS.Okna
                 BtnSkritParol.Visibility = Visibility.Visible;
                 TBlParolProsmotr.Visibility = Visibility.Visible;
 
-                //PBParol.PasswordChar = null;
-
                 TBlParolProsmotr.Text = PBParol.Password.ToString();
             }
         }
@@ -84,6 +78,8 @@ namespace LegistOS.Okna
 
         private static string GeneratorParola(int dlina)
         {
+            // генерация пароля
+
             string parol = "";
             string simvoli = "qwertyuiopasdfghjklzxcvbnm" + "1234567890" + "!#$%&*?" + "QWERTYUIOPASDFGHJKLZXCVBNM";
 
@@ -115,9 +111,11 @@ namespace LegistOS.Okna
 
         private string ProverkaOshibok()
         {
+            // обработчик ошибок
+
             var oshibka = new StringBuilder();
 
-            var povtor = App.Context.DPolzovatels.ToList().FirstOrDefault(p => p.Pochta.ToLower() == TBPochta.Text.ToLower()); //  && p.Parol.ToLower() == PBParol.Password.ToLower()
+            var povtor = App.Context.DPolzovatels.ToList().FirstOrDefault(p => p.Pochta.ToLower() == TBPochta.Text.ToLower());
             if (povtor != null && povtor != _dPolzovatel)
                 oshibka.AppendLine("Аккаунт с такой почтой уже существует;");
 
@@ -135,7 +133,7 @@ namespace LegistOS.Okna
             if (string.IsNullOrWhiteSpace(PBParol.Password))
                 oshibka.AppendLine("Поле Пароль обязательно для заполнения;");
 
-            if (Regex.IsMatch(TBFamilia.Text, @"[0-9!@#$%^&*()_+=?:;№\|/<>.,\[\]\{\}\]$\']")) //a-zA-Zа-яА-Я
+            if (Regex.IsMatch(TBFamilia.Text, @"[0-9!@#$%^&*()_+=?:;№\|/<>.,\[\]\{\}\]$\']"))
                 oshibka.AppendLine("Фамилия должна содержать только буквы;");
             if (Regex.IsMatch(TBImya.Text, @"[0-9!@#$%^&*()_+=?:;№\|/<>.,\[\]\{\}\]$\']"))
                 oshibka.AppendLine("Имя должно содержать только буквы;");
@@ -144,7 +142,7 @@ namespace LegistOS.Okna
             if (Regex.IsMatch(TBTelefon.Text, @"[a-zA-Zа-яА-Я]"))
                 oshibka.AppendLine("Телефон должен содержать только цифры;");
             if (!(System.Text.RegularExpressions.Regex.IsMatch(TBPochta.Text, "[@.]")) && !(System.Text.RegularExpressions.Regex.IsMatch(TBPochta.Text, "[.]")))
-                oshibka.AppendLine("Введите правильный формат почты - обязанельное использование знаков \'@ и .\';");
+                oshibka.AppendLine("Введите правильный формат почты - обязательное использование знаков \'@ и .\';");
 
             if (PBParol.Password.Length > 20)
                 oshibka.AppendLine("Пароль превышает максимально допустимы размер;");
@@ -167,6 +165,9 @@ namespace LegistOS.Okna
             else
             {
                 BtnRegistratia.IsEnabled = true;
+
+                // добавление пользователя в бд по внесенным данным
+
                 var polzpvatel = new Classi.DPolzovatel
                 {
                     Familia = TBFamilia.Text,

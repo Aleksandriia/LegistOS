@@ -16,9 +16,6 @@ using System.Windows.Shapes;
 
 namespace LegistOS.Stranici
 {
-    /// <summary>
-    /// Логика взаимодействия для Vid.xaml
-    /// </summary>
     public partial class Vid : Page
     {
         public Vid()
@@ -34,25 +31,6 @@ namespace LegistOS.Stranici
 
             LVVid.ItemsSource = vid;
 
-        }
-
-        private void BtnRedactirovanie_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void BtnYdalenie_Click(object sender, RoutedEventArgs e)
-        {
-            var vid = (sender as Button).DataContext as Classi.DVid;
-
-            if (MessageBox.Show($"Вы уверены, что хотите удалить вид: " +
-                $"{vid.NazvanieVida}?", "Внимание", MessageBoxButton.YesNo,
-                MessageBoxImage.Warning) == MessageBoxResult.Yes)
-            {
-                App.Context.DVids.Remove(vid);
-                App.Context.SaveChanges();
-                UpdateServices();
-            }
         }
     }
 }

@@ -138,7 +138,7 @@
                 <Button x:Name="BtnVsyaBaza" Background="{x:Null}" BorderBrush="{x:Null}"
                         Width="200" Height="35" Click="BtnVsyaBaza_Click" >
                     <StackPanel Orientation="Horizontal">
-                        <StackPanel x:Name="SPLegalBasis2" Style="{StaticResource SPBokMenu}" >
+                        <StackPanel x:Name="SPVsyaBaza2" Style="{StaticResource SPBokMenu}" >
                             <TextBlock Text="1.1. Вся база" Style="{StaticResource TBlBokMenu}" />
                         </StackPanel>
                     </StackPanel>
@@ -153,37 +153,37 @@
                     </StackPanel>
                 </Button>
 
-                <Button x:Name="BtnFederaLaws" Background="{x:Null}" BorderBrush="{x:Null}"
-                        Width="200" Height="35" Click="BtnFederaLaws_Click" >
+                <Button x:Name="BtnFederalnaya" Background="{x:Null}" BorderBrush="{x:Null}"
+                        Width="200" Height="35" Click="BtnFederalnaya_Click" >
                     <StackPanel Orientation="Horizontal">
-                        <StackPanel x:Name="SPFederaLaws2" Style="{StaticResource SPBokMenu}" >
+                        <StackPanel x:Name="SPFederalnaya2" Style="{StaticResource SPBokMenu}" >
                             <TextBlock Text="1.3. Федеральные законы" Style="{StaticResource TBlBokMenu}" />
                         </StackPanel>
                     </StackPanel>
                 </Button>
 
-                <Button x:Name="BtnPresidentialDecrees" Background="{x:Null}" BorderBrush="{x:Null}"
-                        Width="200" Height="35" Click="BtnPresidentialDecrees_Click" >
+                <Button x:Name="BtnYkaziPrezidentaRF" Background="{x:Null}" BorderBrush="{x:Null}"
+                        Width="200" Height="35" Click="BtnYkaziPrezidentaRF_Click" >
                     <StackPanel Orientation="Horizontal">
-                        <StackPanel x:Name="SPPresidentialDecrees2" Style="{StaticResource SPBokMenu}" >
+                        <StackPanel x:Name="SPYkaziPrezidentaRF2" Style="{StaticResource SPBokMenu}" >
                             <TextBlock Text="1.4. Указы Президента РФ" Style="{StaticResource TBlBokMenu}" />
                         </StackPanel>
                     </StackPanel>
                 </Button>
 
-                <Button x:Name="BtnGovernmentDecrees" Background="{x:Null}" BorderBrush="{x:Null}"
-                        Width="200" Height="50" Click="BtnGovernmentDecrees_Click" >
+                <Button x:Name="BtnPostanovleniya" Background="{x:Null}" BorderBrush="{x:Null}"
+                        Width="200" Height="50" Click="BtnPostanovleniya_Click" >
                     <StackPanel Orientation="Horizontal">
-                        <StackPanel x:Name="SPGovernmentDecrees2" Width="200" Height="50" Style="{StaticResource SPBokMenu}" >
+                        <StackPanel x:Name="SPPostanovleniya2" Width="200" Height="50" Style="{StaticResource SPBokMenu}" >
                             <TextBlock Text="1.5. Постановления правительства РФ" Style="{StaticResource TBlBokMenu}" />
                         </StackPanel>
                     </StackPanel>
                 </Button>
 
-                <Button x:Name="BtnNormativeAct" Background="{x:Null}" BorderBrush="{x:Null}"
-                        Width="200" Height="35" Click="BtnNormativeAct_Click" >
+                <Button x:Name="BtnNormativnieActi" Background="{x:Null}" BorderBrush="{x:Null}"
+                        Width="200" Height="35" Click="BtnNormativnieActi_Click" >
                     <StackPanel Orientation="Horizontal">
-                        <StackPanel x:Name="SPNormativeAct2" Style="{StaticResource SPBokMenu}" >
+                        <StackPanel x:Name="SPNormativnieActi2" Style="{StaticResource SPBokMenu}" >
                             <TextBlock Text="1.6. Нормативные акты" Style="{StaticResource TBlBokMenu}" />
                         </StackPanel>
                     </StackPanel>

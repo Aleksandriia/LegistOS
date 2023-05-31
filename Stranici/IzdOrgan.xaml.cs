@@ -16,9 +16,6 @@ using System.Windows.Shapes;
 
 namespace LegistOS.Stranici
 {
-    /// <summary>
-    /// Логика взаимодействия для IzdOrgan.xaml
-    /// </summary>
     public partial class IzdOrgan : Page
     {
         public IzdOrgan()
@@ -49,16 +46,5 @@ namespace LegistOS.Stranici
                 UpdateServices();
             }
         }
-
-        private void BtnRedactirovanie_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        //private void BtnPodrobnee_Click(object sender, RoutedEventArgs e)
-        //{
-        //    var organ = (sender as Button).DataContext as Classi.DIzdavOrgan;
-        //    NavigationService.Navigate(new Stranici.OpisanieIzdOrgana(organ));
-        //}
     }
 }

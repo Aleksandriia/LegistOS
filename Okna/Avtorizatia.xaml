@@ -13,7 +13,7 @@
             <Image x:Name="ImgLogo" Width="100"
                    Source="/Izobragenia/logo3.450х450.png"
                    HorizontalAlignment="Center" />
-            
+
             <TextBlock x:Name="TBlZagolovok" Text="Авторизация" Style="{StaticResource TBlZagolovok}" />
 
             <TextBlock x:Name="TBlPochta" Text="Почта:" 
@@ -30,14 +30,6 @@
                     Style="{StaticResource BtnDeistv}" Click="BtnVhod_Click" />
             <Button x:Name="BtnRegistratia" Content="Регистрация" 
                     Style="{StaticResource BtnDeistv}" Click="BtnRegistratia_Click" />
-
-            <Button x:Name="BtnZapolnenie" Content="Заполнить" 
-                Style="{StaticResource BtnDeistv}"
-                Click="BtnZapolnenie_Click"/>
         </StackPanel>
-        <Button x:Name="BtnAdminZapolnenie" Content="ЗапАдмин" 
-                Style="{StaticResource BtnDeistv}" Width="70" Margin="225,307,0,0"
-                Click="BtnAdminZapolnenie_Click"/>
-        
     </Grid>
 </Window>

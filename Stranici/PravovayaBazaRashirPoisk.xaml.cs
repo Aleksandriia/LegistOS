@@ -16,9 +16,6 @@ using System.Windows.Shapes;
 
 namespace LegistOS.Stranici
 {
-    /// <summary>
-    /// Логика взаимодействия для PravovayaBazaRashirPoisk.xaml
-    /// </summary>
     public partial class PravovayaBazaRashirPoisk : Page
     {
         public PravovayaBazaRashirPoisk()
@@ -48,13 +45,6 @@ namespace LegistOS.Stranici
         {
             var docs = App.Context.DDocuments.ToList();
             var tegs = App.Context.DTegs;
-            //var dtags = App.Context.DDocuments + App.Context.DTegs;
-            //var sDocs = App.Context.StatusDocs.ToList();
-
-            // Поиск по названию (регистронезависимый)
-            /*docs = docs.Where(p => p.Nazvanie.ToLower().Contains(TBoxPoisk.Text.ToLower()) ||
-                              p.KratOpisanie.ToLower().Contains(TBoxPoisk.Text.ToLower())).ToList();*/
-            //docs = docs.Where(p => p.KratOpisanie.ToLower().Contains(TBoxPoisk.Text.ToLower())).ToList();
 
             // Поиск по номеру документа и дате
             docs = docs.Where(p => p.Nomer.ToLower().Contains(Classi.GlobalPeremen.nomerDocs.ToLower())).ToList();
@@ -78,13 +68,6 @@ namespace LegistOS.Stranici
             else if (CBTegDoc.SelectedIndex != -1)
             {
                 docs = docs.Where(p => p.Teg.ToString().Equals(Classi.GlobalPeremen.tegDocs.ToString())).ToList();
-                //docs = docs.Where(p => p.idDocumenta.Equals(tags.Where(q => q.idTega.ToString().Equals(Classi.GlobalPeremen.tegDocs.ToString())))).ToList();
-                //docs = docs.Where(p => p.DTegs.ToString().Equals(Classi.GlobalPeremen.tegDocs.ToString())) && docs.Where(p => p.idDocumenta.ToString().Equals(Classi.GlobalPeremen.tegDocs.ToString())).ToList();
-                //var dt = docs.Where(p => p.idDocumenta) == tags.Where(p => p.idTega).ToList();
-                /*var docTeg = tags.Where(p => p.idTega.ToString().Equals(Classi.GlobalPeremen.tegDocs.ToString()))
-                    == docs.Where(p => p.idDocumenta.ToString().Equals(Classi.GlobalPeremen.tegDocs.ToString()));*/
-                //docs += docTeg;
-                //docs = (docs.Where(p => p.idDocumenta.ToString().Equals(Classi.GlobalPeremen.tegDocs.ToString())) == tags.Where(p => p.idTega.ToString().Equals(Classi.GlobalPeremen.tegDocs.ToString()))).ToList();
             }
 
             if (CBOrgenDoc.SelectedIndex == -1) {  }
@@ -137,25 +120,25 @@ namespace LegistOS.Stranici
             UpdateServices();
         }
 
-        private void BtnFederaLaws_Click(object sender, RoutedEventArgs e)
+        private void BtnFederalnaya_Click(object sender, RoutedEventArgs e)
         {
             Classi.Bazi.Vibrano = 2;
             UpdateServices();
         }
 
-        private void BtnPresidentialDecrees_Click(object sender, RoutedEventArgs e)
+        private void BtnYkaziPrezidentaRF_Click(object sender, RoutedEventArgs e)
         {
             Classi.Bazi.Vibrano = 3;
             UpdateServices();
         }
 
-        private void BtnGovernmentDecrees_Click(object sender, RoutedEventArgs e)
+        private void BtnPostanovleniya_Click(object sender, RoutedEventArgs e)
         {
             Classi.Bazi.Vibrano = 4;
             UpdateServices();
         }
 
-        private void BtnNormativeAct_Click(object sender, RoutedEventArgs e)
+        private void BtnNormativnieActi_Click(object sender, RoutedEventArgs e)
         {
             Classi.Bazi.Vibrano = 5;
             UpdateServices();
@@ -170,7 +153,6 @@ namespace LegistOS.Stranici
                               p.Nomer.ToLower().Contains(TBoxPoisk.Text.ToLower())).ToList();
 
             LVPravovayaBaza.ItemsSource = docs;
-            //UpdateServices();
 
             /* Вывод количества записей */
             TBlKolvoZapisey.Text = "Найдено записей: " + docs.Count.ToString();
@@ -226,6 +208,8 @@ namespace LegistOS.Stranici
 
         private string ProverkaOshibok()
         {
+            // обработчик ошибок
+
             var proverkavvoda = new StringBuilder();
 
             if (TBNomer.Text != "")

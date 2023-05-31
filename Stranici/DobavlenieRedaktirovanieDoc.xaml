@@ -62,8 +62,6 @@
             <StackPanel Orientation="Vertical">
                 <TextBox x:Name="TBNomerDoc" Style="{StaticResource TBOsn}" Width="250" />
                 <TextBox x:Name="TBNazvanieDoc" Style="{StaticResource TBOsn}" Width="250" />
-                <!--<TextBox x:Name="TBDataNachDoc" Style="{StaticResource TBOsn}" Width="250" />
-                <TextBox x:Name="TBDataKonDoc" Style="{StaticResource TBOsn}" Width="250" />-->
                 <DatePicker Name="DPDataNachDoc" IsTodayHighlighted="True" 
                             Width="250" Style="{StaticResource DPOsn}" />
                 <DatePicker Name="DPDataKonDoc" IsTodayHighlighted="True" 

@@ -15,9 +15,6 @@ using System.Windows.Shapes;
 
 namespace LegistOS.Stranici
 {
-    /// <summary>
-    /// Логика взаимодействия для IzdOrgani.xaml
-    /// </summary>
     public partial class IzdOrgani : Page
     {
         public IzdOrgani()

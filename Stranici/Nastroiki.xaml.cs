@@ -16,9 +16,6 @@ using System.Windows.Shapes;
 
 namespace LegistOS.Stranici
 {
-    /// <summary>
-    /// Логика взаимодействия для Nastroiki.xaml
-    /// </summary>
     public partial class Nastroiki : Page
     {
         private Classi.DPolzovatel _currPolzovatel = null;
@@ -62,23 +59,18 @@ namespace LegistOS.Stranici
         {
             var currPolz = App.dPolzovatel;
             NavigationService.Navigate(new Stranici.NastroikaProfila(currPolz));
-
-            //var currentService = (sender as Button).DataContext as Entities.Service;
-            //NavigationService.Navigate(new ZapisPage(currentService));
         }
 
         private void BtnTemnaya_Click(object sender, RoutedEventArgs e)
         {
-            //_currPolzovatel.Tema = 2;
             App.dPolzovatel.Tema = 2;
 
             App.Context.SaveChanges();
-            //MessageBox.Show("Тема успешно изменена.", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
 
             ResourceDictionary dictionary = new ResourceDictionary();
             dictionary.Source = new Uri("TemnayaTema.xaml", UriKind.Relative);
 
-            // Динамически меняем коллекцию MergedDictionaries
+            // Динамическая смена коллекции MergedDictionaries
             Application.Current.Resources.MergedDictionaries[0] = dictionary;
 
             BtnTemnaya.Background = (Brush)(new BrushConverter().ConvertFrom("#146675"));
@@ -87,9 +79,6 @@ namespace LegistOS.Stranici
             TBZagolovokN.Foreground = new SolidColorBrush(Colors.White);
             SPVerhPolojka.Background = (Brush)(new BrushConverter().ConvertFrom("#474747"));
             RtgBokMeny.Fill = (Brush)(new BrushConverter().ConvertFrom("#474747"));
-            //BtnIzdOrgan.Background = (Brush)(new BrushConverter().ConvertFrom("#748C90"));
-            //BtnRegion.Background = (Brush)(new BrushConverter().ConvertFrom("#748C90"));
-            //BtnVid.Background = (Brush)(new BrushConverter().ConvertFrom("#748C90"));
             SPVid.Background = (Brush)(new BrushConverter().ConvertFrom("#748C90"));
             SPIzdOrg.Background = (Brush)(new BrushConverter().ConvertFrom("#748C90"));
             SPRegion.Background = (Brush)(new BrushConverter().ConvertFrom("#748C90"));
@@ -100,16 +89,14 @@ namespace LegistOS.Stranici
 
         private void BtnSvetlaya_Click(object sender, RoutedEventArgs e)
         {
-            //_currPolzovatel.Tema = 1;
             App.dPolzovatel.Tema = 1;
 
             App.Context.SaveChanges();
-            //MessageBox.Show("Тема успешно изменена.", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
 
             ResourceDictionary dictionary = new ResourceDictionary();
             dictionary.Source = new Uri("SvetlayaTema.xaml", UriKind.Relative);
 
-            // Динамически меняем коллекцию MergedDictionaries
+            // Динамическая смена коллекции MergedDictionaries
             Application.Current.Resources.MergedDictionaries[0] = dictionary;
 
             BtnSvetlaya.Background = (Brush)(new BrushConverter().ConvertFrom("#5EADBC"));
@@ -118,9 +105,6 @@ namespace LegistOS.Stranici
             TBZagolovokN.Foreground = new SolidColorBrush(Colors.Black);
             SPVerhPolojka.Background = (Brush)(new BrushConverter().ConvertFrom("#F4F4F4")); 
             RtgBokMeny.Fill = (Brush)(new BrushConverter().ConvertFrom("#F4F4F4")); 
-            //BtnIzdOrgan.Background = (Brush)(new BrushConverter().ConvertFrom("#FFCCE9F0"));
-            //BtnRegion.Background = (Brush)(new BrushConverter().ConvertFrom("#FFCCE9F0"));
-            //BtnVid.Background = (Brush)(new BrushConverter().ConvertFrom("#FFCCE9F0"));
             SPVid.Background = (Brush)(new BrushConverter().ConvertFrom("#FFCCE9F0"));
             SPIzdOrg.Background = (Brush)(new BrushConverter().ConvertFrom("#FFCCE9F0"));
             SPRegion.Background = (Brush)(new BrushConverter().ConvertFrom("#FFCCE9F0"));

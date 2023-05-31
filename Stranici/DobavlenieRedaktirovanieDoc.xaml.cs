@@ -18,9 +18,6 @@ using System.Windows.Shapes;
 
 namespace LegistOS.Stranici
 {
-    /// <summary>
-    /// Логика взаимодействия для DobavlenieRedaktirovanieDoc.xaml
-    /// </summary>
     public partial class DobavlenieRedaktirovanieDoc : Page
     {
         private Classi.DDocument _currDocument = null;
@@ -91,6 +88,8 @@ namespace LegistOS.Stranici
 
         private string ProverkaOshibok()
         {
+            // обработчик ошибок
+
             var oshibka = new StringBuilder();
 
             var povtor = App.Context.DDocuments.ToList().FirstOrDefault(p => p.Nomer.ToLower() == TBNomerDoc.Text.ToLower() && p.Nazvanie.ToLower() == TBNazvanieDoc.Text.ToLower());
@@ -123,21 +122,6 @@ namespace LegistOS.Stranici
             if (CBNPA.Text.Length <= 0)
                 oshibka.AppendLine("Необходимо выбрать НПА;");
 
-            /*if (Regex.IsMatch(TBFamilia.Text, @"[0-9!@#$%^&*()_+=?:;№\|/<>.,\[\]\{\}\]$\']")) //a-zA-Zа-яА-Я
-                oshibka.AppendLine("Фамилия должна содержать только буквы;");
-            if (Regex.IsMatch(TBImya.Text, @"[0-9!@#$%^&*()_+=?:;№\|/<>.,\[\]\{\}\]$\']"))
-                oshibka.AppendLine("Имя должно содержать только буквы;");
-            if (Regex.IsMatch(TBOtchestvo.Text, @"[0-9!@#$%^&*()_+=?:;№\|/<>.,\[\]\{\}\]$\']"))
-                oshibka.AppendLine("Отчество должно содержать только буквы;");
-            
-            if (!(System.Text.RegularExpressions.Regex.IsMatch(TBPochta.Text, "[@.]")) && !(System.Text.RegularExpressions.Regex.IsMatch(TBPochta.Text, "[.]")))
-                oshibka.AppendLine("Введите правильный формат почты - обязанельное использование знаков \'@ и .\';");
-
-            if (PBParol.Password.Length > 20)
-                oshibka.AppendLine("Пароль превышает максимально допустимы размер;");
-            if (PBParol.Password.Length < 8)
-                oshibka.AppendLine("Пароль слишком простой. Количество символов не меньше 8;");*/
-
             if (oshibka.Length > 0)
                 oshibka.Insert(0, "Устраните следующие ошибки:\n");
 
@@ -153,6 +137,8 @@ namespace LegistOS.Stranici
             {
                 if (_currDocument == null)
                 {
+                    // добавление нового документа
+
                     var docum = new Classi.DDocument
                     {
                         Nomer = TBNomerDoc.Text,
@@ -172,10 +158,11 @@ namespace LegistOS.Stranici
                     App.Context.DDocuments.Add(docum);
                     App.Context.SaveChanges();
                     MessageBox.Show("Данные успешно внесены.", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
-                    //NavigationService.GoBack();
                 }
                 else
                 {
+                    // изменение документа
+
                     _currDocument.Nomer = TBNomerDoc.Text;
                     _currDocument.Nazvanie = TBNazvanieDoc.Text;
                     _currDocument.DataNach = DPDataNachDoc.SelectedDate;
@@ -210,11 +197,7 @@ namespace LegistOS.Stranici
                     TBKratOpisanie.Text != null || TBOpisanie.Text != null ||
                     CBIzdavOrgan.Text != null || CBVid.Text != null || 
                     CBPravBaza.Text != null || CBStatus.Text != null || 
-                    CBRegion.Text != null || CBNPA.Text != null
-                    /*CBIzdavOrgan.SelectedIndex != -1 || CBVid.SelectedIndex != -1 || CBPravBaza.SelectedIndex != -1 ||
-                    CBStatus.SelectedIndex != -1 || CBRegion.SelectedIndex != -1 || CBNPA.SelectedIndex != -1 ||
-                    CBIzdavOrgan.SelectedIndex != 0 || CBVid.SelectedIndex != 0 || CBPravBaza.SelectedIndex != 0 ||
-                    CBStatus.SelectedIndex != 0 || CBRegion.SelectedIndex != 0 || CBNPA.SelectedIndex != 0*/)
+                    CBRegion.Text != null || CBNPA.Text != null)
                 {
                     if (MessageBox.Show("Изменения не были внесены.\nВы действительно хотите выйти?", "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
                     {

@@ -32,12 +32,6 @@
             <StackPanel Orientation="Horizontal" >
                 <TextBox x:Name="TBoxPoisk" TextChanged="TBoxSearch_TextChanged"
                          Style="{StaticResource TBPoisk}" Width="1200" />
-                <!--<Button x:Name="BtnRashirPoisk"
-                        Click="BtnRashirPoisk_Click"
-                        Style="{StaticResource BtnRashPoisk}"
-                        VerticalAlignment="Center" >
-                    <TextBlock Text="Расширенный поиск..." />
-                </Button>-->
             </StackPanel>
             <TextBlock x:Name="TBlKolvoZapisey" Text="Найдено записей: "
                        Style="{StaticResource TBlDopolnitInf}" Margin="10" />
@@ -63,7 +57,6 @@
                     <Grid>
                         <StackPanel Grid.Column="1" Orientation="Vertical" 
                                     HorizontalAlignment="Left" Margin="5">
-
                             <StackPanel Orientation="Horizontal" >
                                 <TextBlock Text="{Binding NazvanieOrgana}" 
                                            HorizontalAlignment="Left" Width="300"
@@ -74,21 +67,6 @@
                                         VerticalAlignment="Center" >
                                     <TextBlock Text="Подробнее..." />
                                 </Button>
-                                <!--<StackPanel Orientation="Horizontal" Margin="0,-12,0,0" >
-                                    <Button Name="BtnRedactirovanie"
-                                        Click="BtnRedactirovanie_Click"
-                                        Style="{StaticResource BtnPodrobnee}"
-                                        Visibility="{Binding AdminContrVidimost}" >
-                                        <TextBlock Text="Редактировать" FontSize="12" />
-                                    </Button>
-
-                                    <Button Name="BtnYdalenie"
-                                        Click="BtnYdalenie_Click"
-                                        Style="{StaticResource BtnPodrobnee}"
-                                        Visibility="{Binding AdminContrVidimost}" >
-                                        <TextBlock Text="Удалить" FontSize="12" />
-                                    </Button>
-                                </StackPanel>-->
                             </StackPanel>
                         </StackPanel>
                     </Grid>

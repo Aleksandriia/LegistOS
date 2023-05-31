@@ -20,21 +20,13 @@ using System.Xml.Linq;
 
 namespace LegistOS.Stranici
 {
-    /// <summary>
-    /// Логика взаимодействия для Document.xaml
-    /// </summary>
     public partial class Document : Page
     {
         private Classi.DIzbrannoe dIzbrannoe = null;
-        //private var proverka = App.Context.DIzbrannoes.Any();
 
         public Document()
         {
             InitializeComponent();
-
-            //dIzbrannoe.idPolzovatelya = App.dPolzovatel.idPolzovatelya;
-
-            //UpdateServices();
         }
 
         public Document(Classi.DDocument document)
@@ -42,8 +34,6 @@ namespace LegistOS.Stranici
             InitializeComponent();
 
             Classi.GlobalPeremen.IDdoc = document.idDocumenta;
-            
-            
 
             TBlNazvanieDoc.Text = document.Nazvanie;
             TBlNomerDoc.Text = document.Nomer;
@@ -103,8 +93,6 @@ namespace LegistOS.Stranici
                     TBlVidDoc.Text = "Регламент";
                     break;
             }
-
-            //TBlTegDoc.Text = document.DTegs.ToString();
 
             switch (document.PravovayaBaza)
             {
@@ -194,7 +182,7 @@ namespace LegistOS.Stranici
 
         private void BtnIzbranDob_Click(object sender, RoutedEventArgs e)
         {
-
+            // добавление документа в избранное
             var proverka = App.Context.DIzbrannoes.ToList().FirstOrDefault(p => p.idPolzovatelya == Classi.GlobalPeremen.idPolzov && p.idDocumenta == Classi.GlobalPeremen.IDdoc); //  && p.Parol.ToLower() == PBParol.Password.ToLower()
             if (proverka != null && proverka != dIzbrannoe)
                 MessageBox.Show("Вы уже подписаны на этот документ", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);

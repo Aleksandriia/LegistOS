@@ -16,9 +16,6 @@ using System.Windows.Shapes;
 
 namespace LegistOS.Stranici
 {
-    /// <summary>
-    /// Логика взаимодействия для NastroikaProfila.xaml
-    /// </summary>
     public partial class NastroikaProfila : Page
     {
         private Classi.DPolzovatel _currPolzovatel = null;
@@ -32,6 +29,8 @@ namespace LegistOS.Stranici
         {
             InitializeComponent();
 
+            //заполнение полей существующими данными авторизированного пользователя
+
             _currPolzovatel = polzovatel;
 
             TBFamilia.Text = _currPolzovatel.Familia;
@@ -44,6 +43,7 @@ namespace LegistOS.Stranici
 
         private static string GeneratorParola(int dlina)
         {
+            // генерирование пароля
             string parol = "";
             string simvoli = "qwertyuiopasdfghjklzxcvbnm" + "1234567890" + "!#$%&*?" + "QWERTYUIOPASDFGHJKLZXCVBNM";
 
@@ -68,6 +68,8 @@ namespace LegistOS.Stranici
 
         private string ProverkaOshibok()
         {
+            // обработчик ошибок
+
             var oshibka = new StringBuilder();
 
             if (string.IsNullOrWhiteSpace(TBFamilia.Text))
@@ -110,6 +112,7 @@ namespace LegistOS.Stranici
                 MessageBox.Show(soobhenieOshibok, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             else
             {
+                // сохранение измененных данных
                 _currPolzovatel.Familia = TBFamilia.Text;
                 _currPolzovatel.Imya = TBImya.Text;
                 _currPolzovatel.Otchestvo = TBOtchestvo.Text;
