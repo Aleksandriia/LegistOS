@@ -27,7 +27,6 @@ namespace LegistOS.Classi
                 }
                 else
                 {
-                    //return "Collapsed";
                     return "Hidden";
                 }
             }
@@ -51,7 +50,6 @@ namespace LegistOS.Classi
                 }
                 else
                 {
-                    //return "Collapsed";
                     return "Hidden";
                 }
             }
@@ -75,7 +73,6 @@ namespace LegistOS.Classi
                 }
                 else
                 {
-                    //return "Collapsed";
                     return "Hidden";
                 }
             }
@@ -99,7 +96,6 @@ namespace LegistOS.Classi
                 }
                 else
                 {
-                    //return "Collapsed";
                     return "Hidden";
                 }
             }

@@ -12,7 +12,6 @@ namespace LegistOS.Classi
         {
             get
             {
-                //return idDocumenta.ToString();
                 if (idDocumenta.Equals(DDocument.idDocumenta))
                     return DDocument.Nazvanie;
                 return idDocumenta.ToString();

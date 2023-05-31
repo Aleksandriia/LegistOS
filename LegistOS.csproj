@@ -111,7 +111,6 @@
     </Compile>
     <Compile Include="Classi\GlobalPeremen.cs" />
     <Compile Include="Classi\Izbrannoe.cs" />
-    <Compile Include="Classi\KonverterDati.cs" />
     <Compile Include="Classi\ModelLegist.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

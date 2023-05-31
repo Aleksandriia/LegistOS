@@ -22,10 +22,6 @@ namespace LegistOS.Classi
         public static int IDdoc = -1;
         public static int idPolzov = -1;
 
-        /*public static string dobavDoc = "Добавление документа";
-        public static string redactDoc = "Изменение документа";
-        public static int dobavDoc = 1;
-        public static int redactDoc = 2;*/
         public static int dobRedDoc = 0;
     }
 }
