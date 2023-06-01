@@ -1,0 +1,16 @@
+﻿<Page x:Class="LegistOS.Stranici.PolzSoglash"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LegistOS.Stranici"
+      mc:Ignorable="d" 
+      d:DesignHeight="534" d:DesignWidth="1240" Loaded="Page_Loaded"
+      Title="Пользовательское соглашение">
+    <Grid Margin="10">
+        <TextBox x:Name="TBPolzSogl" Width="1180" Height="510"  
+                 Text="Пользовательское соглашение"
+                 BorderBrush="{x:Null}" IsReadOnly="True"
+                 Style="{StaticResource TBOsn}" TextWrapping="Wrap"  />
+    </Grid>
+</Page>

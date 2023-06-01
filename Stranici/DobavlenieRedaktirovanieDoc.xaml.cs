@@ -107,8 +107,6 @@ namespace LegistOS.Stranici
             if (string.IsNullOrWhiteSpace(DPDataNachDoc.Text))
                 oshibka.AppendLine("Дата начала обязательна для заполнения;");
 
-            if (Regex.IsMatch(TBNomerDoc.Text, @"[a-zA-Zа-яА-Я]"))
-                oshibka.AppendLine("Номер документа должен содержать только цифры;");
             if (CBIzdavOrgan.Text.Length <= 0)
                 oshibka.AppendLine("Необходимо выбрать издавший орган;");
             if (CBVid.Text.Length <= 0)

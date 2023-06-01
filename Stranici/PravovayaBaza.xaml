@@ -20,7 +20,7 @@
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Column="1" Grid.Row="0" Background="{StaticResource PodlojkaBel}">
-            <TextBlock Text="Правовая база" x:Name="TBZagolovokNP" 
+            <TextBlock Text="Правовая база" x:Name="TBZagolovokPB" 
                        Style="{StaticResource TBlZagolovok}" 
                        HorizontalAlignment="Left" VerticalAlignment="Center" />
         </StackPanel>

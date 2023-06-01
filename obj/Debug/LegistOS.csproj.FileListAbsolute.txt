@@ -116,3 +116,9 @@ E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\Obr
 E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\PolzovatelskoeSoglashenie.g.cs
 E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\ObrabotkaPersonalDannih.baml
 E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\PolzovatelskoeSoglashenie.baml
+E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\Pomosh.g.cs
+E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\Pomosh.baml
+E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\ObrPersonDan.g.cs
+E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\PolzSoglash.g.cs
+E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\ObrPersonDan.baml
+E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\PolzSoglash.baml

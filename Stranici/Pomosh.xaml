@@ -1,0 +1,79 @@
+﻿<Page x:Class="LegistOS.Stranici.Pomosh"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LegistOS.Stranici"
+      mc:Ignorable="d" 
+      d:DesignHeight="700" d:DesignWidth="1440"
+      Title="Помощь">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35" />
+            <RowDefinition Height="5*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel x:Name="SPVerhPolojka"
+                    Grid.Column="1" Grid.Row="0" 
+                    Background="{StaticResource PodlojkaBel}">
+            <TextBlock Text="Помощь" x:Name="TBZagolovokP" 
+                       Style="{StaticResource TBlZagolovok}" 
+                       Grid.Column="1" Grid.Row="0" 
+                       HorizontalAlignment="Left" VerticalAlignment="Center" />
+        </StackPanel>
+        
+        <Rectangle x:Name="RtgBokMeny" Fill="{StaticResource PodlojkaBel}" 
+                   Grid.Column="0" Grid.RowSpan="2" />
+
+        <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="1">
+            <Button x:Name="BtnVoprosi" Background="{x:Null}" BorderBrush="{x:Null}"
+                    Width="200" Height="35" Click="BtnVoprosi_Click" >
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel x:Name="SPVoprosi" 
+                                Style="{StaticResource SPBokMenu}" Width="195" >
+                        <TextBlock x:Name="TBlVoprosi" 
+                                   Text="Ответы на вопросы" 
+                                   Style="{StaticResource TBlBokMenu}" />
+                    </StackPanel>
+                </StackPanel>
+            </Button>
+
+            <Button x:Name="BtnObrPersDan" Background="{x:Null}" BorderBrush="{x:Null}"
+                    Width="200" Height="35" Click="BtnObrPersDan_Click"
+                    Visibility="{Binding AdminContVidimost}"
+                    ToolTip="Обработка персональных данных">
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel x:Name="SPObrPersDan" 
+                                Style="{StaticResource SPBokMenu}" Width="195" >
+                        <TextBlock x:Name="TBlObrPersDan" 
+                                   Text="Обр. персон. данных" 
+                                   Style="{StaticResource TBlBokMenu}" />
+                    </StackPanel>
+                </StackPanel>
+            </Button>
+
+            <Button x:Name="BtnPolzSogl" Background="{x:Null}" BorderBrush="{x:Null}"
+                    Width="200" Height="35" Click="BtnPolzSogl_Click"
+                    Visibility="{Binding AdminContVidimost}"
+                    ToolTip="Пользовательское соглашение">
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel x:Name="SPPolzSogl" 
+                                Style="{StaticResource SPBokMenu}" Width="195" >
+                        <TextBlock x:Name="TBlPolzSogl" 
+                                   Text="Польз. соглашение" 
+                                   Style="{StaticResource TBlBokMenu}" />
+                    </StackPanel>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+
+        <Frame x:Name="FramePomosh" 
+               NavigationUIVisibility="Hidden" 
+               Grid.Row="1" Grid.Column="1" Margin="10" />
+    </Grid>
+</Page>

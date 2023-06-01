@@ -160,11 +160,20 @@
     <Compile Include="Stranici\ObrabotkaPersonalDannih.xaml.cs">
       <DependentUpon>ObrabotkaPersonalDannih.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Stranici\ObrPersonDan.xaml.cs">
+      <DependentUpon>ObrPersonDan.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Stranici\OpisanieIzdOrgana.xaml.cs">
       <DependentUpon>OpisanieIzdOrgana.xaml</DependentUpon>
     </Compile>
     <Compile Include="Stranici\PolzovatelskoeSoglashenie.xaml.cs">
       <DependentUpon>PolzovatelskoeSoglashenie.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Stranici\PolzSoglash.xaml.cs">
+      <DependentUpon>PolzSoglash.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Stranici\Pomosh.xaml.cs">
+      <DependentUpon>Pomosh.xaml</DependentUpon>
     </Compile>
     <Compile Include="Stranici\PravovayaBaza.xaml.cs">
       <DependentUpon>PravovayaBaza.xaml</DependentUpon>
@@ -230,11 +239,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Stranici\ObrPersonDan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Stranici\OpisanieIzdOrgana.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Stranici\PolzovatelskoeSoglashenie.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stranici\PolzSoglash.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stranici\Pomosh.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

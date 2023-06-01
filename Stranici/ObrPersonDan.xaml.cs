@@ -15,9 +15,12 @@ using System.Windows.Shapes;
 
 namespace LegistOS.Stranici
 {
-    public partial class ObrabotkaPersonalDannih : Page
+    /// <summary>
+    /// Логика взаимодействия для ObrPersonDan.xaml
+    /// </summary>
+    public partial class ObrPersonDan : Page
     {
-        public ObrabotkaPersonalDannih()
+        public ObrPersonDan()
         {
             InitializeComponent();
         }

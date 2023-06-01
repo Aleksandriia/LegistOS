@@ -44,6 +44,9 @@ namespace LegistOS.Okna
                 Application.Current.Resources.MergedDictionaries[0] = dictionary;
             }
 
+            Classi.GlobalPeremen.FIO = null;
+            Classi.GlobalPeremen.FIO = App.dPolzovatel.Familia + " " + App.dPolzovatel.Imya + " " + App.dPolzovatel.Otchestvo;
+
             FrameMain.Navigate(new Stranici.PravovayaBaza());
         }
 
@@ -92,6 +95,11 @@ namespace LegistOS.Okna
         private void BtnVMIzdOrgani_Click(object sender, RoutedEventArgs e)
         {
             FrameMain.Navigate(new Stranici.IzdOrgani());
+        }
+
+        private void BtnVMInformatia_Click(object sender, RoutedEventArgs e)
+        {
+            FrameMain.Navigate(new Stranici.Pomosh());
         }
     }
 }

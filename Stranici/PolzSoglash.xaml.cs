@@ -15,16 +15,21 @@ using System.Windows.Shapes;
 
 namespace LegistOS.Stranici
 {
-    public partial class ObrabotkaPersonalDannih : Page
+    /// <summary>
+    /// Логика взаимодействия для PolzSoglash.xaml
+    /// </summary>
+    public partial class PolzSoglash : Page
     {
-        public ObrabotkaPersonalDannih()
+        public PolzSoglash()
         {
             InitializeComponent();
+
+            TBPolzSogl.Text = Classi.PolzovatSoglash.textPolzSoglash;
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            TBObrPersDann.Text = Classi.ObrabotPersonalDannih.textSoglObrPersDann;
+            TBPolzSogl.Text = Classi.PolzovatSoglash.textPolzSoglash;
         }
     }
 }

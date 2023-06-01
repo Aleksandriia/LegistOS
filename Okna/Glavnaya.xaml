@@ -57,7 +57,7 @@
             </Button>
 
             <Button x:Name="BtnVMInformatia" Style="{StaticResource BtnVerhMenu}"
-                    ToolTip="Помощь" >
+                    ToolTip="Помощь" Click="BtnVMInformatia_Click" >
                 <Image x:Name="ImgInformatia" Source="/Izobragenia/Znachki/streamline-computer-desktop-help--computer-devices--48x48.PNG"
                        Width="48"/>
             </Button>
