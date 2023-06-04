@@ -187,6 +187,9 @@
     <Compile Include="Stranici\Vid.xaml.cs">
       <DependentUpon>Vid.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Stranici\Voprosi.xaml.cs">
+      <DependentUpon>Voprosi.xaml</DependentUpon>
+    </Compile>
     <Page Include="Okna\Avtorizatia.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -272,6 +275,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Stranici\Vid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stranici\Voprosi.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -122,3 +122,5 @@ E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\Obr
 E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\PolzSoglash.g.cs
 E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\ObrPersonDan.baml
 E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\PolzSoglash.baml
+E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\Voprosi.g.cs
+E:\6. Диплом\Приложение\LegistOS\LegistOS\obj\Debug\Stranici\Voprosi.baml

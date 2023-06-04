@@ -15,19 +15,18 @@ using System.Windows.Shapes;
 
 namespace LegistOS.Stranici
 {
-    /// <summary>
-    /// Логика взаимодействия для Pomosh.xaml
-    /// </summary>
     public partial class Pomosh : Page
     {
         public Pomosh()
         {
             InitializeComponent();
+
+            FramePomosh.Navigate(new Stranici.Voprosi());
         }
 
         private void BtnVoprosi_Click(object sender, RoutedEventArgs e)
         {
-            //FramePomosh.Navigate(new Stranici.PolzovatelskoeSoglashenie());
+            FramePomosh.Navigate(new Stranici.Voprosi());
         }
 
         private void BtnPolzSogl_Click(object sender, RoutedEventArgs e)

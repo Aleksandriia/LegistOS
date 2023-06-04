@@ -1,0 +1,93 @@
+﻿<Page x:Class="LegistOS.Stranici.Voprosi"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LegistOS.Stranici"
+      mc:Ignorable="d" 
+      d:DesignHeight="534" d:DesignWidth="1240"
+      Title="Вопросы">
+
+    <Grid>
+        <ListView x:Name="LVVoprosi" Margin="10"
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                  Background="{x:Null}" BorderBrush="{x:Null}">
+            <ListViewItem Margin="10" BorderBrush="{StaticResource AksentCvet}" BorderThickness="1.4">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock x:Name="TBlProsmotrDoc" Text="Просмотр документа" 
+                               Style="{StaticResource TBlZagolovokDoc}" FontWeight="Bold" />
+                    <TextBlock x:Name="TBlProsmotrDocOpisanie" Style="{StaticResource TBlTextDoc}" >
+                               Для просмотра документа необходимо перейти на вкладку <Bold>Правовой базы</Bold>.<LineBreak />
+                               В списке документов, у каждого есть кнопка <Bold>Подробнее...</Bold>. При клике на нее откроется документ.
+                    </TextBlock>
+                </StackPanel>
+            </ListViewItem>
+
+            <ListViewItem Margin="10" BorderBrush="{StaticResource AksentCvet}" BorderThickness="1.4">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock x:Name="TBlRashirPoisk" Text="Переход в расширенный поиск" 
+                               Style="{StaticResource TBlZagolovokDoc}" FontWeight="Bold" />
+                    <TextBlock x:Name="TBlRashirPoiskOpisanie" Style="{StaticResource TBlTextDoc}" >
+                               Чтобы перейти в режим расширенного поиска во вкладке Правовой базы, необходимо кликнуть по кнопке <Bold>Расширенный поиск...</Bold> 
+                               рядом со строкой поиска.<LineBreak />
+                               После этого под поисковой строкой появятся поля с выбором критериев поиска.<LineBreak />
+                               Выбрав нужные, следует нажать на кнопку <Bold>Найти</Bold> справа.<LineBreak />
+                               В случае, если необходимо сбросить все критерии поиска, нужно нажать на соответствующую кнопку <Bold>Сбросить</Bold> рядом с кнопкой <Bold>Найти</Bold>.
+                    </TextBlock>
+                </StackPanel>
+            </ListViewItem>
+
+            <ListViewItem Margin="10" BorderBrush="{StaticResource AksentCvet}" BorderThickness="1.4">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock x:Name="TBlObichnPoisk" Text="Переход в обычный из расширенного поиска" 
+                               Style="{StaticResource TBlZagolovokDoc}" FontWeight="Bold" />
+                    <TextBlock x:Name="TBlObichnPoiskOpisanie" Style="{StaticResource TBlTextDoc}" >
+                               Для того, чтобы перейти обратно в обычный поиск, необходимо кликнуть по кнопке <Bold>Обычный поиск...</Bold> 
+                               справа от строки поиска.<LineBreak />
+                               Поля с выбором критериев поиска уберутся.
+                    </TextBlock>
+                </StackPanel>
+            </ListViewItem>
+
+            <ListViewItem Margin="10" BorderBrush="{StaticResource AksentCvet}" BorderThickness="1.4">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock x:Name="TBlSvedeniaObOrgane" Text="Просмотр информации об органе, издавшем документ" 
+                                   Style="{StaticResource TBlZagolovokDoc}" FontWeight="Bold" />
+                    <TextBlock x:Name="TBlSvedeniaObOrganeOpisanie" Style="{StaticResource TBlTextDoc}" >
+                                   У каждого документа в левой части представлена информация о нем.<LineBreak />
+                                   Если необходимо, можно проверить информацию об издавшем органе.<LineBreak />
+                                   Для этого необходимо перейти на следующую вкладку <Bold>Органы издания</Bold> в верхнем меню.<LineBreak />
+                                   Для быстрого нахождения нужного органа, можно воспользоваться строкой поиска, введя название.<LineBreak />
+                                   После этого, можно нажать на кнопку <Bold>Подробнее...</Bold>, и изучить информацию об органе издания.
+                    </TextBlock>
+                </StackPanel>
+            </ListViewItem>
+
+            <ListViewItem Margin="10" BorderBrush="{StaticResource AksentCvet}" BorderThickness="1.4">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock x:Name="TBlSmenaTemi" Text="Смена темы приложения" 
+                                   Style="{StaticResource TBlZagolovokDoc}" FontWeight="Bold" />
+                    <TextBlock x:Name="TBlSmenaTemiOpisanie" Style="{StaticResource TBlTextDoc}" >
+                                   Для изменения цветовой темы приложения необходимо перейти на вкладку <Bold>Настройки</Bold>.<LineBreak />
+                                   В центральной части можно увидеть две кнопки, которые переключают темы на светлую и темную.<LineBreak />
+                                   <Italic>* Для полноценного изменения рекомендуется перезайти в аккаунт!</Italic>.
+                    </TextBlock>
+                </StackPanel>
+            </ListViewItem>
+        </ListView>
+    </Grid>
+</Page>
+
+<!--
+    <ListViewItem Margin="10" BorderBrush="{StaticResource AksentCvet}" BorderThickness="1.4">
+        <StackPanel Orientation="Vertical">
+            <TextBlock x:Name="TBl0" Text="Переход в обычный из расширенного поиска" 
+                                   Style="{StaticResource TBlZagolovokDoc}" FontWeight="Bold" />
+            <TextBlock x:Name="TBl0Opisanie" Style="{StaticResource TBlTextDoc}" >
+                                   Для того, чтобы перейти обратно в обычный поиск, необходимо кликнуть по кнопке <Bold>Обычный поиск...</Bold> 
+                                   справа от строки поиска.<LineBreak />
+                                   Поля с выбором критериев поиска уберутся.
+            </TextBlock>
+        </StackPanel>
+    </ListViewItem>
+    -->
