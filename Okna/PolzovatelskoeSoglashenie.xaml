@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Пользовательское соглашение" Height="500" Width="900"
         MinHeight="499" MinWidth="899" MaxHeight="501" MaxWidth="901"
-        Loaded="Window_Loaded">
+        WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="100" />
